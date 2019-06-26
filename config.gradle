@@ -1,0 +1,19 @@
+ext {
+    applicationId = 'com.flyang.basic'
+
+    app_name = "UI库"
+    compileSdkVersion = 28
+    buildToolsVersion = "26.0.2"
+    minSdkVersion = 16
+    targetSdkVersion = 28
+    versionCode = 1
+    versionName = "1.1.1.2019_beta_01"
+
+    isAlone = false
+
+    dep = [
+            gson: "com.google.code.gson:gson:2.8.5",
+    ]
+}
+
+//./gradlew clean utilcode-lib:bintrayUpload
