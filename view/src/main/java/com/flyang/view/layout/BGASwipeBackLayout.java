@@ -297,21 +297,21 @@ public class BGASwipeBackLayout extends ViewGroup {
     /**
      * 设置阴影资源 id
      */
-    void setShadowResId(@DrawableRes int shadowResId) {
+    public void setShadowResId(@DrawableRes int shadowResId) {
         mShadowView.setShadowResId(shadowResId);
     }
 
     /**
      * 设置是否显示滑动返回的阴影效果
      */
-    void setIsNeedShowShadow(boolean isNeedShowShadow) {
+    public void setIsNeedShowShadow(boolean isNeedShowShadow) {
         mShadowView.setIsNeedShowShadow(isNeedShowShadow);
     }
 
     /**
      * 设置阴影区域的透明度是否根据滑动的距离渐变
      */
-    void setIsShadowAlphaGradient(boolean isShadowAlphaGradient) {
+    public void setIsShadowAlphaGradient(boolean isShadowAlphaGradient) {
         mShadowView.setIsShadowAlphaGradient(isShadowAlphaGradient);
     }
     // ======================== 新加的 END ========================
