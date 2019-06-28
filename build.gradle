@@ -2,9 +2,15 @@
 
 buildscript {
     repositories {
+        maven {
+            url("http://192.168.249.100:8081/repository/basic_test/")
+        }
+        maven {
+            url 'https://jitpack.io'
+        }
         google()
         jcenter()
-        
+        mavenLocal()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.3.1'
@@ -18,9 +24,15 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url("http://192.168.249.100:8081/repository/basic_test/")
+        }
+        maven {
+            url 'https://jitpack.io'
+        }
         google()
         jcenter()
-        
+        mavenLocal()
     }
 }
 

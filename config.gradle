@@ -4,14 +4,29 @@ ext {
     app_name = "UI库"
     compileSdkVersion = 28
     buildToolsVersion = "26.0.2"
-    minSdkVersion = 16
+    minSdkVersion = 19
     targetSdkVersion = 28
     versionCode = 1
     versionName = "1.1.1.2019_beta_01"
 
     isAlone = false
 
+//    basicVersion = "V1.1.1.2019_release_01"
+    utilVersion = "1.1.1.2019_beta_01"
+
+    //GitHub
+//    dep = [
+//            util      : "com.github.caoyangfei.basiclib:util:$utilVersion",
+//            basic     : "com.github.caoyangfei.basiclib:basic:$basicVersion",
+//
+//            gson: "com.google.code.gson:gson:2.8.5",
+//    ]
+
+    //本地
     dep = [
+            util: "com.flyang.common:util:$utilVersion",
+//            basic     : "com.flyang.common:basic:$basicVersion",
+
             gson: "com.google.code.gson:gson:2.8.5",
     ]
 }
