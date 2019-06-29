@@ -3,7 +3,7 @@
 buildscript {
     repositories {
         maven {
-            url("http://192.168.249.100:8081/repository/basic_test/")
+            url("http://192.168.249.100:8081/repository/basic_beta/")
         }
         maven {
             url 'https://jitpack.io'
@@ -25,7 +25,7 @@ buildscript {
 allprojects {
     repositories {
         maven {
-            url("http://192.168.249.100:8081/repository/basic_test/")
+            url("http://192.168.249.100:8081/repository/basic_beta/")
         }
         maven {
             url 'https://jitpack.io'

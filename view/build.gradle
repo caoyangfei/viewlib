@@ -2,8 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven'
 apply plugin: 'signing'
 
-apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.caoyangfei'
+//apply plugin: 'com.github.dcendents.android-maven'
+//group='com.github.caoyangfei'
 
 configurations {
     deployerJars
@@ -67,7 +67,7 @@ dependencies {
     implementation dep.util
 }
 
-def version = "1.1.1.2019_beta_01"
+def version = "1.1.1.2019_beta_05"
 
 uploadArchives {
     repositories {
@@ -76,7 +76,7 @@ uploadArchives {
                 MavenDeployment deployment -> signing.signPom(deployment)
             }
             pom.version = version
-            pom.artifactId = "api"
+            pom.artifactId = "view"
             pom.groupId = GROUP_ID
 
             repository(url: rootProject.getRepositoryUrl(version)) {

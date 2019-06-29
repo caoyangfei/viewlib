@@ -11,13 +11,11 @@ ext {
 
     isAlone = false
 
-//    basicVersion = "V1.1.1.2019_release_01"
-    utilVersion = "1.1.1.2019_beta_01"
+    utilVersion = "1.2.1.2019_beta_04"
 
     //GitHub
 //    dep = [
 //            util      : "com.github.caoyangfei.basiclib:util:$utilVersion",
-//            basic     : "com.github.caoyangfei.basiclib:basic:$basicVersion",
 //
 //            gson: "com.google.code.gson:gson:2.8.5",
 //    ]
@@ -25,7 +23,6 @@ ext {
     //本地
     dep = [
             util: "com.flyang.common:util:$utilVersion",
-//            basic     : "com.flyang.common:basic:$basicVersion",
 
             gson: "com.google.code.gson:gson:2.8.5",
     ]

@@ -57,7 +57,7 @@ import android.view.accessibility.AccessibilityEvent;
 import com.flyang.util.app.ApplicationUtils;
 import com.flyang.util.view.BarUtils;
 import com.flyang.util.view.ScreenUtils;
-import com.flyang.view.layout.swipeback.BGASwipeBackShadowView;
+import com.flyang.view.layout.swipeback.SwipeBackShadowView;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -66,12 +66,12 @@ import java.util.ArrayList;
 
 /**
  * @author caoyangfei
- * @ClassName BGASwipeBackLayout
- * @date 2019/6/26
+ * @ClassName SwipeBackLayout
+ * @date 2019/6/29
  * ------------- Description -------------
  * 通过修改 support-v4 包中 SlidingPaneLayout 的源码来实现滑动返回布局
  */
-public class BGASwipeBackLayout extends ViewGroup {
+public class SwipeBackLayout extends ViewGroup {
     private static final String TAG = "SlidingPaneLayout";
 
     /**
@@ -202,7 +202,7 @@ public class BGASwipeBackLayout extends ViewGroup {
     /**
      * 滑动返回时的阴影视图
      */
-    private BGASwipeBackShadowView mShadowView;
+    private SwipeBackShadowView mShadowView;
     /**
      * 内容视图
      */
@@ -232,7 +232,7 @@ public class BGASwipeBackLayout extends ViewGroup {
 
         setSliderFadeColor(Color.TRANSPARENT);
 
-        mShadowView = new BGASwipeBackShadowView(activity);
+        mShadowView = new SwipeBackShadowView(activity);
 
         addView(mShadowView, 0, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
 
@@ -363,15 +363,15 @@ public class BGASwipeBackLayout extends ViewGroup {
         }
     }
 
-    public BGASwipeBackLayout(Context context) {
+    public SwipeBackLayout(Context context) {
         this(context, null);
     }
 
-    public BGASwipeBackLayout(Context context, AttributeSet attrs) {
+    public SwipeBackLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public BGASwipeBackLayout(Context context, AttributeSet attrs, int defStyle) {
+    public SwipeBackLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
         final float density = context.getResources().getDisplayMetrics().density;
@@ -1680,12 +1680,12 @@ public class BGASwipeBackLayout extends ViewGroup {
     }
 
     interface SlidingPanelLayoutImpl {
-        void invalidateChildRegion(BGASwipeBackLayout parent, View child);
+        void invalidateChildRegion(SwipeBackLayout parent, View child);
     }
 
     static class SlidingPanelLayoutImplBase implements SlidingPanelLayoutImpl {
         @Override
-        public void invalidateChildRegion(BGASwipeBackLayout parent, View child) {
+        public void invalidateChildRegion(SwipeBackLayout parent, View child) {
             ViewCompat.postInvalidateOnAnimation(parent, child.getLeft(), child.getTop(),
                     child.getRight(), child.getBottom());
         }
@@ -1718,7 +1718,7 @@ public class BGASwipeBackLayout extends ViewGroup {
         }
 
         @Override
-        public void invalidateChildRegion(BGASwipeBackLayout parent, View child) {
+        public void invalidateChildRegion(SwipeBackLayout parent, View child) {
             if (mGetDisplayList != null && mRecreateDisplayList != null) {
                 try {
                     mRecreateDisplayList.setBoolean(child, true);
@@ -1737,7 +1737,7 @@ public class BGASwipeBackLayout extends ViewGroup {
 
     static class SlidingPanelLayoutImplJBMR1 extends SlidingPanelLayoutImplBase {
         @Override
-        public void invalidateChildRegion(BGASwipeBackLayout parent, View child) {
+        public void invalidateChildRegion(SwipeBackLayout parent, View child) {
             ViewCompat.setLayerPaint(child, ((LayoutParams) child.getLayoutParams()).dimPaint);
         }
     }
@@ -1752,7 +1752,7 @@ public class BGASwipeBackLayout extends ViewGroup {
             copyNodeInfoNoChildren(info, superNode);
             superNode.recycle();
 
-            info.setClassName(BGASwipeBackLayout.class.getName());
+            info.setClassName(SwipeBackLayout.class.getName());
             info.setSource(host);
 
             final ViewParent parent = ViewCompat.getParentForAccessibility(host);
@@ -1778,7 +1778,7 @@ public class BGASwipeBackLayout extends ViewGroup {
         public void onInitializeAccessibilityEvent(View host, AccessibilityEvent event) {
             super.onInitializeAccessibilityEvent(host, event);
 
-            event.setClassName(BGASwipeBackLayout.class.getName());
+            event.setClassName(SwipeBackLayout.class.getName());
         }
 
         @Override

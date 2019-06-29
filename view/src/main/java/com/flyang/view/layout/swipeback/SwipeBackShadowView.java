@@ -17,17 +17,20 @@ import com.flyang.util.app.ApplicationUtils;
 import com.flyang.util.view.BarUtils;
 import com.flyang.util.view.ScreenUtils;
 import com.flyang.view.R;
-import com.flyang.view.layout.BGASwipeBackLayout;
+import com.flyang.view.layout.SwipeBackLayout;
 
 import java.lang.ref.WeakReference;
 
+
 /**
- * 作者:王浩 邮件:wanghao76@meituan.com
- * 创建时间:2017/10/13
- * 描述:左侧阴影控件
+ * @author caoyangfei
+ * @ClassName BGASwipeBackShadowView
+ * @date 2019/6/29
+ * ------------- Description -------------
+ * 左侧阴影控件
  */
-public class BGASwipeBackShadowView extends FrameLayout {
-    private static final String TAG = BGASwipeBackShadowView.class.getSimpleName();
+public class SwipeBackShadowView extends FrameLayout {
+    private static final String TAG = SwipeBackShadowView.class.getSimpleName();
     private static final float WE_CHAT_STYLE_MAX_OFFSET = 0.75f;
     private Activity mActivity;
     private WeakReference<Activity> mPreActivity;
@@ -55,7 +58,7 @@ public class BGASwipeBackShadowView extends FrameLayout {
 
     private boolean mIsCurrentActivityTranslucent;
 
-    public BGASwipeBackShadowView(Activity activity) {
+    public SwipeBackShadowView(Activity activity) {
         super(activity);
         mActivity = activity;
 
@@ -160,7 +163,7 @@ public class BGASwipeBackShadowView extends FrameLayout {
             removeView(mPreContentView);
 
             ViewGroup.LayoutParams lp = null;
-            if (!(mPreContentView instanceof BGASwipeBackLayout)) {
+            if (!(mPreContentView instanceof SwipeBackLayout)) {
                 int width = mPreDecorView.getWidth();
                 int height = mPreDecorView.getHeight() - BarUtils.getNavBarHeight(activity);
                 if (!ScreenUtils.isPortrait()) {

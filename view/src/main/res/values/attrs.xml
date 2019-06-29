@@ -1,18 +1,69 @@
 <resources>
+
+    <!--自动换行布局-->
     <declare-styleable name="FlowLayout">
         <attr name="android:orientation" />
         <attr name="layoutDirection" format="enum">
-            <enum name="ltr" value="0"/>
-            <enum name="rtl" value="1"/>
+            <enum name="ltr" value="0" />
+            <enum name="rtl" value="1" />
         </attr>
-        <attr name="debugDraw" format="boolean"/>
-        <attr name="maxLines" format="integer"/>
+        <attr name="debugDraw" format="boolean" />
+        <attr name="maxLines" format="integer" />
         <attr name="weightDefault" format="float" />
-        <attr name="android:gravity"/>
+        <attr name="android:gravity" />
     </declare-styleable>
     <declare-styleable name="FlowLayout_LayoutParams">
-        <attr name="layout_newLine" format="boolean"/>
-        <attr name="layout_weight" format="float"/>
-        <attr name="android:layout_gravity"/>
+        <attr name="layout_newLine" format="boolean" />
+        <attr name="layout_weight" format="float" />
+        <attr name="android:layout_gravity" />
+    </declare-styleable>
+
+
+    <!--加载动画-->
+    <declare-styleable name="ShapeLoadingView">
+        <attr name="loadingText" format="string" />
+        <attr name="loadingTextAppearance" format="reference" />
+    </declare-styleable>
+
+    <!--旋转加载动画-->
+    <declare-styleable name="SpinKitLoadingView">
+        <attr name="SpinKit_Style">
+            <enum name="RotatingPlane" value="0" />
+            <enum name="DoubleBounce" value="1" />
+            <enum name="Wave" value="2" />
+            <enum name="WanderingCubes" value="3" />
+            <enum name="Pulse" value="4" />
+            <enum name="ChasingDots" value="5" />
+            <enum name="ThreeBounce" value="6" />
+            <enum name="Circle" value="7" />
+            <enum name="CubeGrid" value="8" />
+            <enum name="FadingCircle" value="9" />
+            <enum name="FoldingCube" value="10" />
+            <enum name="RotatingCircle" value="11" />
+            <enum name="MultiplePulse" value="12" />
+            <enum name="PulseRing" value="13" />
+            <enum name="MultiplePulseRing" value="14" />
+        </attr>
+        <attr name="SpinKit_Color" format="color" />
+    </declare-styleable>
+
+    <!--旋转加载动画-->
+    <declare-styleable name="LoadingIndicatorView">
+        <attr name="minWidth" format="dimension" />
+        <attr name="maxWidth" format="dimension" />
+        <attr name="minHeight" format="dimension" />
+        <attr name="maxHeight" format="dimension" />
+        <attr name="indicatorName" format="string" />
+        <attr name="indicatorColor" format="color" />
+    </declare-styleable>
+
+    <!--圆形加载动画-->
+    <declare-styleable name="CircularLoaderView">
+        <attr name="spinning_bar_width" format="dimension" />
+        <attr name="spinning_bar_color" format="color" />
+        <attr name="spinning_bar_padding" format="dimension" />
+        <attr name="initialCornerAngle" format="dimension" />
+        <attr name="finalCornerAngle" format="dimension" />
+
     </declare-styleable>
 </resources>
