@@ -16,4 +16,6 @@ public interface Loader {
     void showMsg(String msg);
 
     void showResultMsg(String msg, boolean isSuccess);
+
+    void setLoadingText(String str);
 }
