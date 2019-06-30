@@ -8,9 +8,12 @@ import android.graphics.Paint;
 import com.flyang.view.loader.indicator.Indicator;
 
 import java.util.ArrayList;
-
 /**
- * Created by Jack on 2015/10/17.
+ * @author caoyangfei
+ * @ClassName BallRotateIndicator
+ * @date 2019/6/30
+ * ------------- Description -------------
+ * 旋转三个球
  */
 public class BallRotateIndicator extends Indicator {
 

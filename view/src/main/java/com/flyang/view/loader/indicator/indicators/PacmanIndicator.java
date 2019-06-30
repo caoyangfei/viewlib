@@ -9,9 +9,12 @@ import android.view.animation.LinearInterpolator;
 import com.flyang.view.loader.indicator.Indicator;
 
 import java.util.ArrayList;
-
 /**
- * Created by Jack on 2015/10/16.
+ * @author caoyangfei
+ * @ClassName PacmanIndicator
+ * @date 2019/6/30
+ * ------------- Description -------------
+ * 贪吃豆
  */
 public class PacmanIndicator extends Indicator {
 

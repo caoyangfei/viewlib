@@ -9,9 +9,12 @@ import android.view.animation.LinearInterpolator;
 import com.flyang.view.loader.indicator.Indicator;
 
 import java.util.ArrayList;
-
 /**
- * Created by Jack on 2015/10/18.
+ * @author caoyangfei
+ * @ClassName CubeTransitionIndicator
+ * @date 2019/6/30
+ * ------------- Description -------------
+ * 转圈方块
  */
 public class CubeTransitionIndicator extends Indicator {
 

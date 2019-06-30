@@ -5,6 +5,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -43,6 +44,7 @@ public class ShapeLoadingView extends FrameLayout {
 
     private String mLoadText;
 
+    private int mColor;
 
     public ShapeLoadingView(Context context) {
         super(context);
@@ -58,8 +60,9 @@ public class ShapeLoadingView extends FrameLayout {
     private void init(Context context, AttributeSet attrs) {
         if (attrs != null) {
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ShapeLoadingView);
-            mLoadText = typedArray.getString(R.styleable.ShapeLoadingView_loadingText);
-            mTextAppearance = typedArray.getResourceId(R.styleable.ShapeLoadingView_loadingTextAppearance, -1);
+            mLoadText = typedArray.getString(R.styleable.ShapeLoadingView_Shape_Text);
+            mColor = typedArray.getColor(R.styleable.ShapeLoadingView_Shape_Color, Color.WHITE);
+            mTextAppearance = typedArray.getResourceId(R.styleable.ShapeLoadingView_ShapeTextAppearance, -1);
             typedArray.recycle();
         }
 
@@ -79,6 +82,7 @@ public class ShapeLoadingView extends FrameLayout {
         if (mTextAppearance != -1) {
             mLoadTextView.setTextAppearance(getContext(), mTextAppearance);
         }
+        mLoadTextView.setTextColor(mColor);
         setLoadingText(mLoadText);
         addView(view, layoutParams);
         startLoading(200);
@@ -93,6 +97,14 @@ public class ShapeLoadingView extends FrameLayout {
     public int dip2px(float dipValue) {
         final float scale = getContext().getResources().getDisplayMetrics().density;
         return (int) (dipValue * scale + 0.5f);
+    }
+
+    public int getColor() {
+        return mColor;
+    }
+
+    public void setColor(int color) {
+        mColor = color;
     }
 
     private AnimatorSet mAnimatorSet = null;

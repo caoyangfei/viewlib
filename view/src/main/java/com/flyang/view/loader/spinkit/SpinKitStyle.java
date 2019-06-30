@@ -7,7 +7,7 @@ package com.flyang.view.loader.spinkit;
  * ------------- Description -------------
  * 样式枚举
  */
-public enum Style {
+public enum SpinKitStyle {
 
     ROTATING_PLANE(0),
     DOUBLE_BOUNCE(1),
@@ -28,7 +28,7 @@ public enum Style {
     @SuppressWarnings({"FieldCanBeLocal", "unused"})
     private int value;
 
-    Style(int value) {
+    SpinKitStyle(int value) {
         this.value = value;
     }
 }

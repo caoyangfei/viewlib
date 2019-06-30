@@ -12,7 +12,11 @@ import com.flyang.view.loader.indicator.Indicator;
 import java.util.ArrayList;
 
 /**
- * Created by Jack on 2015/10/17.
+ * @author caoyangfei
+ * @ClassName BallPulseRiseIndicator
+ * @date 2019/6/30
+ * ------------- Description -------------
+ * 双排旋转球
  */
 public class BallPulseRiseIndicator extends Indicator {
 

@@ -13,7 +13,11 @@ import com.flyang.view.loader.indicator.Indicator;
 import java.util.ArrayList;
 
 /**
- * Created by Jack on 2015/10/16.
+ * @author caoyangfei
+ * @ClassName SquareSpinIndicator
+ * @date 2019/6/30
+ * ------------- Description -------------
+ * 正方形旋转
  */
 public class SquareSpinIndicator extends Indicator {
 
@@ -23,9 +27,9 @@ public class SquareSpinIndicator extends Indicator {
     private Camera mCamera;
     private Matrix mMatrix;
 
-    public SquareSpinIndicator(){
-        mCamera=new Camera();
-        mMatrix=new Matrix();
+    public SquareSpinIndicator() {
+        mCamera = new Camera();
+        mMatrix = new Matrix();
     }
 
     @Override
@@ -42,17 +46,17 @@ public class SquareSpinIndicator extends Indicator {
         mMatrix.postTranslate(centerX(), centerY());
         canvas.concat(mMatrix);
 
-        canvas.drawRect(new RectF(getWidth()/5,getHeight()/5,getWidth()*4/5,getHeight()*4/5),paint);
+        canvas.drawRect(new RectF(getWidth() / 5, getHeight() / 5, getWidth() * 4 / 5, getHeight() * 4 / 5), paint);
     }
 
     @Override
     public ArrayList<ValueAnimator> onCreateAnimators() {
-        ArrayList<ValueAnimator> animators=new ArrayList<>();
-        ValueAnimator animator=ValueAnimator.ofFloat(0,180,180,0,0);
-        addUpdateListener(animator,new ValueAnimator.AnimatorUpdateListener() {
+        ArrayList<ValueAnimator> animators = new ArrayList<>();
+        ValueAnimator animator = ValueAnimator.ofFloat(0, 180, 180, 0, 0);
+        addUpdateListener(animator, new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                rotateX= (float) animation.getAnimatedValue();
+                rotateX = (float) animation.getAnimatedValue();
                 postInvalidate();
             }
         });
@@ -60,11 +64,11 @@ public class SquareSpinIndicator extends Indicator {
         animator.setRepeatCount(-1);
         animator.setDuration(2500);
 
-        ValueAnimator animator1=ValueAnimator.ofFloat(0,0,180,180,0);
-        addUpdateListener(animator1,new ValueAnimator.AnimatorUpdateListener() {
+        ValueAnimator animator1 = ValueAnimator.ofFloat(0, 0, 180, 180, 0);
+        addUpdateListener(animator1, new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                rotateY= (float) animation.getAnimatedValue();
+                rotateY = (float) animation.getAnimatedValue();
                 postInvalidate();
             }
         });

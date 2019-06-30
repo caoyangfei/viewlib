@@ -27,7 +27,7 @@ import com.flyang.view.loader.spinkit.style.Wave;
  */
 public class SpriteFactory {
 
-    public static Sprite create(Style style) {
+    public static Sprite create(SpinKitStyle style) {
         Sprite sprite = null;
         switch (style) {
             case ROTATING_PLANE:

@@ -9,7 +9,11 @@ import com.flyang.view.loader.indicator.Indicator;
 import java.util.ArrayList;
 
 /**
- * Created by Jack on 2015/10/20.
+ * @author caoyangfei
+ * @ClassName BallGridBeatIndicator
+ * @date 2019/6/30
+ * ------------- Description -------------
+ * 网格球
  */
 public class BallGridBeatIndicator extends Indicator {
 

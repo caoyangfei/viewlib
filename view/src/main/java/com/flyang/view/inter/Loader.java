@@ -18,4 +18,6 @@ public interface Loader {
     void showResultMsg(String msg, boolean isSuccess);
 
     void setLoadingText(String str);
+
+    void setLoadingTextColor(int color);
 }

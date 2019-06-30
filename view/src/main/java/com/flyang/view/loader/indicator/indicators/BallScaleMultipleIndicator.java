@@ -10,7 +10,11 @@ import com.flyang.view.loader.indicator.Indicator;
 import java.util.ArrayList;
 
 /**
- * Created by Jack on 2015/10/19.
+ * @author caoyangfei
+ * @ClassName BallScaleMultipleIndicator
+ * @date 2019/6/30
+ * ------------- Description -------------
+ * 扩大圆
  */
 public class BallScaleMultipleIndicator extends Indicator {
 

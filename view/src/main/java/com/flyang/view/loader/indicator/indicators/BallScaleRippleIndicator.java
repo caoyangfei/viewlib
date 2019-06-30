@@ -9,7 +9,11 @@ import android.animation.ValueAnimator;
 import java.util.ArrayList;
 
 /**
- * Created by Jack on 2015/10/19.
+ * @author caoyangfei
+ * @ClassName BallScaleRippleIndicator
+ * @date 2019/6/30
+ * ------------- Description -------------
+ * 扩大圆
  */
 public class BallScaleRippleIndicator extends BallScaleIndicator {
 

@@ -10,7 +10,11 @@ import com.flyang.view.loader.indicator.Indicator;
 import java.util.ArrayList;
 
 /**
- * Created by Jack on 2015/10/20.
+ * @author caoyangfei
+ * @ClassName SemiCircleSpinIndicator
+ * @date 2019/6/30
+ * ------------- Description -------------
+ * 椭圆旋转
  */
 public class SemiCircleSpinIndicator extends Indicator {
 
@@ -18,19 +22,19 @@ public class SemiCircleSpinIndicator extends Indicator {
 
     @Override
     public void draw(Canvas canvas, Paint paint) {
-        canvas.rotate(degress,centerX(),centerY());
-        RectF rectF=new RectF(0,0,getWidth(),getHeight());
-        canvas.drawArc(rectF,-60,120,false,paint);
+        canvas.rotate(degress, centerX(), centerY());
+        RectF rectF = new RectF(0, 0, getWidth(), getHeight());
+        canvas.drawArc(rectF, -60, 120, false, paint);
     }
 
     @Override
     public ArrayList<ValueAnimator> onCreateAnimators() {
-        ArrayList<ValueAnimator> animators=new ArrayList<>();
-        ValueAnimator rotateAnim=ValueAnimator.ofFloat(0,180,360);
-        addUpdateListener(rotateAnim,new ValueAnimator.AnimatorUpdateListener() {
+        ArrayList<ValueAnimator> animators = new ArrayList<>();
+        ValueAnimator rotateAnim = ValueAnimator.ofFloat(0, 180, 360);
+        addUpdateListener(rotateAnim, new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                degress= (float) animation.getAnimatedValue();
+                degress = (float) animation.getAnimatedValue();
                 postInvalidate();
             }
         });

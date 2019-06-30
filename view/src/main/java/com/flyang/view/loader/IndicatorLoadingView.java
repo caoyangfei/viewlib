@@ -9,15 +9,14 @@ import android.graphics.Rect;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 
 import com.flyang.view.R;
 import com.flyang.view.loader.indicator.Indicator;
-import com.flyang.view.loader.indicator.indicators.BallPulseIndicator;
+import com.flyang.view.loader.indicator.IndicatorFactory;
+import com.flyang.view.loader.indicator.IndicatorStyle;
 
 /**
  * @author caoyangfei
@@ -26,11 +25,9 @@ import com.flyang.view.loader.indicator.indicators.BallPulseIndicator;
  * ------------- Description -------------
  * 其它样式加载
  */
-public class LoadingIndicatorView extends View {
+public class IndicatorLoadingView extends View {
 
     private static final String TAG = "AVLoadingIndicatorView";
-
-    private static final BallPulseIndicator DEFAULT_INDICATOR = new BallPulseIndicator();
 
     private static final int MIN_SHOW_TIME = 500; // ms
     private static final int MIN_DELAY = 500; // ms
@@ -74,24 +71,25 @@ public class LoadingIndicatorView extends View {
     private int mIndicatorColor;
 
     private boolean mShouldStartAnimationDrawable;
+    private IndicatorStyle mStyle;
 
-    public LoadingIndicatorView(Context context) {
+    public IndicatorLoadingView(Context context) {
         super(context);
         init(context, null, 0, 0);
     }
 
-    public LoadingIndicatorView(Context context, AttributeSet attrs) {
+    public IndicatorLoadingView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs, 0, R.style.LoadingIndicatorView);
     }
 
-    public LoadingIndicatorView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public IndicatorLoadingView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs, defStyleAttr, R.style.LoadingIndicatorView);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public LoadingIndicatorView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public IndicatorLoadingView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs, defStyleAttr, R.style.LoadingIndicatorView);
     }
@@ -103,17 +101,18 @@ public class LoadingIndicatorView extends View {
         mMaxHeight = 48;
 
         final TypedArray a = context.obtainStyledAttributes(
-                attrs, R.styleable.LoadingIndicatorView, defStyleAttr, defStyleRes);
+                attrs, R.styleable.IndicatorLoadingView, defStyleAttr, defStyleRes);
 
-        mMinWidth = a.getDimensionPixelSize(R.styleable.LoadingIndicatorView_minWidth, mMinWidth);
-        mMaxWidth = a.getDimensionPixelSize(R.styleable.LoadingIndicatorView_maxWidth, mMaxWidth);
-        mMinHeight = a.getDimensionPixelSize(R.styleable.LoadingIndicatorView_minHeight, mMinHeight);
-        mMaxHeight = a.getDimensionPixelSize(R.styleable.LoadingIndicatorView_maxHeight, mMaxHeight);
-        String indicatorName = a.getString(R.styleable.LoadingIndicatorView_indicatorName);
-        mIndicatorColor = a.getColor(R.styleable.LoadingIndicatorView_indicatorColor, Color.WHITE);
-        setIndicator(indicatorName);
+        mMinWidth = a.getDimensionPixelSize(R.styleable.IndicatorLoadingView_minWidth, mMinWidth);
+        mMaxWidth = a.getDimensionPixelSize(R.styleable.IndicatorLoadingView_maxWidth, mMaxWidth);
+        mMinHeight = a.getDimensionPixelSize(R.styleable.IndicatorLoadingView_minHeight, mMinHeight);
+        mMaxHeight = a.getDimensionPixelSize(R.styleable.IndicatorLoadingView_maxHeight, mMaxHeight);
+        mStyle = IndicatorStyle.values()[a.getInt(R.styleable.IndicatorLoadingView_Indicator_Style, 1)];
+        mIndicatorColor = a.getColor(R.styleable.IndicatorLoadingView_indicatorColor, Color.WHITE);
+
+        Indicator indicator = IndicatorFactory.create(mStyle);
         if (mIndicator == null) {
-            setIndicator(DEFAULT_INDICATOR);
+            setIndicator(indicator);
         }
         a.recycle();
     }
@@ -156,41 +155,6 @@ public class LoadingIndicatorView extends View {
     public void setIndicatorColor(int color) {
         this.mIndicatorColor = color;
         mIndicator.setColor(color);
-    }
-
-
-    /**
-     * You should pay attention to pass this parameter with two way:
-     * for example:
-     * 1. Only class Name,like "SimpleIndicator".(This way would use default package name with
-     * "com.wang.avi.indicators")
-     * 2. Class name with full package,like "com.my.android.indicators.SimpleIndicator".
-     *
-     * @param indicatorName the class must be extend Indicator .
-     */
-    public void setIndicator(String indicatorName) {
-        if (TextUtils.isEmpty(indicatorName)) {
-            return;
-        }
-        StringBuilder drawableClassName = new StringBuilder();
-        if (!indicatorName.contains(".")) {
-            String defaultPackageName = getClass().getPackage().getName();
-            drawableClassName.append(defaultPackageName)
-                    .append(".indicators")
-                    .append(".");
-        }
-        drawableClassName.append(indicatorName);
-        try {
-            Class<?> drawableClass = Class.forName(drawableClassName.toString());
-            Indicator indicator = (Indicator) drawableClass.newInstance();
-            setIndicator(indicator);
-        } catch (ClassNotFoundException e) {
-            Log.e(TAG, "Didn't find your class , check the name again !");
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
     }
 
     public void smoothToShow() {

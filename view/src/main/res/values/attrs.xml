@@ -21,8 +21,9 @@
 
     <!--加载动画-->
     <declare-styleable name="ShapeLoadingView">
-        <attr name="loadingText" format="string" />
-        <attr name="loadingTextAppearance" format="reference" />
+        <attr name="Shape_Text" format="string" />
+        <attr name="Shape_Color" format="color" />
+        <attr name="ShapeTextAppearance" format="reference" />
     </declare-styleable>
 
     <!--旋转加载动画-->
@@ -48,12 +49,41 @@
     </declare-styleable>
 
     <!--旋转加载动画-->
-    <declare-styleable name="LoadingIndicatorView">
+    <declare-styleable name="IndicatorLoadingView">
+        <attr name="Indicator_Style">
+            <enum name="BallBeatIndicator" value="1" />
+            <enum name="BallClipRotateIndicator" value="2" />
+            <enum name="BallClipRotateMultipleIndicator" value="3" />
+            <enum name="BallClipRotatePulseIndicator" value="4" />
+            <enum name="BallGridBeatIndicator" value="5" />
+            <enum name="BallGridPulseIndicator" value="6" />
+            <enum name="BallPulseIndicator" value="7" />
+            <enum name="BallPulseRiseIndicator" value="8" />
+            <enum name="BallPulseSyncIndicator" value="9" />
+            <enum name="BallRotateIndicator" value="10" />
+            <enum name="BallScaleIndicator" value="11" />
+            <enum name="BallScaleMultipleIndicator" value="12" />
+            <enum name="BallScaleRippleIndicator" value="13" />
+            <enum name="BallScaleRippleMultipleIndicator" value="14" />
+            <enum name="BallSpinFadeLoaderIndicator" value="15" />
+            <enum name="BallTrianglePathIndicator" value="16" />
+            <enum name="BallZigZagDeflectIndicator" value="17" />
+            <enum name="BallZigZagIndicator" value="18" />
+            <enum name="CubeTransitionIndicator" value="19" />
+            <enum name="LineScaleIndicator" value="20" />
+            <enum name="LineScalePartyIndicator" value="21" />
+            <enum name="LineScalePulseOutIndicator" value="22" />
+            <enum name="LineScalePulseOutRapidIndicator" value="23" />
+            <enum name="LineSpinFadeLoaderIndicator" value="24" />
+            <enum name="PacmanIndicator" value="25" />
+            <enum name="SemiCircleSpinIndicator" value="26" />
+            <enum name="SquareSpinIndicator" value="27" />
+            <enum name="TriangleSkewSpinIndicator" value="28" />
+        </attr>
         <attr name="minWidth" format="dimension" />
         <attr name="maxWidth" format="dimension" />
         <attr name="minHeight" format="dimension" />
         <attr name="maxHeight" format="dimension" />
-        <attr name="indicatorName" format="string" />
         <attr name="indicatorColor" format="color" />
     </declare-styleable>
 

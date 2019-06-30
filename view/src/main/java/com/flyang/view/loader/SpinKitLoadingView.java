@@ -12,7 +12,7 @@ import android.widget.ProgressBar;
 
 import com.flyang.view.R;
 import com.flyang.view.loader.spinkit.SpriteFactory;
-import com.flyang.view.loader.spinkit.Style;
+import com.flyang.view.loader.spinkit.SpinKitStyle;
 import com.flyang.view.loader.spinkit.sprite.Sprite;
 
 
@@ -26,7 +26,7 @@ import com.flyang.view.loader.spinkit.sprite.Sprite;
 
 public class SpinKitLoadingView extends ProgressBar {
 
-    private Style mStyle;
+    private SpinKitStyle mStyle;
     private int mColor;
     private Sprite mSprite;
 
@@ -47,13 +47,14 @@ public class SpinKitLoadingView extends ProgressBar {
         super(context, attrs, defStyleAttr, defStyleRes);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SpinKitLoadingView, defStyleAttr,
                 defStyleRes);
-        mStyle = Style.values()[a.getInt(R.styleable.SpinKitLoadingView_SpinKit_Style, 0)];
+        mStyle = SpinKitStyle.values()[a.getInt(R.styleable.SpinKitLoadingView_SpinKit_Style, 0)];
         mColor = a.getColor(R.styleable.SpinKitLoadingView_SpinKit_Color, Color.WHITE);
         a.recycle();
         init();
         setIndeterminate(true);
     }
 
+    //初始化动画样式
     private void init() {
         Sprite sprite = SpriteFactory.create(mStyle);
         setIndeterminateDrawable(sprite);

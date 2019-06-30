@@ -5,8 +5,11 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 
 /**
- * Created by Jack on 2015/10/24.
- * Email:81813780@qq.com
+ * @author caoyangfei
+ * @ClassName LineSpinFadeLoaderIndicator
+ * @date 2019/6/30
+ * ------------- Description -------------
+ * 加载
  */
 public class LineSpinFadeLoaderIndicator extends BallSpinFadeLoaderIndicator {
 
