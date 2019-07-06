@@ -11,7 +11,7 @@ ext {
 
     isAlone = false
 
-    utilVersion = "1.2.1.2019_beta_04"
+    utilVersion = "2.1.1.2019_beta_01"
 
     //GitHub
 //    dep = [
