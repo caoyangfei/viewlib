@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.flyang.util.view.KeyboardUtils;
 import com.flyang.view.inter.Delegate;
-import com.flyang.view.manager.SwipeBackManager;
+import com.flyang.view.layout.manager.SwipeBackManager;
 
 public class MainActivity extends AppCompatActivity implements Delegate {
 
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements Delegate {
         // 设置滑动返回是否可用。默认值为 true
         swipeBackManager.setSwipeBackEnable(true);
         // 设置是否仅仅跟踪左侧边缘的滑动返回。默认值为 true
-        swipeBackManager.setIsOnlyTrackingLeftEdge(true);
+        swipeBackManager.setIsOnlyTrackingLeftEdge(false);
         // 设置是否是微信滑动返回样式。默认值为 true
         swipeBackManager.setIsWeChatStyle(true);
         // 设置阴影资源 id。默认值为 R.drawable.bga_sbl_shadow

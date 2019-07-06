@@ -1,4 +1,4 @@
-package com.flyang.view.manager;
+package com.flyang.view.layout.manager;
 
 
 import android.content.Context;

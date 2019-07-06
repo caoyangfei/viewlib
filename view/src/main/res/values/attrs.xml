@@ -96,4 +96,31 @@
         <attr name="finalCornerAngle" format="dimension" />
 
     </declare-styleable>
+
+    <declare-styleable name="CircleProgressView">
+        <attr name="progressNormalColor" format="color"/>
+        <attr name="progressReachColor" format="color"/>
+        <attr name="progressTextColor" format="color"/>
+        <attr name="progressTextSize" format="dimension"/>
+        <attr name="progressTextOffset" format="dimension"/>
+        <attr name="progressNormalSize" format="dimension"/>
+        <attr name="progressReachSize" format="dimension"/>
+        <attr name="radius" format="dimension"/>
+        <attr name="progressTextVisible" format="boolean"/>
+        <attr name="progressStartArc" format="integer"/>
+        <attr name="progressTextSkewX" format="dimension"/>
+        <attr name="progressTextPrefix" format="string"/>
+        <attr name="progressTextSuffix" format="string"/>
+        <attr name="innerBackgroundColor" format="color"/>
+        <attr name="progressStyle" format="enum">
+            <enum name="Normal" value="0"/>
+            <enum name="FillInner" value="1"/>
+            <enum name="FillInnerArc" value="2"/>
+        </attr>
+        <attr name="innerProgressColor" format="color"/>
+        <attr name="innerPadding" format="dimension"/>
+        <attr name="outerColor" format="color"/>
+        <attr name="outerSize" format="dimension"/>
+        <attr name="reachCapRound" format="boolean"/>
+    </declare-styleable>
 </resources>

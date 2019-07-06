@@ -1,4 +1,4 @@
-package com.flyang.view.manager;
+package com.flyang.view.layout.manager;
 
 import android.app.Activity;
 import android.support.annotation.DrawableRes;
