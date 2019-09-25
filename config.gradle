@@ -11,21 +11,24 @@ ext {
 
     isAlone = false
 
-    utilVersion = "2.1.1.2019_beta_01"
+    //本地
+//    utilVersion = "2.1.1.2019_beta_01"
 
-    //GitHub
 //    dep = [
-//            util      : "com.github.caoyangfei.basiclib:util:$utilVersion",
-//
+//            util: "com.flyang.common:util:$utilVersion",
 //            gson: "com.google.code.gson:gson:2.8.5",
 //    ]
 
-    //本地
-    dep = [
-            util: "com.flyang.common:util:$utilVersion",
 
+    //GitHub
+    utilVersion = "1.1.1.2019_02"
+
+    dep = [
+            util: "com.github.caoyangfei:utillib:$utilVersion",
             gson: "com.google.code.gson:gson:2.8.5",
     ]
+
+
 }
 
 //./gradlew clean utilcode-lib:bintrayUpload
