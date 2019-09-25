@@ -2,14 +2,14 @@
 
 ##  使用nexus 配置
 
- 根gradle
+项目gradle
  
    maven {
          
          url("http://192.168.249.100:8081/repository/basic_beta/")           
    }
    
-使用gradle
+模块gradle
 
   utilVersion = "2.1.1.2019_beta_01"
   
@@ -23,14 +23,15 @@
    
 ##  使用GitHub jitpack 配置
 
- 根gradle
+ 项目gradle
  
   maven {
   
            url 'https://jitpack.io'
            
   }
-  使用gradle
+  
+ 模块gradle
   
   utilVersion = "1.1.1.2019_02"
   
