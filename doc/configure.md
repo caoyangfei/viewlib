@@ -15,8 +15,7 @@
   
   dep = [
   
-           util: "com.flyang.common:util:$utilVersion",
-           
+           util: "com.flyang.common:util:$utilVersion",        
            gson: "com.google.code.gson:gson:2.8.5",
            
    ]
@@ -37,8 +36,6 @@
   
   dep = [
   
-          util: "com.github.caoyangfei:utillib:$utilVersion",
-          
-          gson: "com.google.code.gson:gson:2.8.5",
-          
+          util: "com.github.caoyangfei:utillib:$utilVersion",     
+          gson: "com.google.code.gson:gson:2.8.5",     
   ]
