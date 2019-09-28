@@ -24,6 +24,7 @@ import com.flyang.view.loader.indicator.IndicatorStyle;
  * @date 2019/6/29
  * ------------- Description -------------
  * 其它样式加载
+ * {@link IndicatorStyle}
  */
 public class IndicatorLoadingView extends View {
 

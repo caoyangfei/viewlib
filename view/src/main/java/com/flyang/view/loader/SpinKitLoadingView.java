@@ -22,8 +22,8 @@ import com.flyang.view.loader.spinkit.sprite.Sprite;
  * @date 2017/11/17
  * ------------- Description -------------
  * 多样式动画加载控件
+ * {@link SpinKitStyle}
  */
-
 public class SpinKitLoadingView extends ProgressBar {
 
     private SpinKitStyle mStyle;

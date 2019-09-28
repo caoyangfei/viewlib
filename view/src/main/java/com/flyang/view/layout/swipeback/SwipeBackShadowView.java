@@ -46,7 +46,7 @@ public class SwipeBackShadowView extends FrameLayout {
     /**
      * 阴影资源 id
      */
-    private int mShadowResId = R.drawable.bga_sbl_shadow;
+    private int mShadowResId = R.drawable.swipeback_shadow_bg_view;
     /**
      * 阴影区域的透明度是否根据滑动的距离渐变
      */

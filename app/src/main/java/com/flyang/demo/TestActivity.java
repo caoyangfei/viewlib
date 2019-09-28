@@ -36,7 +36,7 @@ public class TestActivity extends AppCompatActivity implements Delegate {
         // 设置是否是微信滑动返回样式。默认值为 true
         swipeBackManager.setIsWeChatStyle(true);
         // 设置阴影资源 id。默认值为 R.drawable.bga_sbl_shadow
-        swipeBackManager.setShadowResId(R.drawable.bga_sbl_shadow);
+        swipeBackManager.setShadowResId(R.drawable.swipeback_shadow_bg_view);
         // 设置是否显示滑动返回的阴影效果。默认值为 true
         swipeBackManager.setIsNeedShowShadow(true);
         // 设置阴影区域的透明度是否根据滑动的距离渐变。默认值为 true
