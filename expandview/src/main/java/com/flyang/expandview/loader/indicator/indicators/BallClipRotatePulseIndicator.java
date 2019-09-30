@@ -1,4 +1,4 @@
-package com.flyang.view.loader.indicator.indicators;
+package com.flyang.expandview.loader.indicator.indicators;
 
 import android.animation.ValueAnimator;
 import android.graphics.Canvas;
@@ -10,11 +10,7 @@ import com.flyang.view.loader.indicator.Indicator;
 import java.util.ArrayList;
 
 /**
- * @author caoyangfei
- * @ClassName BallClipRotatePulseIndicator
- * @date 2019/6/30
- * ------------- Description -------------
- * 网格球
+ * Created by Jack on 2015/10/16.
  */
 public class BallClipRotatePulseIndicator extends Indicator {
 

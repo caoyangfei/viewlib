@@ -1,4 +1,4 @@
-package com.flyang.view.loader.indicator.indicators;
+package com.flyang.expandview.loader.indicator.indicators;
 
 import android.animation.ValueAnimator;
 import android.graphics.Canvas;
@@ -9,68 +9,63 @@ import com.flyang.view.loader.indicator.Indicator;
 
 import java.util.ArrayList;
 
+
 /**
  * @author caoyangfei
- * @ClassName BallClipRotatePulseIndicator
+ * @ClassName BallClipRotateMultipleIndicator
  * @date 2019/6/30
  * ------------- Description -------------
- * 网格球
+ * 旋转光圈
  */
-public class BallClipRotatePulseIndicator extends Indicator {
+public class BallClipRotateMultipleIndicator extends Indicator {
 
-    float scaleFloat1,scaleFloat2,degrees;
+    float scaleFloat=1,degrees;
 
 
     @Override
     public void draw(Canvas canvas, Paint paint) {
+        paint.setStrokeWidth(3);
+        paint.setStyle(Paint.Style.STROKE);
+
         float circleSpacing=12;
         float x=getWidth()/2;
         float y=getHeight()/2;
 
-        //draw fill circle
         canvas.save();
-        canvas.translate(x, y);
-        canvas.scale(scaleFloat1, scaleFloat1);
-        paint.setStyle(Paint.Style.FILL);
-        canvas.drawCircle(0, 0, x / 2.5f, paint);
-
-        canvas.restore();
 
         canvas.translate(x, y);
-        canvas.scale(scaleFloat2, scaleFloat2);
+        canvas.scale(scaleFloat, scaleFloat);
         canvas.rotate(degrees);
 
-        paint.setStrokeWidth(3);
-        paint.setStyle(Paint.Style.STROKE);
-
-        //draw two arc
-        float[] startAngles=new float[]{225,45};
+        //draw two big arc
+        float[] bStartAngles=new float[]{135,-45};
         for (int i = 0; i < 2; i++) {
             RectF rectF=new RectF(-x+circleSpacing,-y+circleSpacing,x-circleSpacing,y-circleSpacing);
-            canvas.drawArc(rectF, startAngles[i], 90, false, paint);
+            canvas.drawArc(rectF, bStartAngles[i], 90, false, paint);
+        }
+
+        canvas.restore();
+        canvas.translate(x, y);
+        canvas.scale(scaleFloat, scaleFloat);
+        canvas.rotate(-degrees);
+        //draw two small arc
+        float[] sStartAngles=new float[]{225,45};
+        for (int i = 0; i < 2; i++) {
+            RectF rectF=new RectF(-x/1.8f+circleSpacing,-y/1.8f+circleSpacing,x/1.8f-circleSpacing,y/1.8f-circleSpacing);
+            canvas.drawArc(rectF, sStartAngles[i], 90, false, paint);
         }
     }
 
     @Override
     public ArrayList<ValueAnimator> onCreateAnimators() {
-        ValueAnimator scaleAnim=ValueAnimator.ofFloat(1,0.3f,1);
+        ArrayList<ValueAnimator> animators=new ArrayList<>();
+        ValueAnimator scaleAnim=ValueAnimator.ofFloat(1,0.6f,1);
         scaleAnim.setDuration(1000);
         scaleAnim.setRepeatCount(-1);
         addUpdateListener(scaleAnim,new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                scaleFloat1 = (float) animation.getAnimatedValue();
-                postInvalidate();
-            }
-        });
-
-        ValueAnimator scaleAnim2=ValueAnimator.ofFloat(1,0.6f,1);
-        scaleAnim2.setDuration(1000);
-        scaleAnim2.setRepeatCount(-1);
-        addUpdateListener(scaleAnim2,new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                scaleFloat2 = (float) animation.getAnimatedValue();
+                scaleFloat = (float) animation.getAnimatedValue();
                 postInvalidate();
             }
         });
@@ -85,12 +80,9 @@ public class BallClipRotatePulseIndicator extends Indicator {
                 postInvalidate();
             }
         });
-        ArrayList<ValueAnimator> animators=new ArrayList<>();
         animators.add(scaleAnim);
-        animators.add(scaleAnim2);
         animators.add(rotateAnim);
         return animators;
     }
-
 
 }
