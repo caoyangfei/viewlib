@@ -1,10 +1,13 @@
 package com.flyang.view.loader.cycler;
 
-/**
- * Created by wangshizhan on 2018/1/12.
- * Email:wangshizhan@supcon.com
- */
 
+/**
+ * @author 曹阳飞
+ * @ClassName OnAnimationEndListener
+ * @date 2017/11/23
+ * ------------- Description -------------
+ * 动画结束监听
+ */
 public interface OnAnimationEndListener {
     void onAnimationEnd();
 }

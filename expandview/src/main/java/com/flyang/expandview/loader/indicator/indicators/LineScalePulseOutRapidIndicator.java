@@ -3,6 +3,8 @@ package com.flyang.expandview.loader.indicator.indicators;
 
 import android.animation.ValueAnimator;
 
+import com.flyang.view.loader.indicator.indicators.LineScaleIndicator;
+
 import java.util.ArrayList;
 
 /**

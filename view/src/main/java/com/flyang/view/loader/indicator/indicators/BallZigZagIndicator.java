@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 public class BallZigZagIndicator extends Indicator {
 
-    float[] translateX = new float[2], translateY = new float[2];
+    protected float[] translateX = new float[2], translateY = new float[2];
 
 
     @Override

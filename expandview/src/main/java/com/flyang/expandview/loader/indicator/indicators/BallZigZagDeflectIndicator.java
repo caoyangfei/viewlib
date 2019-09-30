@@ -4,6 +4,8 @@ package com.flyang.expandview.loader.indicator.indicators;
 import android.animation.ValueAnimator;
 import android.view.animation.LinearInterpolator;
 
+import com.flyang.view.loader.indicator.indicators.BallZigZagIndicator;
+
 import java.util.ArrayList;
 
 /**

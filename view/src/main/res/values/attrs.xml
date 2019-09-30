@@ -51,34 +51,12 @@
     <!--旋转加载动画-->
     <declare-styleable name="IndicatorLoadingView">
         <attr name="Indicator_Style">
-            <enum name="BallBeatIndicator" value="1" />
-            <enum name="BallClipRotateIndicator" value="2" />
-            <enum name="BallClipRotateMultipleIndicator" value="3" />
-            <enum name="BallClipRotatePulseIndicator" value="4" />
-            <enum name="BallGridBeatIndicator" value="5" />
-            <enum name="BallGridPulseIndicator" value="6" />
-            <enum name="BallPulseIndicator" value="7" />
-            <enum name="BallPulseRiseIndicator" value="8" />
-            <enum name="BallPulseSyncIndicator" value="9" />
-            <enum name="BallRotateIndicator" value="10" />
-            <enum name="BallScaleIndicator" value="11" />
-            <enum name="BallScaleMultipleIndicator" value="12" />
-            <enum name="BallScaleRippleIndicator" value="13" />
-            <enum name="BallScaleRippleMultipleIndicator" value="14" />
-            <enum name="BallSpinFadeLoaderIndicator" value="15" />
-            <enum name="BallTrianglePathIndicator" value="16" />
-            <enum name="BallZigZagDeflectIndicator" value="17" />
-            <enum name="BallZigZagIndicator" value="18" />
-            <enum name="CubeTransitionIndicator" value="19" />
-            <enum name="LineScaleIndicator" value="20" />
-            <enum name="LineScalePartyIndicator" value="21" />
-            <enum name="LineScalePulseOutIndicator" value="22" />
-            <enum name="LineScalePulseOutRapidIndicator" value="23" />
-            <enum name="LineSpinFadeLoaderIndicator" value="24" />
-            <enum name="PacmanIndicator" value="25" />
-            <enum name="SemiCircleSpinIndicator" value="26" />
-            <enum name="SquareSpinIndicator" value="27" />
-            <enum name="TriangleSkewSpinIndicator" value="28" />
+            <enum name="BallGridBeatIndicator" value="1" />
+            <enum name="BallPulseRiseIndicator" value="2" />
+            <enum name="BallPulseSyncIndicator" value="3" />
+            <enum name="BallZigZagIndicator" value="4" />
+            <enum name="LineScaleIndicator" value="5" />
+            <enum name="PacmanIndicator" value="6" />
         </attr>
         <attr name="minWidth" format="dimension" />
         <attr name="maxWidth" format="dimension" />
@@ -98,29 +76,29 @@
     </declare-styleable>
 
     <declare-styleable name="CircleProgressView">
-        <attr name="progressNormalColor" format="color"/>
-        <attr name="progressReachColor" format="color"/>
-        <attr name="progressTextColor" format="color"/>
-        <attr name="progressTextSize" format="dimension"/>
-        <attr name="progressTextOffset" format="dimension"/>
-        <attr name="progressNormalSize" format="dimension"/>
-        <attr name="progressReachSize" format="dimension"/>
-        <attr name="radius" format="dimension"/>
-        <attr name="progressTextVisible" format="boolean"/>
-        <attr name="progressStartArc" format="integer"/>
-        <attr name="progressTextSkewX" format="dimension"/>
-        <attr name="progressTextPrefix" format="string"/>
-        <attr name="progressTextSuffix" format="string"/>
-        <attr name="innerBackgroundColor" format="color"/>
+        <attr name="progressNormalColor" format="color" />
+        <attr name="progressReachColor" format="color" />
+        <attr name="progressTextColor" format="color" />
+        <attr name="progressTextSize" format="dimension" />
+        <attr name="progressTextOffset" format="dimension" />
+        <attr name="progressNormalSize" format="dimension" />
+        <attr name="progressReachSize" format="dimension" />
+        <attr name="radius" format="dimension" />
+        <attr name="progressTextVisible" format="boolean" />
+        <attr name="progressStartArc" format="integer" />
+        <attr name="progressTextSkewX" format="dimension" />
+        <attr name="progressTextPrefix" format="string" />
+        <attr name="progressTextSuffix" format="string" />
+        <attr name="innerBackgroundColor" format="color" />
         <attr name="progressStyle" format="enum">
-            <enum name="Normal" value="0"/>
-            <enum name="FillInner" value="1"/>
-            <enum name="FillInnerArc" value="2"/>
+            <enum name="Normal" value="0" />
+            <enum name="FillInner" value="1" />
+            <enum name="FillInnerArc" value="2" />
         </attr>
-        <attr name="innerProgressColor" format="color"/>
-        <attr name="innerPadding" format="dimension"/>
-        <attr name="outerColor" format="color"/>
-        <attr name="outerSize" format="dimension"/>
-        <attr name="reachCapRound" format="boolean"/>
+        <attr name="innerProgressColor" format="color" />
+        <attr name="innerPadding" format="dimension" />
+        <attr name="outerColor" format="color" />
+        <attr name="outerSize" format="dimension" />
+        <attr name="reachCapRound" format="boolean" />
     </declare-styleable>
 </resources>

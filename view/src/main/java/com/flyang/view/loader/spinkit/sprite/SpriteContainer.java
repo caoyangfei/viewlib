@@ -6,9 +6,11 @@ import android.graphics.Rect;
 
 import com.flyang.view.loader.spinkit.animation.AnimationUtils;
 
-
 /**
- * Created by ybq.
+ * @author SpriteContainer
+ * @ClassName Circle
+ * @date 2019/6/29
+ * ------------- Description -------------
  */
 @SuppressWarnings("WeakerAccess")
 public abstract class SpriteContainer extends Sprite {
