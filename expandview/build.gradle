@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'signing'
 
 apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.caoyangfei'
+group = 'com.github.caoyangfei'
 
 configurations {
     deployerJars
@@ -79,11 +79,14 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 
     implementation dep.util
+
     implementation project(path: ':view')
+    //本地nexus库使用时，必须使用线上依赖不然下载不下来
+//    implementation dep.view
 }
 
 
-def version = "2.1.1.2019_beta_01"
+def version = "2.1.1.2019_beta_05"
 
 uploadArchives {
     repositories {
@@ -92,7 +95,7 @@ uploadArchives {
                 MavenDeployment deployment -> signing.signPom(deployment)
             }
             pom.version = version
-            pom.artifactId = "expendview"
+            pom.artifactId = "expandview"
             pom.groupId = GROUP_ID
 
             repository(url: rootProject.getRepositoryUrl(version)) {
