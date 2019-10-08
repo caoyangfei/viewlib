@@ -5,6 +5,7 @@ package com.flyang.view.loader.indicator;
  * @ClassName viewlib_demo
  * @date 2019/6/30
  * ------------- Description -------------
+ * 动画枚举
  */
 public enum IndicatorStyle {
     BallGridBeatIndicator(1),

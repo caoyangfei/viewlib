@@ -12,6 +12,7 @@ import com.flyang.view.loader.indicator.indicators.PacmanIndicator;
  * @ClassName viewlib_demo
  * @date 2019/6/30
  * ------------- Description -------------
+ * 动画构建类
  */
 public class IndicatorFactory {
 

@@ -5,6 +5,7 @@ package com.flyang.expandview.loader.indicator;
  * @ClassName viewlib_demo
  * @date 2019/6/30
  * ------------- Description -------------
+ * 拓展动画枚举
  */
 public enum IndicatorStyleExp {
     BallBeatIndicator(1),
