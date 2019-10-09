@@ -19,10 +19,9 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 
 import com.flyang.view.R;
-import com.flyang.view.constant.RefreshState;
-import com.flyang.view.constant.SpinnerStyle;
-import com.flyang.view.layout.refresh.inter.RefreshHeader;
-import com.flyang.view.layout.refresh.inter.RefreshLayout;
+import com.flyang.view.layout.refresh.constant.RefreshState;
+import com.flyang.view.layout.refresh.constant.SpinnerStyle;
+import com.flyang.view.layout.refresh.inter.RefreshInternal;
 import com.flyang.view.layout.refresh.internal.InternalAbstract;
 import com.flyang.view.layout.refresh.util.SmartUtil;
 
@@ -33,7 +32,7 @@ import com.flyang.view.layout.refresh.util.SmartUtil;
  */
 
 @SuppressWarnings({"UnusedReturnValue", "unused"})
-public class BezierRadarHeader extends InternalAbstract implements RefreshHeader {
+public class BezierRadarHeader extends InternalAbstract implements RefreshInternal {
 
     //<editor-fold desc="属性字段">
     protected int mAccentColor;

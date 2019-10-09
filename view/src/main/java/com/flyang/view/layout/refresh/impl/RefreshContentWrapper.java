@@ -17,29 +17,32 @@ import android.widget.FrameLayout;
 
 import com.flyang.view.layout.refresh.inter.RefreshContent;
 import com.flyang.view.layout.refresh.inter.RefreshKernel;
-import com.flyang.view.layout.refresh.inter.ScrollBoundaryDecider;
 import com.flyang.view.layout.refresh.listener.CoordinatorLayoutListener;
+import com.flyang.view.layout.refresh.listener.ScrollBoundaryDecider;
 import com.flyang.view.layout.refresh.util.DesignUtil;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+import static android.support.v4.view.ViewCompat.canScrollVertically;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-import static com.flyang.view.layout.refresh.util.SmartUtil.canScrollVertically;
 import static com.flyang.view.layout.refresh.util.SmartUtil.isContentView;
 import static com.flyang.view.layout.refresh.util.SmartUtil.isTransformedTouchPointInView;
 import static com.flyang.view.layout.refresh.util.SmartUtil.measureViewHeight;
 import static com.flyang.view.layout.refresh.util.SmartUtil.scrollListBy;
 
 /**
+ * @author caoyangfei
+ * @ClassName RefreshContentWrapper
+ * @date 2019/10/9
+ * ------------- Description -------------
  * 刷新内容包装
- * Created by SCWANG on 2017/5/26.
  */
 @SuppressWarnings("WeakerAccess")
 public class RefreshContentWrapper implements RefreshContent, CoordinatorLayoutListener, AnimatorUpdateListener {
 
-//    protected int mHeaderHeight = Integer.MAX_VALUE;
+    //    protected int mHeaderHeight = Integer.MAX_VALUE;
 //    protected int mFooterHeight = mHeaderHeight - 1;
     protected View mContentView;//直接内容视图
     protected View mOriginalContentView;//被包裹的原真实视图
@@ -49,7 +52,7 @@ public class RefreshContentWrapper implements RefreshContent, CoordinatorLayoutL
     protected int mLastSpinner = 0;
     protected boolean mEnableRefresh = true;
     protected boolean mEnableLoadMore = true;
-//    protected MotionEvent mMotionEvent;
+    //    protected MotionEvent mMotionEvent;
     protected ScrollBoundaryDeciderAdapter mBoundaryAdapter = new ScrollBoundaryDeciderAdapter();
 
     public RefreshContentWrapper(@NonNull View view) {
@@ -86,7 +89,7 @@ public class RefreshContentWrapper implements RefreshContent, CoordinatorLayoutL
         View scrollableView = null;
         Queue<View> views = new LinkedList<>();
         //noinspection unchecked
-        List<View> list = (List<View>)views;
+        List<View> list = (List<View>) views;
         list.add(content);
         while (list.size() > 0 && scrollableView == null) {
             View view = views.poll();
@@ -288,9 +291,9 @@ public class RefreshContentWrapper implements RefreshContent, CoordinatorLayoutL
         try {
             float dy = (value - mLastSpinner) * mScrollableView.getScaleY();
             if (mScrollableView instanceof AbsListView) {
-                scrollListBy((AbsListView) mScrollableView, (int)dy);
+                scrollListBy((AbsListView) mScrollableView, (int) dy);
             } else {
-                mScrollableView.scrollBy(0, (int)dy);
+                mScrollableView.scrollBy(0, (int) dy);
             }
         } catch (Throwable e) {
             //根据用户反馈，此处可能会有BUG

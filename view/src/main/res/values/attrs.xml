@@ -168,6 +168,8 @@
         <attr name="android:scaleType"/>
     </declare-styleable>
 
+    <attr name="srlStyle" format="reference"/><!--样式-->
+
     <attr name="srlDrawableSize" format="dimension"/><!--图片尺寸-->
     <attr name="srlDrawableArrowSize" format="dimension"/><!--箭头图片尺寸-->
     <attr name="srlDrawableProgressSize" format="dimension"/><!--箭头图片尺寸-->
@@ -189,13 +191,6 @@
     <attr name="srlTextUpdate" format="string"/>
     <attr name="srlTextSecondary" format="string"/>
     <attr name="srlTextRefreshing" format="string"/>
-
-    <!--<attr name="srlTextPulling" format="string" />-->
-    <!--<attr name="srlTextRelease" format="string" />-->
-    <!--<attr name="srlTextLoading" format="string" />-->
-    <!--<attr name="srlTextRefreshing" format="string" />-->
-    <!--<attr name="srlTextFinish" format="string" />-->
-    <!--<attr name="srlTextFailed" format="string" />-->
     <attr name="srlTextNothing" format="string" />
 
     <attr name="srlClassicsSpinnerStyle" format="enum">
@@ -213,6 +208,8 @@
     </attr>
 
     <declare-styleable name="SmartRefreshLayout">
+        <attr name="android:clipChildren"/>
+        <attr name="android:clipToPadding"/>
         <attr name="srlPrimaryColor"/>
         <attr name="srlAccentColor"/>
         <attr name="srlReboundDuration" format="integer"/>
@@ -244,7 +241,6 @@
         <attr name="srlEnableClipHeaderWhenFixedBehind" format="boolean"/>
         <attr name="srlEnableClipFooterWhenFixedBehind" format="boolean"/>
         <attr name="srlEnableOverScrollDrag" format="boolean"/>
-        <!--<attr name="srlEnableNestedScrollingOnly" format="boolean"/>-->
         <attr name="srlDisableContentWhenRefresh" format="boolean"/>
         <attr name="srlDisableContentWhenLoading" format="boolean"/>
         <attr name="srlFixedHeaderViewId" format="reference"/>
@@ -256,74 +252,41 @@
         <attr name="layout_srlBackgroundColor" format="color"/>
     </declare-styleable>
 
-    <declare-styleable name="BezierRadarHeader">
-        <attr name="srlPrimaryColor"/>
-        <attr name="srlAccentColor"/>
-        <attr name="srlEnableHorizontalDrag"/>
-    </declare-styleable>
-
-    <declare-styleable name="BallPulseFooter">
-        <attr name="srlClassicsSpinnerStyle"/>
-        <attr name="srlAnimatingColor" format="color"/>
-        <attr name="srlNormalColor" format="color"/>
-    </declare-styleable>
-
-    <declare-styleable name="ClassicsHeader">
-        <attr name="srlClassicsSpinnerStyle"/>
-        <attr name="srlPrimaryColor"/>
-        <attr name="srlAccentColor"/>
-        <attr name="srlFinishDuration"/>
-        <attr name="srlDrawableArrow"/>
-        <attr name="srlDrawableProgress"/>
-        <attr name="srlDrawableMarginRight"/>
-        <attr name="srlDrawableSize"/>
-        <attr name="srlDrawableArrowSize"/>
-        <attr name="srlDrawableProgressSize"/>
-        <attr name="srlTextSizeTitle"/>
-        <attr name="srlTextSizeTime"/>
-        <attr name="srlTextTimeMarginTop" format="dimension"/>
-        <attr name="srlEnableLastTime" format="boolean"/>
-
-        <attr name="srlTextPulling"/>
-        <attr name="srlTextLoading"/>
-        <attr name="srlTextRelease"/>
-        <attr name="srlTextFinish"/>
-        <attr name="srlTextFailed"/>
-        <attr name="srlTextUpdate"/>
-        <attr name="srlTextSecondary"/>
-        <attr name="srlTextRefreshing"/>
-
-    </declare-styleable>
-
-    <declare-styleable name="ClassicsFooter">
-        <attr name="srlClassicsSpinnerStyle"/>
-        <attr name="srlPrimaryColor"/>
-        <attr name="srlAccentColor"/>
-        <attr name="srlFinishDuration"/>
-        <attr name="srlTextSizeTitle"/>
-        <attr name="srlDrawableArrow"/>
-        <attr name="srlDrawableProgress"/>
-        <attr name="srlDrawableMarginRight"/>
-        <attr name="srlDrawableSize"/>
-        <attr name="srlDrawableArrowSize"/>
-        <attr name="srlDrawableProgressSize"/>
-
-        <attr name="srlTextPulling"/>
-        <attr name="srlTextRelease"/>
-        <attr name="srlTextLoading"/>
-        <attr name="srlTextRefreshing"/>
-        <attr name="srlTextFinish"/>
-        <attr name="srlTextFailed"/>
-        <attr name="srlTextNothing"/>
-
-    </declare-styleable>
-
-    <declare-styleable name="TwoLevelHeader">
-        <attr name="srlMaxRage" format="float"/>
-        <attr name="srlFloorRage" format="float"/>
-        <attr name="srlRefreshRage" format="float"/>
-        <attr name="srlFloorDuration" format="integer"/>
-        <attr name="srlEnableTwoLevel" format="boolean"/>
-        <attr name="srlEnablePullToCloseTwoLevel" format="boolean"/>
-    </declare-styleable>
+    <style name="SmartRefreshStyle">
+        <item name="srlPrimaryColor">@android:color/holo_blue_dark</item>
+        <item name="srlAccentColor">@android:color/white</item>
+        <item name="srlReboundDuration">300</item>
+        <item name="srlHeaderHeight">100dp</item>
+        <item name="srlFooterHeight">60dp</item>
+        <item name="srlHeaderInsetStart">0dp</item>
+        <item name="srlFooterInsetStart">0dp</item>
+        <item name="srlDragRate">0.5</item>
+        <item name="srlHeaderMaxDragRate">2.5</item>
+        <item name="srlFooterMaxDragRate">2.5</item>
+        <item name="srlHeaderTriggerRate">1</item>
+        <item name="srlFooterTriggerRate">1</item>
+        <!--<item name="srlEnableRefresh">true</item>-->
+        <!--<item name="srlEnableLoadMore">true</item>-->
+        <!--<item name="srlEnableHeaderTranslationContent">true</item>-->
+        <!--<item name="srlEnableFooterTranslationContent">true</item>-->
+        <!--<item name="srlHeaderTranslationViewId">-1</item>-->
+        <!--<item name="srlFooterTranslationViewId">-1</item>-->
+        <item name="srlEnablePreviewInEditMode">true</item>
+        <item name="srlEnableAutoLoadMore">true</item>
+        <item name="srlEnableOverScrollDrag">false</item>
+        <item name="srlEnableOverScrollBounce">true</item>
+        <item name="srlEnablePureScrollMode">false</item>
+        <item name="srlEnableNestedScrolling">true</item>
+        <item name="srlEnableScrollContentWhenLoaded">true</item>
+        <item name="srlEnableScrollContentWhenRefreshed">true</item>
+        <item name="srlEnableLoadMoreWhenContentNotFull">true</item>
+        <!--<item name="srlEnableFooterFollowWhenLoadFinished" format="boolean"/>-->
+        <item name="srlEnableFooterFollowWhenNoMoreData">false</item>
+        <item name="srlEnableClipHeaderWhenFixedBehind">true</item>
+        <item name="srlEnableClipFooterWhenFixedBehind">true</item>
+        <item name="srlDisableContentWhenRefresh">false</item>
+        <item name="srlDisableContentWhenLoading">false</item>
+        <!--<item name="srlFixedHeaderViewId" format="reference"/>-->
+        <!--<item name="srlFixedFooterViewId" format="reference"/>-->
+    </style>
 </resources>

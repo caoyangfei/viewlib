@@ -4,7 +4,7 @@ package com.flyang.view.layout.refresh.listener;
 import android.support.annotation.NonNull;
 import android.support.annotation.RestrictTo;
 
-import com.flyang.view.constant.RefreshState;
+import com.flyang.view.layout.refresh.constant.RefreshState;
 import com.flyang.view.layout.refresh.inter.RefreshLayout;
 
 import static android.support.annotation.RestrictTo.Scope.LIBRARY;
@@ -13,9 +13,8 @@ import static android.support.annotation.RestrictTo.Scope.SUBCLASSES;
 
 /**
  * 刷新状态改变监听器
- * Created by SCWANG on 2017/5/26.
+ * Created by scwang on 2017/5/26.
  */
-
 public interface OnStateChangedListener {
     /**
      * 【仅限框架内调用】状态改变事件 {@link RefreshState}

@@ -1,4 +1,4 @@
-package com.flyang.view.constant;
+package com.flyang.view.layout.refresh.constant;
 
 /**
  * 尺寸值的定义状态，用于在值覆盖的时候决定优先级

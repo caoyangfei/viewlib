@@ -9,17 +9,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 
-import com.flyang.view.constant.RefreshState;
+import com.flyang.view.layout.refresh.constant.RefreshState;
 import com.flyang.view.layout.refresh.listener.OnLoadMoreListener;
-import com.flyang.view.layout.refresh.listener.OnMultiPurposeListener;
+import com.flyang.view.layout.refresh.listener.OnMultiListener;
 import com.flyang.view.layout.refresh.listener.OnRefreshListener;
 import com.flyang.view.layout.refresh.listener.OnRefreshLoadMoreListener;
-import com.flyang.view.layout.refresh.listener.SimpleMultiPurposeListener;
+import com.flyang.view.layout.refresh.listener.ScrollBoundaryDecider;
+import com.flyang.view.layout.refresh.simple.SimpleBoundaryDecider;
+import com.flyang.view.layout.refresh.simple.SimpleMultiListener;
+
 
 /**
  * 刷新布局
  * interface of the refresh layout
- * Created by SCWANG on 2017/5/26.
+ * Created by scwang on 2017/5/26.
  */
 @SuppressWarnings({"UnusedReturnValue", "SameParameterValue", "unused"})
 public interface RefreshLayout {
@@ -32,12 +35,12 @@ public interface RefreshLayout {
      */
     RefreshLayout setFooterHeight(float dp);
 
-//    /**
-//     * 设置 Footer 高度
-//     * @param px 像素
-//     * @return RefreshLayout
-//     */
-//    RefreshLayout setFooterHeightPx(int px);
+    /**
+     * 设置 Footer 高度
+     * @param px 像素
+     * @return RefreshLayout
+     */
+    RefreshLayout setFooterHeightPx(int px);
 
     /**
      * Set the Header's height.
@@ -47,12 +50,12 @@ public interface RefreshLayout {
      */
     RefreshLayout setHeaderHeight(float dp);
 
-//    /**
-//     * 设置 Header 高度
-//     * @param px 像素
-//     * @return RefreshLayout
-//     */
-//    RefreshLayout setHeaderHeightPx(int px);
+    /**
+     * 设置 Header 高度
+     * @param px 像素
+     * @return RefreshLayout
+     */
+    RefreshLayout setHeaderHeightPx(int px);
 
     /**
      * Set the Header's start offset（see srlHeaderInsetStart in the RepastPracticeActivity XML in demo-app for the practical application）.
@@ -62,13 +65,13 @@ public interface RefreshLayout {
      */
     RefreshLayout setHeaderInsetStart(float dp);
 
-//    /**
-//     * Set the Header's start offset（see srlHeaderInsetStart in the RepastPracticeActivity XML in demo-app for the practical application）.
-//     * 设置 Header 起始偏移量（使用方法参考 demo-app 中的 RepastPracticeActivity xml 中的 srlHeaderInsetStart）
-//     * @param px 像素
-//     * @return RefreshLayout
-//     */
-//    RefreshLayout setHeaderInsetStartPx(int px);
+    /**
+     * Set the Header's start offset（see srlHeaderInsetStart in the RepastPracticeActivity XML in demo-app for the practical application）.
+     * 设置 Header 起始偏移量（使用方法参考 demo-app 中的 RepastPracticeActivity xml 中的 srlHeaderInsetStart）
+     * @param px 像素
+     * @return RefreshLayout
+     */
+    RefreshLayout setHeaderInsetStartPx(int px);
 
     /**
      * Set the Footer's start offset.
@@ -79,13 +82,13 @@ public interface RefreshLayout {
      */
     RefreshLayout setFooterInsetStart(float dp);
 
-//    /**
-//     * Set the Footer's start offset.
-//     * 设置 Footer 起始偏移量（用处和 setFooterInsetStartPx 一样）
-//     * @param px 像素
-//     * @return RefreshLayout
-//     */
-//    RefreshLayout setFooterInsetStartPx(int px);
+    /**
+     * Set the Footer's start offset.
+     * 设置 Footer 起始偏移量（用处和 setFooterInsetStartPx 一样）
+     * @param px 像素
+     * @return RefreshLayout
+     */
+    RefreshLayout setFooterInsetStartPx(int px);
 
     /**
      * Set the damping effect.
@@ -297,16 +300,6 @@ public interface RefreshLayout {
     /**
      * Set whether or not Footer follows the content after there is no more data.
      * 设置是否在没有更多数据之后 Footer 跟随内容
-     * @deprecated use {@link RefreshLayout#setEnableFooterFollowWhenNoMoreData(boolean)}
-     * @param enabled 是否启用
-     * @return RefreshLayout
-     */
-    @Deprecated
-    RefreshLayout setEnableFooterFollowWhenLoadFinished(boolean enabled);
-
-    /**
-     * Set whether or not Footer follows the content after there is no more data.
-     * 设置是否在没有更多数据之后 Footer 跟随内容
      * @param enabled 是否启用
      * @return RefreshLayout
      */
@@ -335,20 +328,6 @@ public interface RefreshLayout {
      * @return RefreshLayout
      */
     RefreshLayout setEnableNestedScroll(boolean enabled);
-
-//    /**
-//     * Sets whether to enable pure nested scrolling mode
-//     * Smart scrolling supports both [nested scrolling] and [traditional scrolling] modes
-//     * With nested scrolling enabled, traditional mode also works when necessary
-//     * However, sometimes interference and conflict can occur. If you find this conflict, you can try to turn on [pure nested scrolling] mode and [traditional mode] off
-//     * 设置是否开启【纯嵌套滚动】模式
-//     * Smart 的滚动支持 【嵌套滚动】 + 【传统滚动】 两种模式
-//     * 在开启 【嵌套滚动】 的情况下，【传统模式】也会在必要的时候发挥作用
-//     * 但是有时候也会发生干扰和冲突，如果您发现了这个冲突，可以尝试开启 【纯嵌套滚动】模式，【传统模式】关闭
-//     * @param enabled 是否启用
-//     * @return RefreshLayout
-//     */
-//    RefreshLayout setEnableNestedScrollOnly(boolean enabled);
 
     /**
      * Set whether to enable the action content view when refreshing.
@@ -392,19 +371,19 @@ public interface RefreshLayout {
 
     /**
      * Set up a multi-function listener.
-     * Recommended {@link SimpleMultiPurposeListener}
+     * Recommended {@link SimpleMultiListener}
      * 设置多功能监听器
-     * 建议使用 {@link SimpleMultiPurposeListener}
+     * 建议使用 {@link SimpleMultiListener}
      * @param listener OnMultiPurposeListener 多功能监听器
      * @return RefreshLayout
      */
-    RefreshLayout setOnMultiPurposeListener(OnMultiPurposeListener listener);
+    RefreshLayout setOnMultiListener(OnMultiListener listener);
 
     /**
      * Set the scroll boundary Decider, Can customize when you can refresh.
-     * Recommended {@link ScrollBoundaryDeciderAdapter}
+     * Recommended {@link SimpleBoundaryDecider}
      * 设置滚动边界判断器
-     * 建议使用 {@link ScrollBoundaryDeciderAdapter}
+     * 建议使用 {@link SimpleBoundaryDecider}
      * @param boundary ScrollBoundaryDecider 判断器
      * @return RefreshLayout
      */
@@ -579,7 +558,6 @@ public interface RefreshLayout {
      * @return true or false, Status non-compliance will fail.
      *         是否成功（状态不符合会失败）
      */
-//    @Deprecated
     boolean autoRefresh(int delayed);
 
     /**
@@ -595,7 +573,7 @@ public interface RefreshLayout {
      * 显示刷新动画并且触发刷新事件
      * @param delayed 开始延时
      * @param duration 拖拽动画持续时间
-     * @param dragRate 拉拽的高度比率（要求 ≥ 1 ）
+     * @param dragRate 拉拽的高度比率
      * @param animationOnly animation only 只有动画
      * @return true or false, Status non-compliance will fail.
      *         是否成功（状态不符合会失败）
@@ -610,15 +588,14 @@ public interface RefreshLayout {
      */
     boolean autoLoadMore();
 
-//    /**
-//     * Display load more animation and trigger load more event, Delayed start.
-//     * 显示加载动画并且触发刷新事件, 延时启动
-//     * @param delayed 开始延时
-//     * @return true or false, Status non-compliance will fail.
-//     *         是否成功（状态不符合会失败）
-//     */
-//    @Deprecated
-//    boolean autoLoadMore(int delayed);
+    /**
+     * Display load more animation and trigger load more event, Delayed start.
+     * 显示加载动画并且触发刷新事件, 延时启动
+     * @param delayed 开始延时
+     * @return true or false, Status non-compliance will fail.
+     *         是否成功（状态不符合会失败）
+     */
+    boolean autoLoadMore(int delayed);
 
     /**
      * Display load more animation without triggering events.
@@ -633,38 +610,23 @@ public interface RefreshLayout {
      * 显示加载动画, 多功能选项
      * @param delayed 开始延时
      * @param duration 拖拽动画持续时间
-     * @param dragRate 拉拽的高度比率（要求 ≥ 1 ）
+     * @param dragRate 拉拽的高度比率
      * @param animationOnly 是否只是显示动画，不回调
      * @return true or false, Status non-compliance will fail.
      *         是否成功（状态不符合会失败）
      */
     boolean autoLoadMore(int delayed, int duration, float dragRate, boolean animationOnly);
 
+    /**
+     * 是否正在刷新
+     * @return RefreshLayout
+     */
+    boolean isRefreshing();
 
-//    /**
-//     * 是否正在刷新
-//     * @deprecated 后续版本将会移除
-//     *      使用 {@link #getState()} == {@link RefreshState#Refreshing} 代替
-//     * @return RefreshLayout
-//     */
-//    @Deprecated
-//    boolean isRefreshing();
-//
-//    /**
-//     * 是否正在加载
-//     * @deprecated 后续版本将会移除
-//     *      使用 {@link #getState()} == {@link RefreshState#Loading} 代替
-//     * @return RefreshLayout
-//     */
-//    @Deprecated
-//    boolean isLoading();
-//
-//    /**
-//     * 恢复没有更多数据的原始状态
-//     * @deprecated 请使用{@link RefreshLayout#setNoMoreData(boolean)}
-//     * @return RefreshLayout
-//     */
-//    @Deprecated
-//    RefreshLayout resetNoMoreData();
+    /**
+     * 是否正在加载
+     * @return RefreshLayout
+     */
+    boolean isLoading();
 
 }

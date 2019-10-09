@@ -2,8 +2,8 @@ package com.flyang.view.layout.refresh.inter;
 
 /**
  * 刷新头部
- * Created by SCWANG on 2017/5/26.
+ * Created by scwang on 2017/5/26.
  */
-public interface RefreshHeader extends RefreshInternal {
+public interface RefreshHeader extends RefreshComponent {
 
 }

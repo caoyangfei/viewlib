@@ -5,9 +5,12 @@ import android.support.annotation.NonNull;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.flyang.view.layout.refresh.listener.ScrollBoundaryDecider;
+
+
 /**
  * 刷新内容组件
- * Created by SCWANG on 2017/5/26.
+ * Created by scwang on 2017/5/26.
  */
 public interface RefreshContent {
 

@@ -3,12 +3,13 @@ package com.flyang.view.layout.refresh.inter;
 import android.animation.ValueAnimator;
 import android.support.annotation.NonNull;
 
-import com.flyang.view.constant.RefreshState;
+import com.flyang.view.layout.refresh.constant.RefreshState;
+
 
 /**
  * 刷新布局核心功能接口
  * 为功能复杂的 Header 或者 Footer 开放的接口
- * Created by SCWANG on 2017/5/26.
+ * Created by scwang on 2017/5/26.
  */
 @SuppressWarnings({"unused", "UnusedReturnValue", "SameParameterValue"})
 public interface RefreshKernel {
@@ -51,7 +52,6 @@ public interface RefreshKernel {
      * @return ValueAnimator 如果没有执行动画 null
      */
     ValueAnimator animSpinner(int endSpinner);
-
     //</editor-fold>
 
     //<editor-fold desc="请求事件">
@@ -62,27 +62,27 @@ public interface RefreshKernel {
      * @param backgroundColor 背景颜色
      * @return RefreshKernel
      */
-    RefreshKernel requestDrawBackgroundFor(@NonNull RefreshInternal internal, int backgroundColor);
+    RefreshKernel requestDrawBackgroundFor(@NonNull RefreshComponent internal, int backgroundColor);
     /**
      * 请求事件
      * @param internal Header Footer 调用时传 this
      * @param request 请求
      * @return RefreshKernel
      */
-    RefreshKernel requestNeedTouchEventFor(@NonNull RefreshInternal internal, boolean request);
+    RefreshKernel requestNeedTouchEventFor(@NonNull RefreshComponent internal, boolean request);
     /**
      * 请求设置默认内容滚动设置
      * @param internal Header Footer 调用时传 this
      * @param translation 移动
      * @return RefreshKernel
      */
-    RefreshKernel requestDefaultTranslationContentFor(@NonNull RefreshInternal internal, boolean translation);
+    RefreshKernel requestDefaultTranslationContentFor(@NonNull RefreshComponent internal, boolean translation);
     /**
      * 请求重新测量 headerHeight 或 footerHeight , 要求 height 高度为 WRAP_CONTENT
      * @param internal Header Footer 调用时传 this
      * @return RefreshKernel
      */
-    RefreshKernel requestRemeasureHeightFor(@NonNull RefreshInternal internal);
+    RefreshKernel requestRemeasureHeightFor(@NonNull RefreshComponent internal);
     /**
      * 设置二楼回弹时长
      * @param duration 二楼回弹时长

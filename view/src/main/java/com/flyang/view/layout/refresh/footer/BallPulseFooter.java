@@ -16,9 +16,7 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
 import com.flyang.view.R;
-import com.flyang.view.constant.SpinnerStyle;
-import com.flyang.view.layout.refresh.inter.RefreshFooter;
-import com.flyang.view.layout.refresh.inter.RefreshLayout;
+import com.flyang.view.layout.refresh.constant.SpinnerStyle;
 import com.flyang.view.layout.refresh.internal.InternalAbstract;
 import com.flyang.view.layout.refresh.util.SmartUtil;
 

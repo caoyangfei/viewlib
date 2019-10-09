@@ -18,15 +18,25 @@ import android.widget.AbsListView;
 import android.widget.ListView;
 import android.widget.ScrollView;
 
+import com.flyang.view.R;
+
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 /**
  * SmartUtil
- * Created by SCWANG on 2018/3/5.
+ * Created by scwang on 2018/3/5.
  */
-
 public class SmartUtil implements Interpolator {
+
+    public static int INTERPOLATOR_VISCOUS_FLUID = 0;
+    public static int INTERPOLATOR_DECELERATE = 1;
+
+    private int type;
+
+    public SmartUtil(int type) {
+        this.type = type;
+    }
 
     //<editor-fold desc="内容工具">
     public static int measureViewHeight(View view) {
@@ -110,7 +120,7 @@ public class SmartUtil implements Interpolator {
      * @return 是否可以刷新
      */
     public static boolean canRefresh(@NonNull View targetView, PointF touch) {
-        if (canScrollVertically(targetView, -1) && targetView.getVisibility() == View.VISIBLE) {
+        if (targetView.canScrollVertically(-1) && targetView.getVisibility() == View.VISIBLE) {
             return false;
         }
         //touch == null 时 canRefresh 不会动态递归搜索
@@ -121,7 +131,8 @@ public class SmartUtil implements Interpolator {
             for (int i = childCount; i > 0; i--) {
                 View child = viewGroup.getChildAt(i - 1);
                 if (isTransformedTouchPointInView(viewGroup, child, touch.x, touch.y, point)) {
-                    if ("fixed".equals(child.getTag()) || "fixed-bottom".equals(child.getTag())) {
+                    Object tag = child.getTag(R.id.srl_tag);
+                    if ("fixed".equals(tag) || "fixed-bottom".equals(tag)) {
                         return false;
                     }
                     touch.offset(point.x, point.y);
@@ -142,7 +153,7 @@ public class SmartUtil implements Interpolator {
      * @return 是否可以刷新
      */
     public static boolean canLoadMore(@NonNull View targetView, PointF touch, boolean contentFull) {
-        if (canScrollVertically(targetView, 1) && targetView.getVisibility() == View.VISIBLE) {
+        if (targetView.canScrollVertically(1) && targetView.getVisibility() == View.VISIBLE) {
             return false;
         }
         //touch == null 时 canLoadMore 不会动态递归搜索
@@ -153,7 +164,8 @@ public class SmartUtil implements Interpolator {
             for (int i = childCount; i > 0; i--) {
                 View child = viewGroup.getChildAt(i - 1);
                 if (isTransformedTouchPointInView(viewGroup, child, touch.x, touch.y, point)) {
-                    if ("fixed".equals(child.getTag()) || "fixed-top".equals(child.getTag())) {
+                    Object tag = child.getTag(R.id.srl_tag);
+                    if ("fixed".equals(tag) || "fixed-top".equals(tag)) {
                         return false;
                     }
                     touch.offset(point.x, point.y);
@@ -163,39 +175,13 @@ public class SmartUtil implements Interpolator {
                 }
             }
         }
-        return (contentFull || canScrollVertically(targetView, -1));
+        return (contentFull || targetView.canScrollVertically(-1));
     }
-
-    public static boolean canScrollVertically(@NonNull View targetView, int direction) {
-        if (android.os.Build.VERSION.SDK_INT < 14) {
-            if (targetView instanceof AbsListView) {
-                final ViewGroup viewGroup = (ViewGroup) targetView;
-                final AbsListView absListView = (AbsListView) targetView;
-                final int childCount = viewGroup.getChildCount();
-                if (direction > 0) {
-                    return childCount > 0 && (absListView.getLastVisiblePosition() < childCount - 1
-                            || viewGroup.getChildAt(childCount - 1).getBottom() > targetView.getPaddingBottom());
-                } else {
-                    return childCount > 0 && (absListView.getFirstVisiblePosition() > 0
-                            || viewGroup.getChildAt(0).getTop() < targetView.getPaddingTop());
-                }
-            } else {
-                if (direction > 0) {
-                    return targetView.getScrollY() < 0;
-                } else {
-                    return targetView.getScrollY() > 0;
-                }
-            }
-        } else {
-            return targetView.canScrollVertically(direction);
-        }
-    }
-
     //</editor-fold>
 
     //<editor-fold desc="transform Point">
 
-    public static boolean isTransformedTouchPointInView(@NonNull View group, @NonNull View child, float x, float y, PointF outLocalPoint) {
+    public static boolean isTransformedTouchPointInView(@NonNull View group,@NonNull View child, float x, float y,PointF outLocalPoint) {
         if (child.getVisibility() != View.VISIBLE) {
             return false;
         }
@@ -214,7 +200,6 @@ public class SmartUtil implements Interpolator {
         }
         return isInView;
     }
-
     //</editor-fold>
 
     //<editor-fold desc="像素密度">
@@ -256,10 +241,10 @@ public class SmartUtil implements Interpolator {
     private static float viscousFluid(float x) {
         x *= VISCOUS_FLUID_SCALE;
         if (x < 1.0f) {
-            x -= (1.0f - (float) Math.exp(-x));
+            x -= (1.0f - (float)Math.exp(-x));
         } else {
             float start = 0.36787944117f;   // 1/e == exp(-1)
-            x = 1.0f - (float) Math.exp(1.0f - x);
+            x = 1.0f - (float)Math.exp(1.0f - x);
             x = start + x * (1.0f - start);
         }
         return x;
@@ -267,6 +252,9 @@ public class SmartUtil implements Interpolator {
 
     @Override
     public float getInterpolation(float input) {
+        if (type == INTERPOLATOR_DECELERATE) {
+            return (1.0f - (1.0f - input) * (1.0f - input));
+        }
         final float interpolated = VISCOUS_FLUID_NORMALIZE * viscousFluid(input);
         if (interpolated > 0) {
             return interpolated + VISCOUS_FLUID_OFFSET;
@@ -274,4 +262,5 @@ public class SmartUtil implements Interpolator {
         return interpolated;
     }
     //</editor-fold>
+
 }

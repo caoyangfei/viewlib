@@ -18,12 +18,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.flyang.view.R;
-import com.flyang.view.constant.RefreshState;
-import com.flyang.view.constant.SpinnerStyle;
-import com.flyang.view.layout.refresh.inter.RefreshHeader;
-import com.flyang.view.layout.refresh.inter.RefreshLayout;
+import com.flyang.view.layout.refresh.constant.RefreshState;
+import com.flyang.view.layout.refresh.constant.SpinnerStyle;
+import com.flyang.view.layout.refresh.inter.RefreshInternal;
 import com.flyang.view.layout.refresh.internal.ArrowDrawable;
-import com.flyang.view.layout.refresh.internal.InternalClassics;
 import com.flyang.view.layout.refresh.internal.ProgressDrawable;
 import com.flyang.view.layout.refresh.util.SmartUtil;
 
@@ -40,7 +38,7 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
  * Created by SCWANG on 2017/5/28.
  */
 @SuppressWarnings({"unused", "UnusedReturnValue"})
-public class ClassicsHeader extends InternalClassics<ClassicsHeader> implements RefreshHeader {
+public class ClassicsHeader extends InternalClassics<ClassicsHeader> implements RefreshInternal {
 
     public static final int ID_TEXT_UPDATE = R.id.srl_classics_update;
 

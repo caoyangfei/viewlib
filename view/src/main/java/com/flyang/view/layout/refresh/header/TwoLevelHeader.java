@@ -10,15 +10,9 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.flyang.view.R;
-import com.flyang.view.constant.RefreshState;
-import com.flyang.view.constant.SpinnerStyle;
-import com.flyang.view.layout.refresh.inter.OnTwoLevelListener;
-import com.flyang.view.layout.refresh.inter.RefreshHeader;
-import com.flyang.view.layout.refresh.inter.RefreshInternal;
-import com.flyang.view.layout.refresh.inter.RefreshKernel;
-import com.flyang.view.layout.refresh.inter.RefreshLayout;
+import com.flyang.view.layout.refresh.constant.RefreshState;
+import com.flyang.view.layout.refresh.constant.SpinnerStyle;
 import com.flyang.view.layout.refresh.internal.InternalAbstract;
-import com.flyang.view.layout.refresh.listener.OnStateChangedListener;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
@@ -28,7 +22,7 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
  * Created by SCWANG on 2017/5/26.
  */
 @SuppressWarnings({"unused", "UnusedReturnValue"})
-public class TwoLevelHeader extends InternalAbstract implements RefreshHeader/*, InvocationHandler*/ {
+public class TwoLevelHeader extends InternalAbstract implements RefreshInternal/*, InvocationHandler*/ {
 
     //<editor-fold desc="属性字段">
     protected int mSpinner;

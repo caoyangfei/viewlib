@@ -10,13 +10,10 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.scwang.smartrefresh.layout.R;
-import com.scwang.smartrefresh.layout.api.RefreshFooter;
-import com.scwang.smartrefresh.layout.api.RefreshKernel;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.constant.RefreshState;
-import com.scwang.smartrefresh.layout.internal.InternalAbstract;
-import com.scwang.smartrefresh.layout.util.SmartUtil;
+import com.flyang.view.R;
+import com.flyang.view.layout.refresh.constant.RefreshState;
+import com.flyang.view.layout.refresh.internal.InternalAbstract;
+import com.flyang.view.layout.refresh.util.SmartUtil;
 
 import static android.view.View.MeasureSpec.EXACTLY;
 import static android.view.View.MeasureSpec.makeMeasureSpec;

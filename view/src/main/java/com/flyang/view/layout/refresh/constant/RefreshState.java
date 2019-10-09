@@ -1,4 +1,4 @@
-package com.flyang.view.constant;
+package com.flyang.view.layout.refresh.constant;
 
 /**
  * 刷新状态
@@ -30,6 +30,15 @@ public enum RefreshState {
         this.isFinishing = finishing;
         this.isTwoLevel = twoLevel;
         this.isReleaseToOpening = releaseToOpening;
+    }
+
+    public static RefreshState from(RefreshState newState) {
+        for (RefreshState state : values()) {
+            if (state.ordinal() == newState.ordinal()) {
+                return state;
+            }
+        }
+        return None;
     }
 
     public RefreshState toFooter() {

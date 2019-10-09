@@ -8,9 +8,9 @@ import static android.support.annotation.RestrictTo.Scope.SUBCLASSES;
 
 /**
  * 刷新底部
- * Created by SCWANG on 2017/5/26.
+ * Created by scwang on 2017/5/26.
  */
-public interface RefreshFooter extends RefreshInternal {
+public interface RefreshFooter extends RefreshComponent {
 
     /**
      * 【仅限框架内调用】设置数据全部加载完成，将不能再次触发加载功能
