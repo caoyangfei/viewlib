@@ -15,23 +15,23 @@ import android.widget.AbsListView;
 import android.widget.FrameLayout;
 import android.widget.Space;
 
-import com.scwang.smart.refresh.layout.api.RefreshContent;
-import com.scwang.smart.refresh.layout.api.RefreshKernel;
-import com.scwang.smart.refresh.layout.kernel.R;
-import com.scwang.smart.refresh.layout.listener.CoordinatorLayoutListener;
-import com.scwang.smart.refresh.layout.listener.ScrollBoundaryDecider;
-import com.scwang.smart.refresh.layout.simple.SimpleBoundaryDecider;
-import com.scwang.smart.refresh.layout.util.DesignUtil;
+import com.flyang.view.R;
+import com.flyang.view.layout.refresh.inter.RefreshContent;
+import com.flyang.view.layout.refresh.inter.RefreshKernel;
+import com.flyang.view.layout.refresh.listener.CoordinatorLayoutListener;
+import com.flyang.view.layout.refresh.listener.ScrollBoundaryDecider;
+import com.flyang.view.layout.refresh.simple.SimpleBoundaryDecider;
+import com.flyang.view.layout.refresh.util.DesignUtil;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-import static com.scwang.smart.refresh.layout.util.SmartUtil.isContentView;
-import static com.scwang.smart.refresh.layout.util.SmartUtil.isTransformedTouchPointInView;
-import static com.scwang.smart.refresh.layout.util.SmartUtil.measureViewHeight;
-import static com.scwang.smart.refresh.layout.util.SmartUtil.scrollListBy;
+import static com.flyang.view.layout.refresh.util.SmartUtil.isContentView;
+import static com.flyang.view.layout.refresh.util.SmartUtil.isTransformedTouchPointInView;
+import static com.flyang.view.layout.refresh.util.SmartUtil.measureViewHeight;
+import static com.flyang.view.layout.refresh.util.SmartUtil.scrollListBy;
 
 /**
  * 刷新内容包装

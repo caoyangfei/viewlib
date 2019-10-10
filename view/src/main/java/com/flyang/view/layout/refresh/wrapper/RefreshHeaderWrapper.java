@@ -3,8 +3,9 @@ package com.flyang.view.layout.refresh.wrapper;
 import android.annotation.SuppressLint;
 import android.view.View;
 
-import com.scwang.smart.refresh.layout.api.RefreshHeader;
-import com.scwang.smart.refresh.layout.simple.SimpleComponent;
+import com.flyang.view.layout.refresh.inter.RefreshHeader;
+import com.flyang.view.layout.refresh.simple.SimpleComponent;
+
 
 /**
  * 刷新头部包装
