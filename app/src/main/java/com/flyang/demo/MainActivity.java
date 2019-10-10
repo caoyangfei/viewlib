@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.flyang.demo.refresh.AssignRefreshActivity;
 import com.flyang.demo.refresh.AssignXmlRefreshActivity;
+import com.flyang.demo.refresh.HorizontalRefreshActivity;
 import com.flyang.util.app.ActivityUtils;
 import com.flyang.util.view.KeyboardUtils;
 import com.flyang.view.inter.Delegate;
@@ -105,6 +106,16 @@ public class MainActivity extends AppCompatActivity implements Delegate {
                             @Override
                             public void onAnimationEnd() {
                                 ActivityUtils.startActivity(AssignXmlRefreshActivity.class);
+                            }
+                        });
+                break;
+            case R.id.refreshBtn3:
+                CircularAnim.fullActivity(MainActivity.this, view)
+                        .colorOrImageRes(R.color.color_2E8B57)
+                        .go(new CircularAnim.OnAnimationEndListener() {
+                            @Override
+                            public void onAnimationEnd() {
+                                ActivityUtils.startActivity(HorizontalRefreshActivity.class);
                             }
                         });
                 break;

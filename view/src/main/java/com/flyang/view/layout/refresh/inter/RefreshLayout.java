@@ -412,9 +412,7 @@ public interface RefreshLayout {
 
     /**
      * Set up a multi-function listener.
-     * Recommended {@link SimpleMultiListener}
      * 设置多功能监听器
-     * 建议使用 {@link SimpleMultiListener}
      *
      * @param listener OnMultiPurposeListener 多功能监听器
      * @return RefreshLayout

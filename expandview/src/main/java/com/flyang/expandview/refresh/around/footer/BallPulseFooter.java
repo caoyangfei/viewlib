@@ -23,8 +23,11 @@ import com.flyang.view.layout.refresh.util.SmartUtil;
 
 
 /**
+ * @author caoyangfei
+ * @ClassName BallPulseFooter
+ * @date 2019/10/10
+ * ------------- Description -------------
  * 球脉冲底部加载组件
- * Created by scwang on 2017/5/30.
  */
 @SuppressWarnings({"unused", "UnusedReturnValue"})
 public class BallPulseFooter extends SimpleComponent implements RefreshFooter {
@@ -96,7 +99,7 @@ public class BallPulseFooter extends SimpleComponent implements RefreshFooter {
         for (int i = 0; i < 3; i++) {
 
             long time = now - mStartTime - 120 * (i + 1);
-            float percent = time > 0 ? ((time%750)/750f) : 0;
+            float percent = time > 0 ? ((time % 750) / 750f) : 0;
             percent = mInterpolator.getInterpolation(percent);
 
             canvas.save();
@@ -144,7 +147,8 @@ public class BallPulseFooter extends SimpleComponent implements RefreshFooter {
         return 0;
     }
 
-    @Override@Deprecated
+    @Override
+    @Deprecated
     public void setPrimaryColors(@ColorInt int... colors) {
         if (!mManualAnimationColor && colors.length > 1) {
             setAnimatingColor(colors[0]);
@@ -154,7 +158,7 @@ public class BallPulseFooter extends SimpleComponent implements RefreshFooter {
             if (colors.length > 1) {
                 setNormalColor(colors[1]);
             } else if (colors.length > 0) {
-                setNormalColor(ColorUtils.compositeColors(0x99ffffff,colors[0]));
+                setNormalColor(ColorUtils.compositeColors(0x99ffffff, colors[0]));
             }
             mManualNormalColor = false;
         }

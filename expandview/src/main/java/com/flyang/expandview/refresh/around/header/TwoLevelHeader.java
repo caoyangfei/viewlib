@@ -26,8 +26,11 @@ import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 /**
+ * @author caoyangfei
+ * @ClassName TwoLevelHeader
+ * @date 2019/10/10
+ * ------------- Description -------------
  * 二级刷新
- * Created by scwang on 2017/5/26.
  */
 @SuppressWarnings({"unused", "UnusedReturnValue"})
 public class TwoLevelHeader extends SimpleComponent implements RefreshHeader, NestedScrollingParent2 {
@@ -229,19 +232,36 @@ public class TwoLevelHeader extends SimpleComponent implements RefreshHeader, Ne
 
     //<editor-fold desc="NestedScrollingParent2">
     private int mNestedScrollAxes = 0;
+
     @Override
     public boolean onStartNestedScroll(@NonNull View child, @NonNull View target, int nestedScrollAxes) {
         return true;
     }
+
     public void onNestedScrollAccepted(@NonNull View child, @NonNull View target, int nestedScrollAxes) {
         mNestedScrollAxes = nestedScrollAxes;
     }
-    public void onStopNestedScroll(@NonNull View target) {}
-    public void onNestedScroll(@NonNull View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed) {}
-    public void onNestedPreScroll(@NonNull View target, int dx, int dy, @NonNull int[] consumed){}
-    public boolean onNestedFling(@NonNull View target, float velocityX, float velocityY, boolean consumed){return false;}
-    public boolean onNestedPreFling(@NonNull View target, float velocityX, float velocityY) {return false;}
-    public int getNestedScrollAxes() {return mNestedScrollAxes;}
+
+    public void onStopNestedScroll(@NonNull View target) {
+    }
+
+    public void onNestedScroll(@NonNull View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed) {
+    }
+
+    public void onNestedPreScroll(@NonNull View target, int dx, int dy, @NonNull int[] consumed) {
+    }
+
+    public boolean onNestedFling(@NonNull View target, float velocityX, float velocityY, boolean consumed) {
+        return false;
+    }
+
+    public boolean onNestedPreFling(@NonNull View target, float velocityX, float velocityY) {
+        return false;
+    }
+
+    public int getNestedScrollAxes() {
+        return mNestedScrollAxes;
+    }
 
     @Override
     public boolean onStartNestedScroll(@NonNull View child, @NonNull View target, int nestedScrollAxes, int i1) {
@@ -273,6 +293,7 @@ public class TwoLevelHeader extends SimpleComponent implements RefreshHeader, Ne
 
     /**
      * 设置指定的 Header
+     *
      * @param header RefreshHeader
      * @return TwoLevelHeader
      */
@@ -282,8 +303,9 @@ public class TwoLevelHeader extends SimpleComponent implements RefreshHeader, Ne
 
     /**
      * 设置指定的 Header
+     *
      * @param header RefreshHeader
-     * @param width 指定宽度
+     * @param width  指定宽度
      * @param height 指定高度
      * @return TwoLevelHeader
      */
@@ -308,6 +330,7 @@ public class TwoLevelHeader extends SimpleComponent implements RefreshHeader, Ne
 
     /**
      * 设置下拉 Header 的最大高度比值
+     *
      * @param rate MaxDragHeight/HeaderHeight
      * @return TwoLevelHeader
      */
@@ -325,6 +348,7 @@ public class TwoLevelHeader extends SimpleComponent implements RefreshHeader, Ne
 
     /**
      * 是否禁止在二极状态是上滑关闭状态回到初态
+     *
      * @param enabled 是否启用
      * @return TwoLevelHeader
      */
@@ -339,6 +363,7 @@ public class TwoLevelHeader extends SimpleComponent implements RefreshHeader, Ne
 
     /**
      * 设置触发二楼的白百分比
+     *
      * @param rate 比率 要求大于 RefreshRage
      * @return TwoLevelHeader
      */
@@ -349,6 +374,7 @@ public class TwoLevelHeader extends SimpleComponent implements RefreshHeader, Ne
 
     /**
      * 设置触发刷新的百分比
+     *
      * @param rate 比率 要求小于 FloorRage
      * @return TwoLevelHeader
      */
@@ -359,6 +385,7 @@ public class TwoLevelHeader extends SimpleComponent implements RefreshHeader, Ne
 
     /**
      * 设置是否开启二级刷新
+     *
      * @param enabled 是否开启
      * @return TwoLevelHeader
      */
@@ -369,6 +396,7 @@ public class TwoLevelHeader extends SimpleComponent implements RefreshHeader, Ne
 
     /**
      * 设置二楼展开动画持续的时间
+     *
      * @param duration 毫秒
      * @return TwoLevelHeader
      */
@@ -379,6 +407,7 @@ public class TwoLevelHeader extends SimpleComponent implements RefreshHeader, Ne
 
     /**
      * 设置二级刷新监听器
+     *
      * @param listener 监听器
      * @return TwoLevelHeader
      */
@@ -389,6 +418,7 @@ public class TwoLevelHeader extends SimpleComponent implements RefreshHeader, Ne
 
     /**
      * 结束二级刷新
+     *
      * @return TwoLevelHeader
      */
     public TwoLevelHeader finishTwoLevel() {
@@ -402,6 +432,7 @@ public class TwoLevelHeader extends SimpleComponent implements RefreshHeader, Ne
     /**
      * Open the second floor voluntarily
      * 主动打开二楼
+     *
      * @param widthOnTwoLevelListener 是否触发 OnTwoLevelListener 监听器
      * @return TwoLevelHeader
      */

@@ -35,9 +35,11 @@ import static android.view.View.MeasureSpec.getSize;
 import static android.view.View.MeasureSpec.makeMeasureSpec;
 
 /**
+ * @author caoyangfei
+ * @ClassName WaveSwipeHeader
+ * @date 2019/10/10
+ * ------------- Description -------------
  * 全屏水滴下拉头
- * Created by scwang on 2017/6/4.
- * from https://github.com/recruit-lifestyle/WaveSwipeRefreshLayout
  */
 @SuppressWarnings("unused")
 public class WaveSwipeHeader extends SimpleComponent implements RefreshHeader {
@@ -49,8 +51,9 @@ public class WaveSwipeHeader extends SimpleComponent implements RefreshHeader {
 
     protected enum VERTICAL_DRAG_THRESHOLD {
         FIRST(0.1f), SECOND(0.16f + FIRST.val), THIRD(0.5f + FIRST.val);
-//        FIRST(0.2f), SECOND(0.26f + FIRST.val), THIRD(0.7f + FIRST.val);
+        //        FIRST(0.2f), SECOND(0.26f + FIRST.val), THIRD(0.7f + FIRST.val);
         final float val;
+
         VERTICAL_DRAG_THRESHOLD(float val) {
             this.val = val;
         }
@@ -119,7 +122,7 @@ public class WaveSwipeHeader extends SimpleComponent implements RefreshHeader {
         final int circleDiameter = progress.getIntrinsicWidth();
         final int spec = View.MeasureSpec.makeMeasureSpec(circleDiameter, View.MeasureSpec.EXACTLY);
         circleView.measure(spec, spec);
-        waveView.measure(makeMeasureSpec(getSize(widthMeasureSpec), EXACTLY),makeMeasureSpec(getSize(heightMeasureSpec), EXACTLY));
+        waveView.measure(makeMeasureSpec(getSize(widthMeasureSpec), EXACTLY), makeMeasureSpec(getSize(heightMeasureSpec), EXACTLY));
     }
 
     @Override
@@ -132,7 +135,7 @@ public class WaveSwipeHeader extends SimpleComponent implements RefreshHeader {
         final int thisWidth = thisView.getMeasuredWidth();
         final int circleWidth = circleView.getMeasuredWidth();
         final int circleHeight = circleView.getMeasuredHeight();
-        circleView.layout((thisWidth - circleWidth) / 2, -circleHeight , (thisWidth + circleWidth) / 2, 0);
+        circleView.layout((thisWidth - circleWidth) / 2, -circleHeight, (thisWidth + circleWidth) / 2, 0);
 
         if (thisView.isInEditMode()) {
             onMoving(true, 0.99f, SmartUtil.dp2px(99), SmartUtil.dp2px(100), SmartUtil.dp2px(100));
@@ -142,6 +145,7 @@ public class WaveSwipeHeader extends SimpleComponent implements RefreshHeader {
     //</editor-fold>
 
     //<editor-fold desc="WaveSwipe">
+
     /**
      * @param colors セットするColor達
      */
@@ -323,8 +327,12 @@ public class WaveSwipeHeader extends SimpleComponent implements RefreshHeader {
         };
         scaleDownAnimation.setDuration(200);
         mCircleView.setAnimationListener(new Animation.AnimationListener() {
-            public void onAnimationStart(Animation animation) {}
-            public void onAnimationRepeat(Animation animation) {}
+            public void onAnimationStart(Animation animation) {
+            }
+
+            public void onAnimationRepeat(Animation animation) {
+            }
+
             public void onAnimationEnd(Animation animation) {
                 mProgress.stop();
                 mProgress.setAlpha(0xff);
@@ -340,8 +348,9 @@ public class WaveSwipeHeader extends SimpleComponent implements RefreshHeader {
      * @param colors 对应Xml中配置的 refreshPrimaryColor refreshAccentColor
      * @deprecated 请使用 {@link RefreshLayout#setPrimaryColorsId(int...)}
      */
-    @Override@Deprecated
-    public void setPrimaryColors(@ColorInt int ... colors) {
+    @Override
+    @Deprecated
+    public void setPrimaryColors(@ColorInt int... colors) {
         if (colors.length > 0) {
             mWaveView.setWaveColor(colors[0]);
             if (colors.length > 1) {
@@ -358,6 +367,7 @@ public class WaveSwipeHeader extends SimpleComponent implements RefreshHeader {
     //</editor-fold>
 
     //<editor-fold desc="ProgressAnimationImageView">
+
     /**
      * 現在の向きが600dpを超えているかどうか
      *
@@ -368,6 +378,7 @@ public class WaveSwipeHeader extends SimpleComponent implements RefreshHeader {
         DisplayMetrics displayMetrics = Resources.getSystem().getDisplayMetrics();
         return displayMetrics.widthPixels / displayMetrics.density >= 600;
     }
+
     /**
      * Custom view has progress drawable.
      * Some features of MaterialProgressDrawable are decorated.
@@ -393,7 +404,8 @@ public class WaveSwipeHeader extends SimpleComponent implements RefreshHeader {
          * ViewのAnimationのStart時にセットされたListenerの {@link Animation.AnimationListener#onAnimationStart(Animation)}
          * を呼ぶ
          */
-        @Override public void onAnimationStart() {
+        @Override
+        public void onAnimationStart() {
             super.onAnimationStart();
             if (mListener != null) {
                 mListener.onAnimationStart(getAnimation());
@@ -404,12 +416,14 @@ public class WaveSwipeHeader extends SimpleComponent implements RefreshHeader {
          * ViewのAnimationのEnd時にセットされたListenerの {@link Animation.AnimationListener#onAnimationEnd(Animation)}
          * (Animation)} を呼ぶ
          */
-        @Override public void onAnimationEnd() {
+        @Override
+        public void onAnimationEnd() {
             super.onAnimationEnd();
             if (mListener != null) {
                 mListener.onAnimationEnd(getAnimation());
             }
         }
+
         /**
          * Constructor
          * {@inheritDoc}

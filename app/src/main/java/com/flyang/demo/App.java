@@ -56,7 +56,7 @@ public class App extends Application {
             @NonNull
             @Override
             public RefreshFooter createRefreshFooter(@NonNull Context context, @NonNull RefreshLayout layout) {
-                return new ClassicsFooter(context);
+                return new ClassicsFooter(context).setPrimaryColorId(R.color.color_aa72d572);
             }
         });
     }

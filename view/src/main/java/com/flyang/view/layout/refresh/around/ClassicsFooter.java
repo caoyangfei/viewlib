@@ -2,7 +2,6 @@ package com.flyang.view.layout.refresh.around;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -10,14 +9,13 @@ import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.flyang.view.R;
+import com.flyang.view.layout.refresh.around.drawable.ArrowDrawable;
+import com.flyang.view.layout.refresh.around.drawable.ProgressDrawable;
 import com.flyang.view.layout.refresh.constant.RefreshState;
 import com.flyang.view.layout.refresh.constant.SpinnerStyle;
 import com.flyang.view.layout.refresh.inter.RefreshFooter;
 import com.flyang.view.layout.refresh.inter.RefreshLayout;
-import com.flyang.view.layout.refresh.around.drawable.ArrowDrawable;
-import com.flyang.view.layout.refresh.around.drawable.ProgressDrawable;
 import com.flyang.view.layout.refresh.util.SmartUtil;
-
 
 
 /**
@@ -194,13 +192,13 @@ public class ClassicsFooter extends ClassicsAbstract<ClassicsFooter> implements 
     /**
      * ClassicsFooter 在(SpinnerStyle.FixedBehind)时才有主题色
      */
-    @Override
+   /* @Override
     @Deprecated
     public void setPrimaryColors(@ColorInt int... colors) {
         if (mSpinnerStyle == SpinnerStyle.FixedBehind) {
             super.setPrimaryColors(colors);
         }
-    }
+    }*/
 
     /**
      * 设置数据全部加载完成，将不能再次触发加载功能

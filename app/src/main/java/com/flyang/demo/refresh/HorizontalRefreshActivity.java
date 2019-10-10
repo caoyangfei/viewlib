@@ -9,16 +9,17 @@ import com.flyang.view.layout.refresh.constant.RefreshState;
 import com.flyang.view.layout.refresh.inter.RefreshLayout;
 import com.flyang.view.layout.refresh.listener.OnMultiListener;
 
-public class AssignXmlRefreshActivity extends AppCompatActivity {
+public class HorizontalRefreshActivity extends AppCompatActivity {
 
     private RefreshLayout refreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_assignxml_refresh);
+        setContentView(R.layout.activity_horizontal_refresh);
 
         refreshLayout = findViewById(R.id.refreshLayout);
+
 
         refreshLayout.setOnMultiListener(new OnMultiListener() {
             @Override
@@ -39,6 +40,8 @@ public class AssignXmlRefreshActivity extends AppCompatActivity {
                 refreshLayout.finishRefresh(3000);
             }
         });
+
+
     }
 
 

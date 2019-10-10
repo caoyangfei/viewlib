@@ -30,8 +30,11 @@ import com.flyang.view.layout.refresh.util.SmartUtil;
 import static android.view.View.MeasureSpec.getSize;
 
 /**
+ * @author caoyangfei
+ * @ClassName MaterialHeader
+ * @date 2019/10/10
+ * ------------- Description -------------
  * Material 主题下拉头
- * Created by scwang on 2017/6/2.
  */
 @SuppressWarnings("unused")
 public class MaterialHeader extends SimpleComponent implements RefreshHeader {
@@ -80,8 +83,8 @@ public class MaterialHeader extends SimpleComponent implements RefreshHeader {
         mProgress = new MaterialProgressDrawable(this);
         mProgress.setBackgroundColor(CIRCLE_BG_LIGHT);
         mProgress.setAlpha(255);
-        mProgress.setColorSchemeColors(0xff0099cc,0xffff4444,0xff669900,0xffaa66cc,0xffff8800);
-        mCircleView = new CircleImageView(context,CIRCLE_BG_LIGHT);
+        mProgress.setColorSchemeColors(0xff0099cc, 0xffff4444, 0xff669900, 0xffaa66cc, 0xffff8800);
+        mCircleView = new CircleImageView(context, CIRCLE_BG_LIGHT);
         mCircleView.setImageDrawable(mProgress);
         mCircleView.setAlpha(0f);
         thisGroup.addView(mCircleView);
@@ -268,8 +271,9 @@ public class MaterialHeader extends SimpleComponent implements RefreshHeader {
      * @param colors 对应Xml中配置的 refreshPrimaryColor refreshAccentColor
      * @deprecated 请使用 {@link RefreshLayout#setPrimaryColorsId(int...)}
      */
-    @Override@Deprecated
-    public void setPrimaryColors(@ColorInt int ... colors) {
+    @Override
+    @Deprecated
+    public void setPrimaryColors(@ColorInt int... colors) {
         if (colors.length > 0) {
             mBezierPaint.setColor(colors[0]);
         }
@@ -278,6 +282,7 @@ public class MaterialHeader extends SimpleComponent implements RefreshHeader {
 
 
     //<editor-fold desc="API">
+
     /**
      * Set the background color of the progress spinner disc.
      *
@@ -305,6 +310,7 @@ public class MaterialHeader extends SimpleComponent implements RefreshHeader {
 
     /**
      * 设置 ColorScheme
+     *
      * @param colors ColorScheme
      * @return MaterialHeader
      */
@@ -315,6 +321,7 @@ public class MaterialHeader extends SimpleComponent implements RefreshHeader {
 
     /**
      * 设置 ColorScheme
+     *
      * @param colorIds ColorSchemeResources
      * @return MaterialHeader
      */
@@ -330,6 +337,7 @@ public class MaterialHeader extends SimpleComponent implements RefreshHeader {
 
     /**
      * 设置大小尺寸
+     *
      * @param size One of DEFAULT, or LARGE.
      * @return MaterialHeader
      */
@@ -355,6 +363,7 @@ public class MaterialHeader extends SimpleComponent implements RefreshHeader {
 
     /**
      * 是否显示贝塞尔图形
+     *
      * @param show 是否显示
      * @return MaterialHeader
      */
@@ -365,6 +374,7 @@ public class MaterialHeader extends SimpleComponent implements RefreshHeader {
 
     /**
      * 设置实在正在刷新的时候可以 上下滚动 Header
+     *
      * @param scrollable 是否支持滚动
      */
     public MaterialHeader setScrollableWhenRefreshing(boolean scrollable) {

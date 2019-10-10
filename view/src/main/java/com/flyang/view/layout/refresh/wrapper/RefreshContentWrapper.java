@@ -34,8 +34,11 @@ import static com.flyang.view.layout.refresh.util.SmartUtil.measureViewHeight;
 import static com.flyang.view.layout.refresh.util.SmartUtil.scrollListBy;
 
 /**
+ * @author caoyangfei
+ * @ClassName RefreshContentWrapper
+ * @date 2019/10/10
+ * ------------- Description -------------
  * 刷新内容包装
- * Created by scwang on 2017/5/26.
  */
 @SuppressWarnings("WeakerAccess")
 public class RefreshContentWrapper implements RefreshContent, CoordinatorLayoutListener, AnimatorUpdateListener {
@@ -84,7 +87,7 @@ public class RefreshContentWrapper implements RefreshContent, CoordinatorLayoutL
         View scrollableView = null;
         Queue<View> views = new LinkedList<>();
         //noinspection unchecked
-        List<View> list = (List<View>)views;
+        List<View> list = (List<View>) views;
         list.add(content);
         while (list.size() > 0 && scrollableView == null) {
             View view = views.poll();
@@ -226,7 +229,7 @@ public class RefreshContentWrapper implements RefreshContent, CoordinatorLayoutL
                 frameLayout.addView(fixedHeader, 1, lp);
             }
             if (fixedFooter != null) {
-                fixedFooter.setTag(R.id.refresh_tag,"fixed-bottom");
+                fixedFooter.setTag(R.id.refresh_tag, "fixed-bottom");
                 ViewGroup.LayoutParams lp = fixedFooter.getLayoutParams();
                 ViewGroup parent = (ViewGroup) fixedFooter.getParent();
                 index = parent.indexOfChild(fixedFooter);
@@ -271,9 +274,9 @@ public class RefreshContentWrapper implements RefreshContent, CoordinatorLayoutL
         try {
             float dy = (value - mLastSpinner) * mScrollableView.getScaleY();
             if (mScrollableView instanceof AbsListView) {
-                scrollListBy((AbsListView) mScrollableView, (int)dy);
+                scrollListBy((AbsListView) mScrollableView, (int) dy);
             } else {
-                mScrollableView.scrollBy(0, (int)dy);
+                mScrollableView.scrollBy(0, (int) dy);
             }
         } catch (Throwable e) {
             //根据用户反馈，此处可能会有BUG

@@ -21,11 +21,12 @@ import com.flyang.view.layout.refresh.inter.RefreshKernel;
 import com.flyang.view.layout.refresh.inter.RefreshLayout;
 import com.flyang.view.layout.refresh.util.SmartUtil;
 
-
 /**
+ * @author caoyangfei
+ * @ClassName FlyRefreshHeader
+ * @date 2019/10/10
+ * ------------- Description -------------
  * 纸飞机和山丘
- * Created by scwang on 2017/6/6.
- * from https://github.com/race604/FlyRefresh
  */
 public class FlyRefreshHeader extends FalsifyHeader implements RefreshHeader {
 
@@ -92,7 +93,7 @@ public class FlyRefreshHeader extends FalsifyHeader implements RefreshHeader {
             valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
                 @Override
                 public void onAnimationUpdate(ValueAnimator animation) {
-                    onMoving(true,(float) animation.getAnimatedValue(), 0, 0, 0);
+                    onMoving(true, (float) animation.getAnimatedValue(), 0, 0, 0);
                 }
             });
             valueAnimator.start();
@@ -107,7 +108,7 @@ public class FlyRefreshHeader extends FalsifyHeader implements RefreshHeader {
             layout.setEnableRefresh(false);
 
 
-            final int offDistX = ((View) mRefreshLayout).getWidth()-mFlyView.getLeft();
+            final int offDistX = ((View) mRefreshLayout).getWidth() - mFlyView.getLeft();
             final int offDistY = -(mFlyView.getTop() - mOffset) * 2 / 3;
             ObjectAnimator transX = ObjectAnimator.ofFloat(mFlyView, "translationX", 0, offDistX);
             ObjectAnimator transY = ObjectAnimator.ofFloat(mFlyView, "translationY", 0, offDistY);
@@ -120,11 +121,11 @@ public class FlyRefreshHeader extends FalsifyHeader implements RefreshHeader {
             AnimatorSet flyUpAnim = new AnimatorSet();
             flyUpAnim.setDuration(800);
             flyUpAnim.playTogether(transX
-                    ,transY
-                    ,rotation
-                    ,rotationX
-                    ,ObjectAnimator.ofFloat(mFlyView, "scaleX", mFlyView.getScaleX(), 0.5f)
-                    ,ObjectAnimator.ofFloat(mFlyView, "scaleY", mFlyView.getScaleY(), 0.5f)
+                    , transY
+                    , rotation
+                    , rotationX
+                    , ObjectAnimator.ofFloat(mFlyView, "scaleX", mFlyView.getScaleX(), 0.5f)
+                    , ObjectAnimator.ofFloat(mFlyView, "scaleY", mFlyView.getScaleY(), 0.5f)
             );
 
             mFlyAnimator = flyUpAnim;
@@ -136,8 +137,9 @@ public class FlyRefreshHeader extends FalsifyHeader implements RefreshHeader {
      * @param colors 对应Xml中配置的 refreshPrimaryColor refreshAccentColor
      * @deprecated 请使用 {@link RefreshLayout#setPrimaryColorsId(int...)}
      */
-    @Override@Deprecated
-    public void setPrimaryColors(@ColorInt int ... colors) {
+    @Override
+    @Deprecated
+    public void setPrimaryColors(@ColorInt int... colors) {
         if (colors.length > 0) {
             if (mSceneView != null) {
                 mSceneView.setPrimaryColor(colors[0]);
@@ -162,7 +164,7 @@ public class FlyRefreshHeader extends FalsifyHeader implements RefreshHeader {
     //</editor-fold>
 
     //<editor-fold desc="API">
-    public void setUp(@Nullable MountainSceneView sceneView,@Nullable View flyView) {
+    public void setUp(@Nullable MountainSceneView sceneView, @Nullable View flyView) {
         mFlyView = flyView;
         mSceneView = sceneView;
     }
@@ -226,6 +228,7 @@ public class FlyRefreshHeader extends FalsifyHeader implements RefreshHeader {
                     mFlyView.setRotationY(0);
                 }
             }
+
             @Override
             public void onAnimationEnd(Animator animation) {
                 if (mRefreshLayout != null) {

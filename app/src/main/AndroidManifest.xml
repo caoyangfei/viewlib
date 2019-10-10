@@ -35,6 +35,10 @@
             android:name=".refresh.AssignXmlRefreshActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".refresh.HorizontalRefreshActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
     </application>
 
 </manifest>

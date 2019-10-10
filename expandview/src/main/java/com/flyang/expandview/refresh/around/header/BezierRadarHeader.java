@@ -26,10 +26,12 @@ import com.flyang.view.layout.refresh.inter.RefreshLayout;
 import com.flyang.view.layout.refresh.simple.SimpleComponent;
 import com.flyang.view.layout.refresh.util.SmartUtil;
 
-
 /**
+ * @author caoyangfei
+ * @ClassName BezierRadarHeader
+ * @date 2019/10/10
+ * ------------- Description -------------
  * 贝塞尔曲线类雷达风格刷新组件
- * Created by scwang on 2017/5/28.
  */
 @SuppressWarnings({"UnusedReturnValue", "unused"})
 public class BezierRadarHeader extends SimpleComponent implements RefreshHeader {
@@ -59,17 +61,17 @@ public class BezierRadarHeader extends SimpleComponent implements RefreshHeader 
     protected float mRadarCircle = 0;
     protected float mRadarScale = 0;
     protected Animator mAnimatorSet;
-//    protected ValueAnimator mRadarAnimator;
-    protected RectF mRadarRect = new RectF(0,0,0,0);
+    //    protected ValueAnimator mRadarAnimator;
+    protected RectF mRadarRect = new RectF(0, 0, 0, 0);
     //</editor-fold>
 
     //<editor-fold desc="FrameLayout">
     public BezierRadarHeader(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public BezierRadarHeader(Context context, AttributeSet attrs) {
-        super(context, attrs,0);
+        super(context, attrs, 0);
 
         mSpinnerStyle = SpinnerStyle.FixedBehind;
 
@@ -132,8 +134,9 @@ public class BezierRadarHeader extends SimpleComponent implements RefreshHeader 
 
     /**
      * 绘制背景波形
+     *
      * @param canvas 画布
-     * @param width 宽度
+     * @param width  宽度
      */
     protected void drawWave(Canvas canvas, int width) {
         //重置画笔
@@ -148,22 +151,23 @@ public class BezierRadarHeader extends SimpleComponent implements RefreshHeader 
 
     /**
      * 绘制下拉时的 多个点
+     *
      * @param canvas 画布
-     * @param width 宽度
+     * @param width  宽度
      */
     protected void drawDot(Canvas canvas, int width, int height) {
         if (mDotAlpha > 0) {
             mPaint.setColor(mAccentColor);
             final int num = 7;
             float x = SmartUtil.px2dp(height);
-            float wide = (1f * width / num) * mDotFraction -((mDotFraction >1)?((mDotFraction -1)*(1f * width / num)/ mDotFraction):0);//y1 = t*(w/n)-(t>1)*((t-1)*(w/n)/t)
+            float wide = (1f * width / num) * mDotFraction - ((mDotFraction > 1) ? ((mDotFraction - 1) * (1f * width / num) / mDotFraction) : 0);//y1 = t*(w/n)-(t>1)*((t-1)*(w/n)/t)
             float high = height - ((mDotFraction > 1) ? ((mDotFraction - 1) * height / 2 / mDotFraction) : 0);//y2 = x - (t>1)*((t-1)*x/t);
-            for (int i = 0 ; i < num; i++) {
+            for (int i = 0; i < num; i++) {
                 float index = 1f + i - (1f + num) / 2;//y3 = (x + 1) - (n + 1)/2; 居中 index 变量：0 1 2 3 4 结果： -2 -1 0 1 2
                 float alpha = 255 * (1 - (2 * (Math.abs(index) / num)));//y4 = m * ( 1 - 2 * abs(y3) / n); 横向 alpha 差
                 mPaint.setAlpha((int) (mDotAlpha * alpha * (1d - 1d / Math.pow((x / 800d + 1d), 15))));//y5 = y4 * (1-1/((x/800+1)^15));竖直 alpha 差
-                float radius = mDotRadius * (1-1/((x/10+1)));//y6 = mDotRadius*(1-1/(x/10+1));半径
-                canvas.drawCircle(width / 2f- radius/2 + wide * index , high / 2, radius, mPaint);
+                float radius = mDotRadius * (1 - 1 / ((x / 10 + 1)));//y6 = mDotRadius*(1-1/(x/10+1));半径
+                canvas.drawCircle(width / 2f - radius / 2 + wide * index, high / 2, radius, mPaint);
             }
             mPaint.setAlpha(255);
         }
@@ -171,8 +175,9 @@ public class BezierRadarHeader extends SimpleComponent implements RefreshHeader 
 
     /**
      * 绘制刷新时的 雷达动画
+     *
      * @param canvas 画布
-     * @param width 宽度
+     * @param width  宽度
      * @param height 高度
      */
     protected void drawRadar(Canvas canvas, int width, int height) {
@@ -204,8 +209,9 @@ public class BezierRadarHeader extends SimpleComponent implements RefreshHeader 
 
     /**
      * 绘制刷新完成 白色扩散动画
+     *
      * @param canvas 画布
-     * @param width 宽度
+     * @param width  宽度
      * @param height 高度
      */
     protected void drawRipple(Canvas canvas, int width, int height) {
@@ -248,7 +254,7 @@ public class BezierRadarHeader extends SimpleComponent implements RefreshHeader 
         animatorDotAlpha.setInterpolator(interpolatorDecelerate);
         animatorRadarScale.addUpdateListener(new AnimatorUpdater(PROPERTY_RADAR_SCALE));
         //雷达旋转
-        ValueAnimator mRadarAnimator = ValueAnimator.ofInt(0,360);
+        ValueAnimator mRadarAnimator = ValueAnimator.ofInt(0, 360);
         mRadarAnimator.setDuration(720);
         mRadarAnimator.setRepeatCount(ValueAnimator.INFINITE);
         mRadarAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
@@ -260,8 +266,8 @@ public class BezierRadarHeader extends SimpleComponent implements RefreshHeader 
         //贝塞尔弹性动画
         ValueAnimator animatorWave = ValueAnimator.ofInt(
                 mWaveHeight, 0,
-                -(int)(mWaveHeight *0.8f),0,
-                -(int)(mWaveHeight *0.4f),0);
+                -(int) (mWaveHeight * 0.8f), 0,
+                -(int) (mWaveHeight * 0.4f), 0);
         animatorWave.addUpdateListener(new AnimatorUpdater(PROPERTY_WAVE_HEIGHT));
         animatorWave.setInterpolator(new SmartUtil(SmartUtil.INTERPOLATOR_DECELERATE));
         animatorWave.setDuration(800);
@@ -302,8 +308,9 @@ public class BezierRadarHeader extends SimpleComponent implements RefreshHeader 
         }
     }
 
-    @Override@Deprecated
-    public void setPrimaryColors(@ColorInt int ... colors) {
+    @Override
+    @Deprecated
+    public void setPrimaryColors(@ColorInt int... colors) {
         if (colors.length > 0 && !mManualPrimaryColor) {
             setPrimaryColor(colors[0]);
             mManualPrimaryColor = false;
@@ -371,9 +378,11 @@ public class BezierRadarHeader extends SimpleComponent implements RefreshHeader 
     protected class AnimatorUpdater implements ValueAnimator.AnimatorUpdateListener {
 
         byte propertyName;
+
         AnimatorUpdater(byte name) {
             this.propertyName = name;
         }
+
         @Override
         public void onAnimationUpdate(ValueAnimator animation) {
             if (PROPERTY_RADAR_SCALE == propertyName) {
