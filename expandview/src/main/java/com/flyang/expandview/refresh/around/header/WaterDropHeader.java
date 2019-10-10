@@ -30,9 +30,11 @@ import static android.view.View.MeasureSpec.makeMeasureSpec;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 /**
- * WaterDropHeader
- * Created by scwang on 2017/5/31.
- * from https://github.com/THEONE10211024/WaterDropListView
+ * @author caoyangfei
+ * @ClassName WaterDropHeader
+ * @date 2019/10/10
+ * ------------- Description -------------
+ * 苹果水滴
  */
 public class WaterDropHeader extends SimpleComponent implements RefreshHeader {
 
@@ -75,7 +77,7 @@ public class WaterDropHeader extends SimpleComponent implements RefreshHeader {
         mProgress = new MaterialProgressDrawable(mImageView);
         mProgress.setBackgroundColor(0xffffffff);
         mProgress.setAlpha(255);
-        mProgress.setColorSchemeColors(0xffffffff,0xff0099cc,0xffff4444,0xff669900,0xffaa66cc,0xffff8800);
+        mProgress.setColorSchemeColors(0xffffffff, 0xff0099cc, 0xffff4444, 0xff669900, 0xffaa66cc, 0xffff8800);
         mImageView.setImageDrawable(mProgress);
         thisGroup.addView(mImageView, SmartUtil.dp2px(30), SmartUtil.dp2px(30));
     }
@@ -133,10 +135,10 @@ public class WaterDropHeader extends SimpleComponent implements RefreshHeader {
         if (mState == RefreshState.Refreshing) {
             canvas.save();
             canvas.translate(
-                    thisView.getWidth()/2f-progressDrawable.getBounds().width()/2f,
+                    thisView.getWidth() / 2f - progressDrawable.getBounds().width() / 2f,
                     mWaterDropView.getMaxCircleRadius()
-                            +dropView.getPaddingTop()
-                            -progressDrawable.getBounds().height()/2f
+                            + dropView.getPaddingTop()
+                            - progressDrawable.getBounds().height() / 2f
             );
             progressDrawable.draw(canvas);
             canvas.restore();
@@ -237,8 +239,9 @@ public class WaterDropHeader extends SimpleComponent implements RefreshHeader {
      * @param colors 对应Xml中配置的 refreshPrimaryColor refreshAccentColor
      * @deprecated 请使用 {@link RefreshLayout#setPrimaryColorsId(int...)}
      */
-    @Override@Deprecated
-    public void setPrimaryColors(@ColorInt int ... colors) {
+    @Override
+    @Deprecated
+    public void setPrimaryColors(@ColorInt int... colors) {
         if (colors.length > 0) {
             mWaterDropView.setIndicatorColor(colors[0]);
         }

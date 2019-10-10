@@ -38,7 +38,6 @@
 
         <com.flyang.view.layout.refresh.around.ClassicsFooter
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srlClassicsSpinnerStyle="FixedBehind" />
+            android:layout_height="wrap_content" />
     </com.flyang.demo.widget.SmartRefreshHorizontal>
 </LinearLayout>

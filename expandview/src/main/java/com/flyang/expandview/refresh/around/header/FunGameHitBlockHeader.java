@@ -19,8 +19,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by scwang on 2018/2/29.
- * from https://github.com/Hitomis/FunGameRefresh
+ * @author caoyangfei
+ * @ClassName FunGameHitBlockHeader
+ * @date 2019/10/10
+ * ------------- Description -------------
+ * 打砖块
  */
 public class FunGameHitBlockHeader extends FunGameView {
 
@@ -149,6 +152,7 @@ public class FunGameHitBlockHeader extends FunGameView {
             pointList.clear();
         }
     }
+
     /**
      * 检查小球是否撞击到挡板
      *

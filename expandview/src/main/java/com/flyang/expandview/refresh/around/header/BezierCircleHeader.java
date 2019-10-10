@@ -21,11 +21,12 @@ import com.flyang.view.layout.refresh.inter.RefreshLayout;
 import com.flyang.view.layout.refresh.simple.SimpleComponent;
 import com.flyang.view.layout.refresh.util.SmartUtil;
 
-
 /**
- * CircleRefresh
- * Created by scwang on 2018/7/18.
- * from https://github.com/tuesda/CircleRefreshLayout
+ * @author caoyangfei
+ * @ClassName BezierCircleHeader
+ * @date 2019/10/10
+ * ------------- Description -------------
+ * 贝塞尔曲线类雷达
  */
 public class BezierCircleHeader extends SimpleComponent implements RefreshHeader {
 

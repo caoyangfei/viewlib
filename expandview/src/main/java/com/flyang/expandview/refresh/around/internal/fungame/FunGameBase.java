@@ -21,8 +21,11 @@ import com.flyang.view.layout.refresh.util.SmartUtil;
 import static android.view.MotionEvent.ACTION_MASK;
 
 /**
- * 游戏 header
- * Created by scwang on 2017/6/17.
+ * @author caoyangfei
+ * @ClassName FunGameBase
+ * @date 2019/10/10
+ * ------------- Description -------------
+ * 游戏
  */
 @SuppressLint("RestrictedApi")
 public abstract class FunGameBase extends SimpleComponent implements RefreshHeader {
@@ -109,7 +112,7 @@ public abstract class FunGameBase extends SimpleComponent implements RefreshHead
 //            enableLoadMore = mRefreshKernel.getRefreshLayout().isEnableLoadMore();
 //            mRefreshKernel.getRefreshLayout().setEnableLoadMore(false);
             View contentView = mRefreshContent.getView();
-            ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams)contentView.getLayoutParams();
+            ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) contentView.getLayoutParams();
             params.topMargin += mHeaderHeight;
             contentView.setLayoutParams(params);
         }
@@ -132,7 +135,7 @@ public abstract class FunGameBase extends SimpleComponent implements RefreshHead
                 mRefreshKernel.moveSpinner(mHeaderHeight, true);
             }
             View contentView = mRefreshContent.getView();
-            ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams)contentView.getLayoutParams();
+            ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) contentView.getLayoutParams();
             params.topMargin -= mHeaderHeight;
             contentView.setLayoutParams(params);
         } else {

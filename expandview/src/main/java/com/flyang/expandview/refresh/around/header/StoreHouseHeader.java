@@ -28,9 +28,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * StoreHouseHeader
- * Created by scwang on 2017/5/31.
- * from https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh
+ * @author caoyangfei
+ * @ClassName StoreHouseHeader
+ * @date 2019/10/10
+ * ------------- Description -------------
+ * StoreHouse
  */
 @SuppressWarnings({"unused", "UnusedReturnValue", "SameParameterValue"})
 public class StoreHouseHeader extends SimpleComponent implements RefreshHeader {
@@ -310,10 +312,12 @@ public class StoreHouseHeader extends SimpleComponent implements RefreshHeader {
         mAniController.stop();
         if (success && mEnableFadeAnimation) {
             final View thisView = this;
-            thisView.startAnimation(new Animation() {{
-                super.setDuration(250);
-                super.setInterpolator(new AccelerateInterpolator());
-            }
+            thisView.startAnimation(new Animation() {
+                {
+                    super.setDuration(250);
+                    super.setInterpolator(new AccelerateInterpolator());
+                }
+
                 @Override
                 protected void applyTransformation(float interpolatedTime, Transformation t) {
                     final View thisView = StoreHouseHeader.this;
@@ -339,8 +343,9 @@ public class StoreHouseHeader extends SimpleComponent implements RefreshHeader {
      * @param colors 对应Xml中配置的 refreshPrimaryColor refreshAccentColor
      * @deprecated 请使用 {@link RefreshLayout#setPrimaryColorsId(int...)}
      */
-    @Override@Deprecated
-    public void setPrimaryColors(@ColorInt int ... colors) {
+    @Override
+    @Deprecated
+    public void setPrimaryColors(@ColorInt int... colors) {
         if (colors.length > 0) {
             mBackgroundColor = colors[0];
             if (mRefreshKernel != null) {

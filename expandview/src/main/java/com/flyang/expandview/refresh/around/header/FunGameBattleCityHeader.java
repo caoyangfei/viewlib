@@ -18,9 +18,11 @@ import java.util.Queue;
 import java.util.Random;
 
 /**
- * Created by scwang on 2018/3/09.
- * email:196425254@qq.com
- * from https://github.com/Hitomis/FunGameRefresh
+ * @author caoyangfei
+ * @ClassName FunGameBattleCityHeader
+ * @date 2019/10/10
+ * ------------- Description -------------
+ * 战争城市
  */
 public class FunGameBattleCityHeader extends FunGameView {
 
@@ -33,7 +35,7 @@ public class FunGameBattleCityHeader extends FunGameView {
     /**
      * 炮管尺寸所在tank尺寸的比率
      */
-    protected static final float TANK_BARREL_RATIO = 1/3.f;
+    protected static final float TANK_BARREL_RATIO = 1 / 3.f;
 
     /**
      * 默认子弹之间空隙间距
@@ -100,7 +102,7 @@ public class FunGameBattleCityHeader extends FunGameView {
      * 当前前一颗子弹和后一颗子弹的间距值
      * 用于确定是否要发射新的一颗子弹
      */
-    protected int  offsetMBulletX;
+    protected int offsetMBulletX;
 
     /**
      * 当前漏掉的坦克数量
@@ -169,17 +171,19 @@ public class FunGameBattleCityHeader extends FunGameView {
 
     /**
      * 由index轨道下标从左边起始位置生成一个用于绘制敌方坦克的Rect
+     *
      * @param index 轨道下标
      * @return 敌方坦克矩阵
      */
     protected RectF generateEnemyTank(int index) {
-        float left = - (controllerSize + barrelSize);
+        float left = -(controllerSize + barrelSize);
         float top = index * (controllerSize) + DIVIDING_LINE_SIZE;
         return new RectF(left, top, left + barrelSize * 2.5f, top + controllerSize);
     }
 
     /**
      * 由Y坐标获取该坐标所在轨道的下标
+     *
      * @param y 坐标Y值
      * @return 轨道下标
      */
@@ -187,11 +191,12 @@ public class FunGameBattleCityHeader extends FunGameView {
         int index = y / (mHeaderHeight / TANK_ROW_NUM);
         index = index >= TANK_ROW_NUM ? TANK_ROW_NUM - 1 : index;
         index = index < 0 ? 0 : index;
-        return  index;
+        return index;
     }
 
     /**
      * 判断是否消灭敌方坦克
+     *
      * @param point 单签子弹坐标点
      * @return 消灭：true, 反之：false
      */
@@ -219,14 +224,15 @@ public class FunGameBattleCityHeader extends FunGameView {
         wipeOutNum = 0;
 
         if (enemyTankSpace > 12)
-        enemyTankSpace -= 12;
+            enemyTankSpace -= 12;
 
         if (bulletSpace > 30)
-        bulletSpace -= 30;
+            bulletSpace -= 30;
     }
 
     /**
      * 判断我方坦克是否与敌方坦克相撞
+     *
      * @param index 轨道下标
      * @param selfX 我方坦克所在坐标X值
      * @param selfY 我方坦克矩阵的top 或者 bottom 值
@@ -243,6 +249,7 @@ public class FunGameBattleCityHeader extends FunGameView {
 
     /**
      * 随机定位一个轨道下标值
+     *
      * @return 轨道下标
      */
     protected int appearanceOption() {
@@ -253,22 +260,23 @@ public class FunGameBattleCityHeader extends FunGameView {
     //<editor-fold desc="绘制方法">
     @Override
     protected void drawGame(Canvas canvas, int width, int height) {
-        drawSelfTank(canvas,width);
+        drawSelfTank(canvas, width);
         if (status == STATUS_GAME_PLAY || status == STATUS_GAME_FINISHED || status == STATUS_GAME_FAIL) {
-            drawEnemyTank(canvas,width);
-            drawBulletPath(canvas,width);
+            drawEnemyTank(canvas, width);
+            drawBulletPath(canvas, width);
         }
         final View thisView = this;
         if (thisView.isInEditMode()) {
             drawTank(canvas, new RectF(controllerSize, 0, controllerSize * 2, controllerSize));
-            drawTank(canvas, new RectF(0, controllerSize, controllerSize, controllerSize*2));
-            drawTank(canvas, new RectF(controllerSize * 3, controllerSize * 2, controllerSize * 4, controllerSize*3));
+            drawTank(canvas, new RectF(0, controllerSize, controllerSize, controllerSize * 2));
+            drawTank(canvas, new RectF(controllerSize * 3, controllerSize * 2, controllerSize * 4, controllerSize * 3));
         }
     }
 
     /**
      * 绘制子弹路径
-     * @param width 华埠宽度
+     *
+     * @param width  华埠宽度
      * @param canvas 默认画布
      */
     protected void drawBulletPath(Canvas canvas, int width) {
@@ -307,8 +315,9 @@ public class FunGameBattleCityHeader extends FunGameView {
 
     /**
      * 绘制子弹
+     *
      * @param canvas 默认画布
-     * @param point 子弹圆心坐标点
+     * @param point  子弹圆心坐标点
      */
     protected void drawBullet(Canvas canvas, Point point) {
         point.x -= bulletSpeed;
@@ -317,7 +326,8 @@ public class FunGameBattleCityHeader extends FunGameView {
 
     /**
      * 绘制我方坦克
-     * @param width 华埠宽度
+     *
+     * @param width  华埠宽度
      * @param canvas 默认画布
      */
     protected void drawSelfTank(Canvas canvas, int width) {
@@ -345,8 +355,9 @@ public class FunGameBattleCityHeader extends FunGameView {
 
     /**
      * 绘制三条轨道上的敌方坦克
+     *
      * @param canvas 默认画布
-     * @param width 华埠宽度
+     * @param width  华埠宽度
      */
     protected void drawEnemyTank(Canvas canvas, int width) {
         mPaint.setColor(lModelColor);
@@ -389,8 +400,9 @@ public class FunGameBattleCityHeader extends FunGameView {
 
     /**
      * 绘制一辆敌方坦克
+     *
      * @param canvas 默认画布
-     * @param rectF 坦克矩阵
+     * @param rectF  坦克矩阵
      */
     protected void drawTank(Canvas canvas, RectF rectF) {
         rectF.set(rectF.left + enemySpeed, rectF.top, rectF.right + enemySpeed, rectF.bottom);

@@ -285,7 +285,7 @@
         <item name="refreshDisableContentWhenLoading">false</item>
     </style>
 
-    <!--刷新布局子控件设置属性-->
+    <!--刷新布局子控件header设置属性-->
     <declare-styleable name="SmartRefreshLayout_Layout">
         <attr name="layout_refreshSpinnerStyle" />
         <attr name="layout_refreshBackgroundColor" format="color" />
