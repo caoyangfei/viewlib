@@ -1,6 +1,7 @@
 package com.flyang.expandview.refresh.around.header;
 
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -77,8 +78,8 @@ public class WaveSwipeHeader extends SimpleComponent implements RefreshHeader {
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.WaveSwipeHeader);
 
-        int primaryColor = ta.getColor(R.styleable.WaveSwipeHeader_srlPrimaryColor, 0);
-        int accentColor = ta.getColor(R.styleable.WaveSwipeHeader_srlAccentColor, 0);
+        int primaryColor = ta.getColor(R.styleable.WaveSwipeHeader_refreshPrimaryColor, 0);
+        int accentColor = ta.getColor(R.styleable.WaveSwipeHeader_refreshAccentColor, 0);
 
         if (ta.hasValue(R.styleable.WaveSwipeHeader_wshPrimaryColor)) {
             primaryColor = ta.getColor(R.styleable.WaveSwipeHeader_wshPrimaryColor, 0);
@@ -95,9 +96,9 @@ public class WaveSwipeHeader extends SimpleComponent implements RefreshHeader {
         } else {
             mProgress.setColorSchemeColors(0xffffffff);
         }
-        if (ta.hasValue(R.styleable.WaveSwipeHeader_srlShadowRadius)) {
-            int radius = ta.getDimensionPixelOffset(R.styleable.WaveSwipeHeader_srlShadowRadius, 0);
-            int color = ta.getColor(R.styleable.WaveSwipeHeader_srlShadowColor, 0xff000000);
+        if (ta.hasValue(R.styleable.WaveSwipeHeader_refreshShadowRadius)) {
+            int radius = ta.getDimensionPixelOffset(R.styleable.WaveSwipeHeader_refreshShadowRadius, 0);
+            int color = ta.getColor(R.styleable.WaveSwipeHeader_refreshShadowColor, 0xff000000);
             mWaveView.setShadow(radius, color);
         }
         if (ta.hasValue(R.styleable.WaveSwipeHeader_wshShadowRadius)) {
@@ -336,7 +337,7 @@ public class WaveSwipeHeader extends SimpleComponent implements RefreshHeader {
     }
 
     /**
-     * @param colors 对应Xml中配置的 srlPrimaryColor srlAccentColor
+     * @param colors 对应Xml中配置的 refreshPrimaryColor refreshAccentColor
      * @deprecated 请使用 {@link RefreshLayout#setPrimaryColorsId(int...)}
      */
     @Override@Deprecated
@@ -373,6 +374,7 @@ public class WaveSwipeHeader extends SimpleComponent implements RefreshHeader {
      *
      * @author jmatsu
      */
+    @SuppressLint("AppCompatCustomView")
     protected class ProgressAnimationImageView extends ImageView {
 
         /**

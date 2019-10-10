@@ -84,17 +84,17 @@ public class StoreHouseHeader extends SimpleComponent implements RefreshHeader {
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.StoreHouseHeader);
 
-        mLineWidth = ta.getDimensionPixelOffset(R.styleable.StoreHouseHeader_srlLineWidth, mLineWidth);
-        mDropHeight = ta.getDimensionPixelOffset(R.styleable.StoreHouseHeader_srlDropHeight, mDropHeight);
-        mEnableFadeAnimation = ta.getBoolean(R.styleable.StoreHouseHeader_srlEnableFadeAnimation, mEnableFadeAnimation);
+        mLineWidth = ta.getDimensionPixelOffset(R.styleable.StoreHouseHeader_refreshLineWidth, mLineWidth);
+        mDropHeight = ta.getDimensionPixelOffset(R.styleable.StoreHouseHeader_refreshDropHeight, mDropHeight);
+        mEnableFadeAnimation = ta.getBoolean(R.styleable.StoreHouseHeader_refreshEnableFadeAnimation, mEnableFadeAnimation);
 
         mLineWidth = ta.getDimensionPixelOffset(R.styleable.StoreHouseHeader_shhLineWidth, mLineWidth);
         mDropHeight = ta.getDimensionPixelOffset(R.styleable.StoreHouseHeader_shhDropHeight, mDropHeight);
         mEnableFadeAnimation = ta.getBoolean(R.styleable.StoreHouseHeader_shhEnableFadeAnimation, mEnableFadeAnimation);
         if (ta.hasValue(R.styleable.StoreHouseHeader_shhText)) {
             initWithString(ta.getString(R.styleable.StoreHouseHeader_shhText));
-        } else if (ta.hasValue(R.styleable.StoreHouseHeader_srlText)) {
-            initWithString(ta.getString(R.styleable.StoreHouseHeader_srlText));
+        } else if (ta.hasValue(R.styleable.StoreHouseHeader_refreshText)) {
+            initWithString(ta.getString(R.styleable.StoreHouseHeader_refreshText));
         } else {
             initWithString("StoreHouse");
         }
@@ -336,7 +336,7 @@ public class StoreHouseHeader extends SimpleComponent implements RefreshHeader {
     }
 
     /**
-     * @param colors 对应Xml中配置的 srlPrimaryColor srlAccentColor
+     * @param colors 对应Xml中配置的 refreshPrimaryColor refreshAccentColor
      * @deprecated 请使用 {@link RefreshLayout#setPrimaryColorsId(int...)}
      */
     @Override@Deprecated

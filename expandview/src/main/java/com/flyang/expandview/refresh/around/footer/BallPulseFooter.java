@@ -66,13 +66,13 @@ public class BallPulseFooter extends SimpleComponent implements RefreshFooter {
         mPaint.setAntiAlias(true);
 
         mSpinnerStyle = SpinnerStyle.Translate;
-        mSpinnerStyle = SpinnerStyle.values[ta.getInt(R.styleable.BallPulseFooter_srlClassicsSpinnerStyle, mSpinnerStyle.ordinal)];
+        mSpinnerStyle = SpinnerStyle.values[ta.getInt(R.styleable.BallPulseFooter_refreshClassicsSpinnerStyle, mSpinnerStyle.ordinal)];
 
-        if (ta.hasValue(R.styleable.BallPulseFooter_srlNormalColor)) {
-            setNormalColor(ta.getColor(R.styleable.BallPulseFooter_srlNormalColor, 0));
+        if (ta.hasValue(R.styleable.BallPulseFooter_refreshNormalColor)) {
+            setNormalColor(ta.getColor(R.styleable.BallPulseFooter_refreshNormalColor, 0));
         }
-        if (ta.hasValue(R.styleable.BallPulseFooter_srlAnimatingColor)) {
-            setAnimatingColor(ta.getColor(R.styleable.BallPulseFooter_srlAnimatingColor, 0));
+        if (ta.hasValue(R.styleable.BallPulseFooter_refreshAnimatingColor)) {
+            setAnimatingColor(ta.getColor(R.styleable.BallPulseFooter_refreshAnimatingColor, 0));
         }
 
         ta.recycle();

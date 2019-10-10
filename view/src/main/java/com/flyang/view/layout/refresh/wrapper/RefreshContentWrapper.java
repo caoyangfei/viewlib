@@ -216,7 +216,7 @@ public class RefreshContentWrapper implements RefreshContent, CoordinatorLayoutL
             kernel.getRefreshLayout().getLayout().addView(frameLayout, index, layoutParams);
             mContentView = frameLayout;
             if (fixedHeader != null) {
-                fixedHeader.setTag(R.id.srl_tag, "fixed-top");
+                fixedHeader.setTag(R.id.refresh_tag, "fixed-top");
                 ViewGroup.LayoutParams lp = fixedHeader.getLayoutParams();
                 ViewGroup parent = (ViewGroup) fixedHeader.getParent();
                 index = parent.indexOfChild(fixedHeader);
@@ -226,7 +226,7 @@ public class RefreshContentWrapper implements RefreshContent, CoordinatorLayoutL
                 frameLayout.addView(fixedHeader, 1, lp);
             }
             if (fixedFooter != null) {
-                fixedFooter.setTag(R.id.srl_tag,"fixed-bottom");
+                fixedFooter.setTag(R.id.refresh_tag,"fixed-bottom");
                 ViewGroup.LayoutParams lp = fixedFooter.getLayoutParams();
                 ViewGroup parent = (ViewGroup) fixedFooter.getParent();
                 index = parent.indexOfChild(fixedFooter);

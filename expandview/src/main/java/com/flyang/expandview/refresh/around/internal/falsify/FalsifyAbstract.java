@@ -46,7 +46,7 @@ public abstract class FalsifyAbstract extends SimpleComponent implements Refresh
             canvas.drawRect(d, d, thisView.getWidth() - d, thisView.getBottom() - d, paint);
 
             TextView textView = new TextView(context);
-            textView.setText(context.getString(R.string.srl_component_falsify, getClass().getSimpleName(), SmartUtil.px2dp(thisView.getHeight())));
+            textView.setText(context.getString(R.string.refresh_component_falsify, getClass().getSimpleName(), SmartUtil.px2dp(thisView.getHeight())));
             textView.setTextColor(0xcccccccc);
             textView.setGravity(Gravity.CENTER);
             //noinspection UnnecessaryLocalVariable

@@ -44,7 +44,7 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 @SuppressWarnings({"unused", "UnusedReturnValue"})
 public class ClassicsHeader extends ClassicsAbstract<ClassicsHeader> implements RefreshHeader {
 
-    public static final int ID_TEXT_UPDATE = R.id.srl_classics_update;
+    public static final int ID_TEXT_UPDATE = R.id.refresh_classics_update;
 
     public static String REFRESH_HEADER_PULLING = null;//"下拉可以刷新";
     public static String REFRESH_HEADER_REFRESHING = null;//"正在刷新...";
@@ -81,128 +81,128 @@ public class ClassicsHeader extends ClassicsAbstract<ClassicsHeader> implements 
     public ClassicsHeader(Context context, AttributeSet attrs) {
         super(context, attrs, 0);
 
-        View.inflate(context, R.layout.srl_classics_header, this);
+        View.inflate(context, R.layout.refresh_classics_header, this);
 
         final View thisView = this;
-        final View arrowView = mArrowView = thisView.findViewById(R.id.srl_classics_arrow);
-        final View updateView = mLastUpdateText = thisView.findViewById(R.id.srl_classics_update);
-        final View progressView = mProgressView = thisView.findViewById(R.id.srl_classics_progress);
+        final View arrowView = mArrowView = thisView.findViewById(R.id.refresh_classics_arrow);
+        final View updateView = mLastUpdateText = thisView.findViewById(R.id.refresh_classics_update);
+        final View progressView = mProgressView = thisView.findViewById(R.id.refresh_classics_progress);
 
-        mTitleText = thisView.findViewById(R.id.srl_classics_title);
+        mTitleText = thisView.findViewById(R.id.refresh_classics_title);
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.ClassicsHeader);
 
         RelativeLayout.LayoutParams lpArrow = (RelativeLayout.LayoutParams) arrowView.getLayoutParams();
         RelativeLayout.LayoutParams lpProgress = (RelativeLayout.LayoutParams) progressView.getLayoutParams();
         LinearLayout.LayoutParams lpUpdateText = new LinearLayout.LayoutParams(WRAP_CONTENT, WRAP_CONTENT);
-        lpUpdateText.topMargin = ta.getDimensionPixelSize(R.styleable.ClassicsHeader_srlTextTimeMarginTop, SmartUtil.dp2px(0));
-        lpProgress.rightMargin = ta.getDimensionPixelSize(R.styleable.ClassicsHeader_srlDrawableMarginRight, SmartUtil.dp2px(20));
+        lpUpdateText.topMargin = ta.getDimensionPixelSize(R.styleable.ClassicsHeader_refreshTextTimeMarginTop, SmartUtil.dp2px(0));
+        lpProgress.rightMargin = ta.getDimensionPixelSize(R.styleable.ClassicsHeader_refreshDrawableMarginRight, SmartUtil.dp2px(20));
         lpArrow.rightMargin = lpProgress.rightMargin;
 
-        lpArrow.width = ta.getLayoutDimension(R.styleable.ClassicsHeader_srlDrawableArrowSize, lpArrow.width);
-        lpArrow.height = ta.getLayoutDimension(R.styleable.ClassicsHeader_srlDrawableArrowSize, lpArrow.height);
-        lpProgress.width = ta.getLayoutDimension(R.styleable.ClassicsHeader_srlDrawableProgressSize, lpProgress.width);
-        lpProgress.height = ta.getLayoutDimension(R.styleable.ClassicsHeader_srlDrawableProgressSize, lpProgress.height);
+        lpArrow.width = ta.getLayoutDimension(R.styleable.ClassicsHeader_refreshDrawableArrowSize, lpArrow.width);
+        lpArrow.height = ta.getLayoutDimension(R.styleable.ClassicsHeader_refreshDrawableArrowSize, lpArrow.height);
+        lpProgress.width = ta.getLayoutDimension(R.styleable.ClassicsHeader_refreshDrawableProgressSize, lpProgress.width);
+        lpProgress.height = ta.getLayoutDimension(R.styleable.ClassicsHeader_refreshDrawableProgressSize, lpProgress.height);
 
-        lpArrow.width = ta.getLayoutDimension(R.styleable.ClassicsHeader_srlDrawableSize, lpArrow.width);
-        lpArrow.height = ta.getLayoutDimension(R.styleable.ClassicsHeader_srlDrawableSize, lpArrow.height);
-        lpProgress.width = ta.getLayoutDimension(R.styleable.ClassicsHeader_srlDrawableSize, lpProgress.width);
-        lpProgress.height = ta.getLayoutDimension(R.styleable.ClassicsHeader_srlDrawableSize, lpProgress.height);
+        lpArrow.width = ta.getLayoutDimension(R.styleable.ClassicsHeader_refreshDrawableSize, lpArrow.width);
+        lpArrow.height = ta.getLayoutDimension(R.styleable.ClassicsHeader_refreshDrawableSize, lpArrow.height);
+        lpProgress.width = ta.getLayoutDimension(R.styleable.ClassicsHeader_refreshDrawableSize, lpProgress.width);
+        lpProgress.height = ta.getLayoutDimension(R.styleable.ClassicsHeader_refreshDrawableSize, lpProgress.height);
 
-        mFinishDuration = ta.getInt(R.styleable.ClassicsHeader_srlFinishDuration, mFinishDuration);
-        mEnableLastTime = ta.getBoolean(R.styleable.ClassicsHeader_srlEnableLastTime, mEnableLastTime);
-        mSpinnerStyle = SpinnerStyle.values[ta.getInt(R.styleable.ClassicsHeader_srlClassicsSpinnerStyle, mSpinnerStyle.ordinal)];
+        mFinishDuration = ta.getInt(R.styleable.ClassicsHeader_refreshFinishDuration, mFinishDuration);
+        mEnableLastTime = ta.getBoolean(R.styleable.ClassicsHeader_refreshEnableLastTime, mEnableLastTime);
+        mSpinnerStyle = SpinnerStyle.values[ta.getInt(R.styleable.ClassicsHeader_refreshClassicsSpinnerStyle, mSpinnerStyle.ordinal)];
 
-        if (ta.hasValue(R.styleable.ClassicsHeader_srlDrawableArrow)) {
-            mArrowView.setImageDrawable(ta.getDrawable(R.styleable.ClassicsHeader_srlDrawableArrow));
+        if (ta.hasValue(R.styleable.ClassicsHeader_refreshDrawableArrow)) {
+            mArrowView.setImageDrawable(ta.getDrawable(R.styleable.ClassicsHeader_refreshDrawableArrow));
         } else if (mArrowView.getDrawable() == null) {
             mArrowDrawable = new ArrowDrawable();
             mArrowDrawable.setColor(0xff666666);
             mArrowView.setImageDrawable(mArrowDrawable);
         }
 
-        if (ta.hasValue(R.styleable.ClassicsHeader_srlDrawableProgress)) {
-            mProgressView.setImageDrawable(ta.getDrawable(R.styleable.ClassicsHeader_srlDrawableProgress));
+        if (ta.hasValue(R.styleable.ClassicsHeader_refreshDrawableProgress)) {
+            mProgressView.setImageDrawable(ta.getDrawable(R.styleable.ClassicsHeader_refreshDrawableProgress));
         } else if (mProgressView.getDrawable() == null) {
             mProgressDrawable = new ProgressDrawable();
             mProgressDrawable.setColor(0xff666666);
             mProgressView.setImageDrawable(mProgressDrawable);
         }
 
-        if (ta.hasValue(R.styleable.ClassicsHeader_srlTextSizeTitle)) {
-            mTitleText.setTextSize(TypedValue.COMPLEX_UNIT_PX, ta.getDimensionPixelSize(R.styleable.ClassicsHeader_srlTextSizeTitle, SmartUtil.dp2px(16)));
+        if (ta.hasValue(R.styleable.ClassicsHeader_refreshTextSizeTitle)) {
+            mTitleText.setTextSize(TypedValue.COMPLEX_UNIT_PX, ta.getDimensionPixelSize(R.styleable.ClassicsHeader_refreshTextSizeTitle, SmartUtil.dp2px(16)));
 //        } else {
 //            mTitleText.setTextSize(16);
         }
 
-        if (ta.hasValue(R.styleable.ClassicsHeader_srlTextSizeTime)) {
-            mLastUpdateText.setTextSize(TypedValue.COMPLEX_UNIT_PX, ta.getDimensionPixelSize(R.styleable.ClassicsHeader_srlTextSizeTime, SmartUtil.dp2px(12)));
+        if (ta.hasValue(R.styleable.ClassicsHeader_refreshTextSizeTime)) {
+            mLastUpdateText.setTextSize(TypedValue.COMPLEX_UNIT_PX, ta.getDimensionPixelSize(R.styleable.ClassicsHeader_refreshTextSizeTime, SmartUtil.dp2px(12)));
 //        } else {
 //            mLastUpdateText.setTextSize(12);
         }
 
-        if (ta.hasValue(R.styleable.ClassicsHeader_srlPrimaryColor)) {
-            super.setPrimaryColor(ta.getColor(R.styleable.ClassicsHeader_srlPrimaryColor, 0));
+        if (ta.hasValue(R.styleable.ClassicsHeader_refreshPrimaryColor)) {
+            super.setPrimaryColor(ta.getColor(R.styleable.ClassicsHeader_refreshPrimaryColor, 0));
         }
-        if (ta.hasValue(R.styleable.ClassicsHeader_srlAccentColor)) {
-            setAccentColor(ta.getColor(R.styleable.ClassicsHeader_srlAccentColor, 0));
+        if (ta.hasValue(R.styleable.ClassicsHeader_refreshAccentColor)) {
+            setAccentColor(ta.getColor(R.styleable.ClassicsHeader_refreshAccentColor, 0));
         }
 
-        if (ta.hasValue(R.styleable.ClassicsHeader_srlTextPulling)) {
-            mTextPulling = ta.getString(R.styleable.ClassicsHeader_srlTextPulling);
+        if (ta.hasValue(R.styleable.ClassicsHeader_refreshTextPulling)) {
+            mTextPulling = ta.getString(R.styleable.ClassicsHeader_refreshTextPulling);
         } else if (REFRESH_HEADER_PULLING != null) {
             mTextPulling = REFRESH_HEADER_PULLING;
         } else {
-            mTextPulling = context.getString(R.string.srl_header_pulling);
+            mTextPulling = context.getString(R.string.refresh_header_pulling);
         }
-        if (ta.hasValue(R.styleable.ClassicsHeader_srlTextLoading)) {
-            mTextLoading = ta.getString(R.styleable.ClassicsHeader_srlTextLoading);
+        if (ta.hasValue(R.styleable.ClassicsHeader_refreshTextLoading)) {
+            mTextLoading = ta.getString(R.styleable.ClassicsHeader_refreshTextLoading);
         } else if (REFRESH_HEADER_LOADING != null) {
             mTextLoading = REFRESH_HEADER_LOADING;
         } else {
-            mTextLoading = context.getString(R.string.srl_header_loading);
+            mTextLoading = context.getString(R.string.refresh_header_loading);
         }
-        if (ta.hasValue(R.styleable.ClassicsHeader_srlTextRelease)) {
-            mTextRelease = ta.getString(R.styleable.ClassicsHeader_srlTextRelease);
+        if (ta.hasValue(R.styleable.ClassicsHeader_refreshTextRelease)) {
+            mTextRelease = ta.getString(R.styleable.ClassicsHeader_refreshTextRelease);
         } else if (REFRESH_HEADER_RELEASE != null) {
             mTextRelease = REFRESH_HEADER_RELEASE;
         } else {
-            mTextRelease = context.getString(R.string.srl_header_release);
+            mTextRelease = context.getString(R.string.refresh_header_release);
         }
-        if (ta.hasValue(R.styleable.ClassicsHeader_srlTextFinish)) {
-            mTextFinish = ta.getString(R.styleable.ClassicsHeader_srlTextFinish);
+        if (ta.hasValue(R.styleable.ClassicsHeader_refreshTextFinish)) {
+            mTextFinish = ta.getString(R.styleable.ClassicsHeader_refreshTextFinish);
         } else if (REFRESH_HEADER_FINISH != null) {
             mTextFinish = REFRESH_HEADER_FINISH;
         } else {
-            mTextFinish = context.getString(R.string.srl_header_finish);
+            mTextFinish = context.getString(R.string.refresh_header_finish);
         }
-        if (ta.hasValue(R.styleable.ClassicsHeader_srlTextFailed)) {
-            mTextFailed = ta.getString(R.styleable.ClassicsHeader_srlTextFailed);
+        if (ta.hasValue(R.styleable.ClassicsHeader_refreshTextFailed)) {
+            mTextFailed = ta.getString(R.styleable.ClassicsHeader_refreshTextFailed);
         } else if (REFRESH_HEADER_FAILED != null) {
             mTextFailed = REFRESH_HEADER_FAILED;
         } else {
-            mTextFailed = context.getString(R.string.srl_header_failed);
+            mTextFailed = context.getString(R.string.refresh_header_failed);
         }
-        if (ta.hasValue(R.styleable.ClassicsHeader_srlTextSecondary)) {
-            mTextSecondary = ta.getString(R.styleable.ClassicsHeader_srlTextSecondary);
+        if (ta.hasValue(R.styleable.ClassicsHeader_refreshTextSecondary)) {
+            mTextSecondary = ta.getString(R.styleable.ClassicsHeader_refreshTextSecondary);
         } else if (REFRESH_HEADER_SECONDARY != null) {
             mTextSecondary = REFRESH_HEADER_SECONDARY;
         } else {
-            mTextSecondary = context.getString(R.string.srl_header_secondary);
+            mTextSecondary = context.getString(R.string.refresh_header_secondary);
         }
-        if (ta.hasValue(R.styleable.ClassicsHeader_srlTextRefreshing)) {
-            mTextRefreshing = ta.getString(R.styleable.ClassicsHeader_srlTextRefreshing);
+        if (ta.hasValue(R.styleable.ClassicsHeader_refreshTextRefreshing)) {
+            mTextRefreshing = ta.getString(R.styleable.ClassicsHeader_refreshTextRefreshing);
         } else if (REFRESH_HEADER_REFRESHING != null) {
             mTextRefreshing = REFRESH_HEADER_REFRESHING;
         } else {
-            mTextRefreshing = context.getString(R.string.srl_header_refreshing);
+            mTextRefreshing = context.getString(R.string.refresh_header_refreshing);
         }
-        if (ta.hasValue(R.styleable.ClassicsHeader_srlTextUpdate)) {
-            mTextUpdate = ta.getString(R.styleable.ClassicsHeader_srlTextUpdate);
+        if (ta.hasValue(R.styleable.ClassicsHeader_refreshTextUpdate)) {
+            mTextUpdate = ta.getString(R.styleable.ClassicsHeader_refreshTextUpdate);
         } else if (REFRESH_HEADER_UPDATE != null) {
             mTextUpdate = REFRESH_HEADER_UPDATE;
         } else {
-            mTextUpdate = context.getString(R.string.srl_header_update);
+            mTextUpdate = context.getString(R.string.refresh_header_update);
         }
         mLastUpdateFormat = new SimpleDateFormat(mTextUpdate, Locale.getDefault());
 

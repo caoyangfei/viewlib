@@ -96,17 +96,17 @@ public abstract class FunGameView<T extends FunGameView> extends FunGameBase {
         mMaskTextBottom = thisView.getResources().getString(R.string.fgh_mask_bottom);//"拖动控制游戏";//"Scroll to move handle";
         mMaskTextTopPull = thisView.getResources().getString(R.string.fgh_mask_top_pull);//"下拉即将展开";//"Pull To Break Out!";
         mMaskTextTopRelease = thisView.getResources().getString(R.string.fgh_mask_top_release);//"放手即将展开";//"Release To Break Out!";
-        if (ta.hasValue(R.styleable.FunGameView_srlMaskTextTop)) {
-            mMaskTextTopPull = mMaskTextTopRelease = ta.getString(R.styleable.FunGameView_srlMaskTextTop);
+        if (ta.hasValue(R.styleable.FunGameView_refreshMaskTextTop)) {
+            mMaskTextTopPull = mMaskTextTopRelease = ta.getString(R.styleable.FunGameView_refreshMaskTextTop);
         }
-        if (ta.hasValue(R.styleable.FunGameView_srlMaskTextTopPull)) {
-            mMaskTextTopPull = ta.getString(R.styleable.FunGameView_srlMaskTextTopPull);
+        if (ta.hasValue(R.styleable.FunGameView_refreshMaskTextTopPull)) {
+            mMaskTextTopPull = ta.getString(R.styleable.FunGameView_refreshMaskTextTopPull);
         }
-        if (ta.hasValue(R.styleable.FunGameView_srlMaskTextTopRelease)) {
-            mMaskTextTopRelease = ta.getString(R.styleable.FunGameView_srlMaskTextTopRelease);
+        if (ta.hasValue(R.styleable.FunGameView_refreshMaskTextTopRelease)) {
+            mMaskTextTopRelease = ta.getString(R.styleable.FunGameView_refreshMaskTextTopRelease);
         }
-        if (ta.hasValue(R.styleable.FunGameView_srlMaskTextBottom)) {
-            mMaskTextBottom = ta.getString(R.styleable.FunGameView_srlMaskTextBottom);
+        if (ta.hasValue(R.styleable.FunGameView_refreshMaskTextBottom)) {
+            mMaskTextBottom = ta.getString(R.styleable.FunGameView_refreshMaskTextBottom);
         }
 
         if (ta.hasValue(R.styleable.FunGameView_fghMaskTextTop)) {
@@ -126,8 +126,8 @@ public abstract class FunGameView<T extends FunGameView> extends FunGameBase {
         int maskTextSizeTop = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16, metrics);
         int maskTextSizeBottom = maskTextSizeTop * 14 / 16;
 
-        maskTextSizeTop = ta.getDimensionPixelSize(R.styleable.FunGameView_srlMaskTextSizeTop, maskTextSizeTop);
-        maskTextSizeBottom = ta.getDimensionPixelSize(R.styleable.FunGameView_srlMaskTextSizeBottom, maskTextSizeBottom);
+        maskTextSizeTop = ta.getDimensionPixelSize(R.styleable.FunGameView_refreshMaskTextSizeTop, maskTextSizeTop);
+        maskTextSizeBottom = ta.getDimensionPixelSize(R.styleable.FunGameView_refreshMaskTextSizeBottom, maskTextSizeBottom);
 
         maskTextSizeTop = ta.getDimensionPixelSize(R.styleable.FunGameView_fghMaskTextSizeTop, maskTextSizeTop);
         maskTextSizeBottom = ta.getDimensionPixelSize(R.styleable.FunGameView_fghMaskTextSizeBottom, maskTextSizeBottom);
@@ -171,10 +171,10 @@ public abstract class FunGameView<T extends FunGameView> extends FunGameBase {
         mTextLoadingFinish = context.getString(R.string.fgh_text_loading_finish);
         mTextLoadingFailed = context.getString(R.string.fgh_text_loading_failed);
 
-        mBackColor = ta.getColor(R.styleable.FunGameView_srlBackColor, 0);
-        lModelColor = ta.getColor(R.styleable.FunGameView_srlLeftColor, Color.BLACK);
-        mModelColor = ta.getColor(R.styleable.FunGameView_srlMiddleColor, Color.BLACK);
-        rModelColor = ta.getColor(R.styleable.FunGameView_srlRightColor, 0xFFA5A5A5);
+        mBackColor = ta.getColor(R.styleable.FunGameView_refreshBackColor, 0);
+        lModelColor = ta.getColor(R.styleable.FunGameView_refreshLeftColor, Color.BLACK);
+        mModelColor = ta.getColor(R.styleable.FunGameView_refreshMiddleColor, Color.BLACK);
+        rModelColor = ta.getColor(R.styleable.FunGameView_refreshRightColor, 0xFFA5A5A5);
 
         if (ta.hasValue(R.styleable.FunGameView_fghBackColor)) {
             mBackColor = ta.getColor(R.styleable.FunGameView_fghBackColor, 0);
@@ -189,17 +189,17 @@ public abstract class FunGameView<T extends FunGameView> extends FunGameBase {
             rModelColor = ta.getColor(R.styleable.FunGameView_fghRightColor, 0xFFA5A5A5);
         }
 
-        if (ta.hasValue(R.styleable.FunGameView_srlTextGameOver)) {
-            mTextGameOver = ta.getString(R.styleable.FunGameView_srlTextGameOver);
+        if (ta.hasValue(R.styleable.FunGameView_refreshTextGameOver)) {
+            mTextGameOver = ta.getString(R.styleable.FunGameView_refreshTextGameOver);
         }
-        if (ta.hasValue(R.styleable.FunGameView_srlTextLoading)) {
-            mTextLoading = ta.getString(R.styleable.FunGameView_srlTextLoading);
+        if (ta.hasValue(R.styleable.FunGameView_refreshTextLoading)) {
+            mTextLoading = ta.getString(R.styleable.FunGameView_refreshTextLoading);
         }
-        if (ta.hasValue(R.styleable.FunGameView_srlTextLoadingFinished)) {
-            mTextLoadingFinish = ta.getString(R.styleable.FunGameView_srlTextLoadingFinished);
+        if (ta.hasValue(R.styleable.FunGameView_refreshTextLoadingFinished)) {
+            mTextLoadingFinish = ta.getString(R.styleable.FunGameView_refreshTextLoadingFinished);
         }
-        if (ta.hasValue(R.styleable.FunGameView_srlTextLoadingFailed)) {
-            mTextLoadingFailed = ta.getString(R.styleable.FunGameView_srlTextLoadingFailed);
+        if (ta.hasValue(R.styleable.FunGameView_refreshTextLoadingFailed)) {
+            mTextLoadingFailed = ta.getString(R.styleable.FunGameView_refreshTextLoadingFailed);
         }
 
         if (ta.hasValue(R.styleable.FunGameView_fghTextGameOver)) {
@@ -386,7 +386,7 @@ public abstract class FunGameView<T extends FunGameView> extends FunGameBase {
                 mMaskViewTop.setText(mMaskTextTopRelease);
                 break;
 //            case ReleaseToTwoLevel:
-//                mMaskViewTop.setText(com.scwang.smartrefresh.layout.R.string.srl_header_secondary);
+//                mMaskViewTop.setText(com.scwang.smartrefresh.layout.R.string.refresh_header_secondary);
 //                break;
         }
     }

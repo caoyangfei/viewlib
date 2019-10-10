@@ -101,8 +101,8 @@ public class FunGameHitBlockHeader extends FunGameView {
         super(context, attrs, 0);
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.FunGameHitBlockHeader);
 
-        speed = ta.getInt(R.styleable.FunGameHitBlockHeader_srlBallSpeed, SmartUtil.dp2px(SPEED));
-        blockHorizontalNum = ta.getInt(R.styleable.FunGameHitBlockHeader_srlBlockHorizontalNum, BLOCK_HORIZONTAL_NUM);
+        speed = ta.getInt(R.styleable.FunGameHitBlockHeader_refreshBallSpeed, SmartUtil.dp2px(SPEED));
+        blockHorizontalNum = ta.getInt(R.styleable.FunGameHitBlockHeader_refreshBlockHorizontalNum, BLOCK_HORIZONTAL_NUM);
 
         if (ta.hasValue(R.styleable.FunGameHitBlockHeader_fghBallSpeed)) {
             speed = ta.getInt(R.styleable.FunGameHitBlockHeader_fghBallSpeed, SmartUtil.dp2px(SPEED));

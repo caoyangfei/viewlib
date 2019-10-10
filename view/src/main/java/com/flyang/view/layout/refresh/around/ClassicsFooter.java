@@ -56,109 +56,109 @@ public class ClassicsFooter extends ClassicsAbstract<ClassicsFooter> implements 
     public ClassicsFooter(Context context, AttributeSet attrs) {
         super(context, attrs, 0);
 
-        View.inflate(context, R.layout.srl_classics_footer, this);
+        View.inflate(context, R.layout.refresh_classics_footer, this);
 
         final View thisView = this;
-        final View arrowView = mArrowView = thisView.findViewById(R.id.srl_classics_arrow);
-        final View progressView = mProgressView = thisView.findViewById(R.id.srl_classics_progress);
+        final View arrowView = mArrowView = thisView.findViewById(R.id.refresh_classics_arrow);
+        final View progressView = mProgressView = thisView.findViewById(R.id.refresh_classics_progress);
 
-        mTitleText = thisView.findViewById(R.id.srl_classics_title);
+        mTitleText = thisView.findViewById(R.id.refresh_classics_title);
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.ClassicsFooter);
 
         RelativeLayout.LayoutParams lpArrow = (RelativeLayout.LayoutParams) arrowView.getLayoutParams();
         RelativeLayout.LayoutParams lpProgress = (RelativeLayout.LayoutParams) progressView.getLayoutParams();
-        lpProgress.rightMargin = ta.getDimensionPixelSize(R.styleable.ClassicsFooter_srlDrawableMarginRight, SmartUtil.dp2px(20));
+        lpProgress.rightMargin = ta.getDimensionPixelSize(R.styleable.ClassicsFooter_refreshDrawableMarginRight, SmartUtil.dp2px(20));
         lpArrow.rightMargin = lpProgress.rightMargin;
 
-        lpArrow.width = ta.getLayoutDimension(R.styleable.ClassicsFooter_srlDrawableArrowSize, lpArrow.width);
-        lpArrow.height = ta.getLayoutDimension(R.styleable.ClassicsFooter_srlDrawableArrowSize, lpArrow.height);
-        lpProgress.width = ta.getLayoutDimension(R.styleable.ClassicsFooter_srlDrawableProgressSize, lpProgress.width);
-        lpProgress.height = ta.getLayoutDimension(R.styleable.ClassicsFooter_srlDrawableProgressSize, lpProgress.height);
+        lpArrow.width = ta.getLayoutDimension(R.styleable.ClassicsFooter_refreshDrawableArrowSize, lpArrow.width);
+        lpArrow.height = ta.getLayoutDimension(R.styleable.ClassicsFooter_refreshDrawableArrowSize, lpArrow.height);
+        lpProgress.width = ta.getLayoutDimension(R.styleable.ClassicsFooter_refreshDrawableProgressSize, lpProgress.width);
+        lpProgress.height = ta.getLayoutDimension(R.styleable.ClassicsFooter_refreshDrawableProgressSize, lpProgress.height);
 
-        lpArrow.width = ta.getLayoutDimension(R.styleable.ClassicsFooter_srlDrawableSize, lpArrow.width);
-        lpArrow.height = ta.getLayoutDimension(R.styleable.ClassicsFooter_srlDrawableSize, lpArrow.height);
-        lpProgress.width = ta.getLayoutDimension(R.styleable.ClassicsFooter_srlDrawableSize, lpProgress.width);
-        lpProgress.height = ta.getLayoutDimension(R.styleable.ClassicsFooter_srlDrawableSize, lpProgress.height);
+        lpArrow.width = ta.getLayoutDimension(R.styleable.ClassicsFooter_refreshDrawableSize, lpArrow.width);
+        lpArrow.height = ta.getLayoutDimension(R.styleable.ClassicsFooter_refreshDrawableSize, lpArrow.height);
+        lpProgress.width = ta.getLayoutDimension(R.styleable.ClassicsFooter_refreshDrawableSize, lpProgress.width);
+        lpProgress.height = ta.getLayoutDimension(R.styleable.ClassicsFooter_refreshDrawableSize, lpProgress.height);
 
-        mFinishDuration = ta.getInt(R.styleable.ClassicsFooter_srlFinishDuration, mFinishDuration);
-        mSpinnerStyle = SpinnerStyle.values[ta.getInt(R.styleable.ClassicsFooter_srlClassicsSpinnerStyle, mSpinnerStyle.ordinal)];
+        mFinishDuration = ta.getInt(R.styleable.ClassicsFooter_refreshFinishDuration, mFinishDuration);
+        mSpinnerStyle = SpinnerStyle.values[ta.getInt(R.styleable.ClassicsFooter_refreshClassicsSpinnerStyle, mSpinnerStyle.ordinal)];
 
-        if (ta.hasValue(R.styleable.ClassicsFooter_srlDrawableArrow)) {
-            mArrowView.setImageDrawable(ta.getDrawable(R.styleable.ClassicsFooter_srlDrawableArrow));
+        if (ta.hasValue(R.styleable.ClassicsFooter_refreshDrawableArrow)) {
+            mArrowView.setImageDrawable(ta.getDrawable(R.styleable.ClassicsFooter_refreshDrawableArrow));
         } else if (mArrowView.getDrawable() == null) {
             mArrowDrawable = new ArrowDrawable();
             mArrowDrawable.setColor(0xff666666);
             mArrowView.setImageDrawable(mArrowDrawable);
         }
 
-        if (ta.hasValue(R.styleable.ClassicsFooter_srlDrawableProgress)) {
-            mProgressView.setImageDrawable(ta.getDrawable(R.styleable.ClassicsFooter_srlDrawableProgress));
+        if (ta.hasValue(R.styleable.ClassicsFooter_refreshDrawableProgress)) {
+            mProgressView.setImageDrawable(ta.getDrawable(R.styleable.ClassicsFooter_refreshDrawableProgress));
         } else if (mProgressView.getDrawable() == null) {
             mProgressDrawable = new ProgressDrawable();
             mProgressDrawable.setColor(0xff666666);
             mProgressView.setImageDrawable(mProgressDrawable);
         }
 
-        if (ta.hasValue(R.styleable.ClassicsFooter_srlTextSizeTitle)) {
-            mTitleText.setTextSize(TypedValue.COMPLEX_UNIT_PX, ta.getDimensionPixelSize(R.styleable.ClassicsFooter_srlTextSizeTitle, SmartUtil.dp2px(16)));
+        if (ta.hasValue(R.styleable.ClassicsFooter_refreshTextSizeTitle)) {
+            mTitleText.setTextSize(TypedValue.COMPLEX_UNIT_PX, ta.getDimensionPixelSize(R.styleable.ClassicsFooter_refreshTextSizeTitle, SmartUtil.dp2px(16)));
         }
 
-        if (ta.hasValue(R.styleable.ClassicsFooter_srlPrimaryColor)) {
-            super.setPrimaryColor(ta.getColor(R.styleable.ClassicsFooter_srlPrimaryColor, 0));
+        if (ta.hasValue(R.styleable.ClassicsFooter_refreshPrimaryColor)) {
+            super.setPrimaryColor(ta.getColor(R.styleable.ClassicsFooter_refreshPrimaryColor, 0));
         }
-        if (ta.hasValue(R.styleable.ClassicsFooter_srlAccentColor)) {
-            super.setAccentColor(ta.getColor(R.styleable.ClassicsFooter_srlAccentColor, 0));
+        if (ta.hasValue(R.styleable.ClassicsFooter_refreshAccentColor)) {
+            super.setAccentColor(ta.getColor(R.styleable.ClassicsFooter_refreshAccentColor, 0));
         }
 
-        if (ta.hasValue(R.styleable.ClassicsFooter_srlTextPulling)) {
-            mTextPulling = ta.getString(R.styleable.ClassicsFooter_srlTextPulling);
+        if (ta.hasValue(R.styleable.ClassicsFooter_refreshTextPulling)) {
+            mTextPulling = ta.getString(R.styleable.ClassicsFooter_refreshTextPulling);
         } else if (REFRESH_FOOTER_PULLING != null) {
             mTextPulling = REFRESH_FOOTER_PULLING;
         } else {
-            mTextPulling = context.getString(R.string.srl_footer_pulling);
+            mTextPulling = context.getString(R.string.refresh_footer_pulling);
         }
-        if (ta.hasValue(R.styleable.ClassicsFooter_srlTextRelease)) {
-            mTextRelease = ta.getString(R.styleable.ClassicsFooter_srlTextRelease);
+        if (ta.hasValue(R.styleable.ClassicsFooter_refreshTextRelease)) {
+            mTextRelease = ta.getString(R.styleable.ClassicsFooter_refreshTextRelease);
         } else if (REFRESH_FOOTER_RELEASE != null) {
             mTextRelease = REFRESH_FOOTER_RELEASE;
         } else {
-            mTextRelease = context.getString(R.string.srl_footer_release);
+            mTextRelease = context.getString(R.string.refresh_footer_release);
         }
-        if (ta.hasValue(R.styleable.ClassicsFooter_srlTextLoading)) {
-            mTextLoading = ta.getString(R.styleable.ClassicsFooter_srlTextLoading);
+        if (ta.hasValue(R.styleable.ClassicsFooter_refreshTextLoading)) {
+            mTextLoading = ta.getString(R.styleable.ClassicsFooter_refreshTextLoading);
         } else if (REFRESH_FOOTER_LOADING != null) {
             mTextLoading = REFRESH_FOOTER_LOADING;
         } else {
-            mTextLoading = context.getString(R.string.srl_footer_loading);
+            mTextLoading = context.getString(R.string.refresh_footer_loading);
         }
-        if (ta.hasValue(R.styleable.ClassicsFooter_srlTextRefreshing)) {
-            mTextRefreshing = ta.getString(R.styleable.ClassicsFooter_srlTextRefreshing);
+        if (ta.hasValue(R.styleable.ClassicsFooter_refreshTextRefreshing)) {
+            mTextRefreshing = ta.getString(R.styleable.ClassicsFooter_refreshTextRefreshing);
         } else if (REFRESH_FOOTER_REFRESHING != null) {
             mTextRefreshing = REFRESH_FOOTER_REFRESHING;
         } else {
-            mTextRefreshing = context.getString(R.string.srl_footer_refreshing);
+            mTextRefreshing = context.getString(R.string.refresh_footer_refreshing);
         }
-        if (ta.hasValue(R.styleable.ClassicsFooter_srlTextFinish)) {
-            mTextFinish = ta.getString(R.styleable.ClassicsFooter_srlTextFinish);
+        if (ta.hasValue(R.styleable.ClassicsFooter_refreshTextFinish)) {
+            mTextFinish = ta.getString(R.styleable.ClassicsFooter_refreshTextFinish);
         } else if (REFRESH_FOOTER_FINISH != null) {
             mTextFinish = REFRESH_FOOTER_FINISH;
         } else {
-            mTextFinish = context.getString(R.string.srl_footer_finish);
+            mTextFinish = context.getString(R.string.refresh_footer_finish);
         }
-        if (ta.hasValue(R.styleable.ClassicsFooter_srlTextFailed)) {
-            mTextFailed = ta.getString(R.styleable.ClassicsFooter_srlTextFailed);
+        if (ta.hasValue(R.styleable.ClassicsFooter_refreshTextFailed)) {
+            mTextFailed = ta.getString(R.styleable.ClassicsFooter_refreshTextFailed);
         } else if (REFRESH_FOOTER_FAILED != null) {
             mTextFailed = REFRESH_FOOTER_FAILED;
         } else {
-            mTextFailed = context.getString(R.string.srl_footer_failed);
+            mTextFailed = context.getString(R.string.refresh_footer_failed);
         }
-        if (ta.hasValue(R.styleable.ClassicsFooter_srlTextNothing)) {
-            mTextNothing = ta.getString(R.styleable.ClassicsFooter_srlTextNothing);
+        if (ta.hasValue(R.styleable.ClassicsFooter_refreshTextNothing)) {
+            mTextNothing = ta.getString(R.styleable.ClassicsFooter_refreshTextNothing);
         } else if (REFRESH_FOOTER_NOTHING != null) {
             mTextNothing = REFRESH_FOOTER_NOTHING;
         } else {
-            mTextNothing = context.getString(R.string.srl_footer_nothing);
+            mTextNothing = context.getString(R.string.refresh_footer_nothing);
         }
 
         ta.recycle();

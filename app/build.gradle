@@ -18,10 +18,21 @@ android {
         }
     }
 
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            //资源文件分包
+            res.srcDirs =
+                    [
+                            'src/main/res/layout/refresh',
+                            'src/main/res/layout',
+                            'src/main/res'
+                    ]
+        }
+    }
+
     compileOptions {
-
         sourceCompatibility JavaVersion.VERSION_1_8
-
         targetCompatibility JavaVersion.VERSION_1_8
 
     }
@@ -37,4 +48,7 @@ dependencies {
     implementation project(path: ':view')
 
     implementation dep.util
+    implementation project(path: ':expandview')
+    implementation 'com.github.czy1121:loadinglayout:1.0.1'
+    implementation 'com.wang.avi:library:2.1.3'
 }

@@ -133,7 +133,7 @@ public class FlyRefreshHeader extends FalsifyHeader implements RefreshHeader {
     }
 
     /**
-     * @param colors 对应Xml中配置的 srlPrimaryColor srlAccentColor
+     * @param colors 对应Xml中配置的 refreshPrimaryColor refreshAccentColor
      * @deprecated 请使用 {@link RefreshLayout#setPrimaryColorsId(int...)}
      */
     @Override@Deprecated

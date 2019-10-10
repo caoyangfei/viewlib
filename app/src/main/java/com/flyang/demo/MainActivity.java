@@ -5,9 +5,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.flyang.demo.refresh.AssignRefreshActivity;
+import com.flyang.demo.refresh.AssignXmlRefreshActivity;
+import com.flyang.util.app.ActivityUtils;
 import com.flyang.util.view.KeyboardUtils;
 import com.flyang.view.inter.Delegate;
 import com.flyang.view.layout.manager.SwipeBackManager;
+import com.flyang.view.progress.CircularAnim;
 
 public class MainActivity extends AppCompatActivity implements Delegate {
 
@@ -79,9 +83,32 @@ public class MainActivity extends AppCompatActivity implements Delegate {
     }
 
     public void onClick(View view) {
-        Intent intent = new Intent(this, TestActivity.class);
-        startActivity(intent);
-//        swipeBackManager.forward(intent);
+        switch (view.getId()) {
+            case R.id.test:
+                Intent intent = new Intent(this, TestActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.refreshBtn1:
+                CircularAnim.fullActivity(MainActivity.this, view)
+                        .colorOrImageRes(R.color.colorPrimary)
+                        .go(new CircularAnim.OnAnimationEndListener() {
+                            @Override
+                            public void onAnimationEnd() {
+                                ActivityUtils.startActivity(AssignRefreshActivity.class);
+                            }
+                        });
+                break;
+            case R.id.refreshBtn2:
+                CircularAnim.fullActivity(MainActivity.this, view)
+                        .colorOrImageRes(R.color.colorPrimary)
+                        .go(new CircularAnim.OnAnimationEndListener() {
+                            @Override
+                            public void onAnimationEnd() {
+                                ActivityUtils.startActivity(AssignXmlRefreshActivity.class);
+                            }
+                        });
+                break;
+        }
     }
 
 

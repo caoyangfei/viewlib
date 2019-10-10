@@ -1,2 +1,21 @@
 <resources>
+     <string name="description_define_in_xml"><![CDATA[\n
+        Feature：\n
+        1.Can preview in Android Studio\n
+        2.Priority is higher than [global default] but below [JavaCode]\n\n
+        Usage：\n
+        <com.scwang.smartrefresh.SmartRefreshLayout\n
+            \t\tandroid:layout_width="match_parent"\n
+            \t\tandroid:layout_height="match_parent">\n
+            \t<com.scwang.smartrefresh.header.ClassicsHeader\n
+                \t\tandroid:layout_width="match_parent"\n
+                \t\tandroid:layout_height="wrap_content"/>\n
+            \t<TextView\n
+                \t\tandroid:layout_width="match_parent"\n
+                \t\tandroid:layout_height="match_parent"/>\n
+            \t<com.scwang.smartrefresh.footer.ClassicsFooter\n
+                \t\tandroid:layout_width="match_parent"\n
+                \t\tandroid:layout_height="wrap_content"/>\n
+        </com.scwang.smartrefresh.SmartRefreshLayout>\n
+    ]]></string>
 </resources>

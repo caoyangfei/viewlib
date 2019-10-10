@@ -37,9 +37,9 @@ import static android.view.View.MeasureSpec.EXACTLY;
 @SuppressWarnings({"unused", "UnusedReturnValue"})
 public abstract class ClassicsAbstract<T extends ClassicsAbstract> extends SimpleComponent implements RefreshComponent {
 
-    public static final int ID_TEXT_TITLE = R.id.srl_classics_title;
-    public static final int ID_IMAGE_ARROW = R.id.srl_classics_arrow;
-    public static final int ID_IMAGE_PROGRESS = R.id.srl_classics_progress;
+    public static final int ID_TEXT_TITLE = R.id.refresh_classics_title;
+    public static final int ID_IMAGE_ARROW = R.id.refresh_classics_arrow;
+    public static final int ID_IMAGE_PROGRESS = R.id.refresh_classics_progress;
 
     protected TextView mTitleText;
     protected ImageView mArrowView;

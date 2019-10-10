@@ -34,7 +34,7 @@ public interface RefreshComponent extends OnStateChangedListener {
 
     /**
      * 【仅限框架内调用】设置主题颜色
-     * @param colors 对应Xml中配置的 srlPrimaryColor srlAccentColor
+     * @param colors 对应Xml中配置的 refreshPrimaryColor refreshAccentColor
      */
     @RestrictTo({LIBRARY,LIBRARY_GROUP,SUBCLASSES})
     void setPrimaryColors(@ColorInt int... colors);

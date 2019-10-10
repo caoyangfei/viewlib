@@ -96,11 +96,11 @@ public class MaterialHeader extends SimpleComponent implements RefreshHeader {
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.MaterialHeader);
 
-        mShowBezierWave = ta.getBoolean(R.styleable.MaterialHeader_srlShowBezierWave, mShowBezierWave);
-        mScrollableWhenRefreshing = ta.getBoolean(R.styleable.MaterialHeader_srlScrollableWhenRefreshing, mScrollableWhenRefreshing);
-        mBezierPaint.setColor(ta.getColor(R.styleable.MaterialHeader_srlPrimaryColor, 0xff11bbff));
-        if (ta.hasValue(R.styleable.MaterialHeader_srlShadowRadius)) {
-            int radius = ta.getDimensionPixelOffset(R.styleable.MaterialHeader_srlShadowRadius, 0);
+        mShowBezierWave = ta.getBoolean(R.styleable.MaterialHeader_refreshShowBezierWave, mShowBezierWave);
+        mScrollableWhenRefreshing = ta.getBoolean(R.styleable.MaterialHeader_refreshScrollableWhenRefreshing, mScrollableWhenRefreshing);
+        mBezierPaint.setColor(ta.getColor(R.styleable.MaterialHeader_refreshPrimaryColor, 0xff11bbff));
+        if (ta.hasValue(R.styleable.MaterialHeader_refreshShadowRadius)) {
+            int radius = ta.getDimensionPixelOffset(R.styleable.MaterialHeader_refreshShadowRadius, 0);
             int color = ta.getColor(R.styleable.MaterialHeader_mhShadowColor, 0xff000000);
             mBezierPaint.setShadowLayer(radius, 0, 0, color);
             thisView.setLayerType(LAYER_TYPE_SOFTWARE, null);
@@ -265,7 +265,7 @@ public class MaterialHeader extends SimpleComponent implements RefreshHeader {
     }
 
     /**
-     * @param colors 对应Xml中配置的 srlPrimaryColor srlAccentColor
+     * @param colors 对应Xml中配置的 refreshPrimaryColor refreshAccentColor
      * @deprecated 请使用 {@link RefreshLayout#setPrimaryColorsId(int...)}
      */
     @Override@Deprecated

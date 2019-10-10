@@ -181,8 +181,8 @@ public class PhoenixHeader extends SimpleComponent implements RefreshHeader {
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.PhoenixHeader);
 
-        int primaryColor = ta.getColor(R.styleable.PhoenixHeader_srlPrimaryColor, 0);
-        int accentColor = ta.getColor(R.styleable.PhoenixHeader_srlAccentColor, 0);
+        int primaryColor = ta.getColor(R.styleable.PhoenixHeader_refreshPrimaryColor, 0);
+        int accentColor = ta.getColor(R.styleable.PhoenixHeader_refreshAccentColor, 0);
 
         if (ta.hasValue(R.styleable.PhoenixHeader_phPrimaryColor)) {
             primaryColor = ta.getColor(R.styleable.PhoenixHeader_phPrimaryColor, 0);
@@ -236,7 +236,7 @@ public class PhoenixHeader extends SimpleComponent implements RefreshHeader {
     }
 
     /**
-     * @param colors 对应Xml中配置的 srlPrimaryColor srlAccentColor
+     * @param colors 对应Xml中配置的 refreshPrimaryColor refreshAccentColor
      * @deprecated 请使用 {@link RefreshLayout#setPrimaryColorsId(int...)}
      */
     @Override@Deprecated

@@ -105,240 +105,275 @@
 
     <declare-styleable name="BannerView">
         <!-- 指示点容器背景 -->
-        <attr name="banner_pointContainerBackground" format="reference|color"/>
+        <attr name="banner_pointContainerBackground" format="reference|color" />
         <!-- 指示点背景 -->
-        <attr name="banner_pointDrawable" format="reference"/>
+        <attr name="banner_pointDrawable" format="reference" />
         <!-- 指示点容器左右内间距 -->
-        <attr name="banner_pointContainerLeftRightPadding" format="dimension"/>
+        <attr name="banner_pointContainerLeftRightPadding" format="dimension" />
         <!-- 指示点上下外间距 -->
-        <attr name="banner_pointTopBottomMargin" format="dimension"/>
+        <attr name="banner_pointTopBottomMargin" format="dimension" />
         <!-- 指示点左右外间距 -->
-        <attr name="banner_pointLeftRightMargin" format="dimension"/>
+        <attr name="banner_pointLeftRightMargin" format="dimension" />
         <!-- 指示器的位置 -->
         <attr name="banner_indicatorGravity">
-            <flag name="top" value="0x30"/>
-            <flag name="bottom" value="0x50"/>
-            <flag name="left" value="0x03"/>
-            <flag name="right" value="0x05"/>
-            <flag name="center_horizontal" value="0x01"/>
+            <flag name="top" value="0x30" />
+            <flag name="bottom" value="0x50" />
+            <flag name="left" value="0x03" />
+            <flag name="right" value="0x05" />
+            <flag name="center_horizontal" value="0x01" />
         </attr>
         <!-- 是否开启自动轮播 -->
-        <attr name="banner_pointAutoPlayAble" format="boolean"/>
+        <attr name="banner_pointAutoPlayAble" format="boolean" />
         <!-- 自动轮播的时间间隔 -->
-        <attr name="banner_pointAutoPlayInterval" format="integer"/>
+        <attr name="banner_pointAutoPlayInterval" format="integer" />
         <!-- 页码切换过程的时间长度 -->
-        <attr name="banner_pageChangeDuration" format="integer"/>
+        <attr name="banner_pageChangeDuration" format="integer" />
         <!-- 页面切换的动画效果 -->
         <attr name="banner_transitionEffect" format="enum">
-            <enum name="defaultEffect" value="0"/>
-            <enum name="alpha" value="1"/>
-            <enum name="rotate" value="2"/>
-            <enum name="cube" value="3"/>
-            <enum name="flip" value="4"/>
-            <enum name="accordion" value="5"/>
-            <enum name="zoomFade" value="6"/>
-            <enum name="fade" value="7"/>
-            <enum name="zoomCenter" value="8"/>
-            <enum name="zoomStack" value="9"/>
-            <enum name="stack" value="10"/>
-            <enum name="depth" value="11"/>
-            <enum name="zoom" value="12"/>
+            <enum name="defaultEffect" value="0" />
+            <enum name="alpha" value="1" />
+            <enum name="rotate" value="2" />
+            <enum name="cube" value="3" />
+            <enum name="flip" value="4" />
+            <enum name="accordion" value="5" />
+            <enum name="zoomFade" value="6" />
+            <enum name="fade" value="7" />
+            <enum name="zoomCenter" value="8" />
+            <enum name="zoomStack" value="9" />
+            <enum name="stack" value="10" />
+            <enum name="depth" value="11" />
+            <enum name="zoom" value="12" />
         </attr>
         <!-- 提示文案的文字颜色 -->
-        <attr name="banner_tipTextColor" format="reference|color"/>
+        <attr name="banner_tipTextColor" format="reference|color" />
         <!-- 提示文案的文字大小 -->
-        <attr name="banner_tipTextSize" format="dimension"/>
+        <attr name="banner_tipTextSize" format="dimension" />
         <!-- 加载网络数据时覆盖在 BGABanner 最上层的占位图 -->
-        <attr name="banner_placeholderDrawable" format="reference"/>
+        <attr name="banner_placeholderDrawable" format="reference" />
         <!-- 是否是数字指示器 -->
-        <attr name="banner_isNumberIndicator" format="boolean"/>
+        <attr name="banner_isNumberIndicator" format="boolean" />
         <!-- 数字指示器文字颜色 -->
-        <attr name="banner_numberIndicatorTextColor" format="reference|color"/>
+        <attr name="banner_numberIndicatorTextColor" format="reference|color" />
         <!-- 数字指示器文字大小 -->
-        <attr name="banner_numberIndicatorTextSize" format="dimension"/>
+        <attr name="banner_numberIndicatorTextSize" format="dimension" />
         <!-- 数字指示器背景 -->
-        <attr name="banner_numberIndicatorBackground" format="reference"/>
+        <attr name="banner_numberIndicatorBackground" format="reference" />
         <!-- 当只有一页数据时是否显示指示器，默认值为 false -->
-        <attr name="banner_isNeedShowIndicatorOnOnlyOnePage" format="boolean"/>
+        <attr name="banner_isNeedShowIndicatorOnOnlyOnePage" format="boolean" />
         <!-- 自动轮播区域距离 BGABanner 底部的距离 -->
-        <attr name="banner_contentBottomMargin" format="dimension"/>
+        <attr name="banner_contentBottomMargin" format="dimension" />
         <!-- 宽高比例，如果大于 0，则会根据宽度来计算高度，否则使用 android:layout_height 指定的高度 -->
-        <attr name="banner_aspectRatio" format="float"/>
+        <attr name="banner_aspectRatio" format="float" />
         <!-- 占位图和资源图片缩放模式 -->
-        <attr name="android:scaleType"/>
+        <attr name="android:scaleType" />
     </declare-styleable>
 
-    <attr name="srlStyle" format="reference"/><!--样式-->
 
-    <attr name="srlDrawableSize" format="dimension"/><!--图片尺寸-->
-    <attr name="srlDrawableArrowSize" format="dimension"/><!--箭头图片尺寸-->
-    <attr name="srlDrawableProgressSize" format="dimension"/><!--箭头图片尺寸-->
-    <attr name="srlDrawableMarginRight" format="dimension"/><!--图片和文字的间距-->
-    <attr name="srlTextSizeTitle" format="dimension"/><!--标题字体-->
-    <attr name="srlTextSizeTime" format="dimension"/><!--时间字体-->
-    <attr name="srlFinishDuration" format="integer"/><!--完成时停留时间-->
-    <attr name="srlPrimaryColor" format="color"/><!--主要颜色-->
-    <attr name="srlAccentColor" format="color"/><!--强调颜色-->
-    <attr name="srlDrawableArrow" format="reference"/><!--箭头图片-->
-    <attr name="srlDrawableProgress" format="reference"/><!--转动图片-->
-    <attr name="srlEnableHorizontalDrag" format="boolean"/><!--支持水平拖动-->
-
-    <attr name="srlTextPulling" format="string"/>
-    <attr name="srlTextLoading" format="string"/>
-    <attr name="srlTextRelease" format="string"/>
-    <attr name="srlTextFinish" format="string"/>
-    <attr name="srlTextFailed" format="string"/>
-    <attr name="srlTextUpdate" format="string"/>
-    <attr name="srlTextSecondary" format="string"/>
-    <attr name="srlTextRefreshing" format="string"/>
-    <attr name="srlTextNothing" format="string" />
-
-    <attr name="srlClassicsSpinnerStyle" format="enum">
-        <enum name="Translate" value="0"/><!--平行移动-->
-        <enum name="Scale" value="1"/><!--拉伸形变-->
-        <enum name="FixedBehind" value="2"/><!--固定在背后-->
-    </attr>
-
-    <attr name="layout_srlSpinnerStyle" format="enum">
-        <enum name="Translate" value="0"/><!--平行移动-->
-        <enum name="Scale" value="1"/><!--拉伸形变-->
-        <enum name="FixedBehind" value="2"/><!--固定在背后-->
-        <enum name="FixedFront" value="3"/><!--固定在前面-->
-        <enum name="MatchLayout" value="4"/><!--填满布局-->
-    </attr>
+    <!--智能刷新布局SmartRefreshLayout-->
+    <attr name="refreshPrimaryColor" format="color" /><!--主题颜色-->
+    <attr name="refreshAccentColor" format="color" /><!--强调颜色-->
 
     <declare-styleable name="SmartRefreshLayout">
-        <attr name="android:clipChildren"/>
-        <attr name="android:clipToPadding"/>
-        <attr name="srlPrimaryColor"/>
-        <attr name="srlAccentColor"/>
-        <attr name="srlReboundDuration" format="integer"/>
-        <attr name="srlHeaderHeight" format="dimension"/>
-        <attr name="srlFooterHeight" format="dimension"/>
-        <attr name="srlHeaderInsetStart" format="dimension"/>
-        <attr name="srlFooterInsetStart" format="dimension"/>
-        <attr name="srlDragRate" format="float"/>
-        <attr name="srlHeaderMaxDragRate" format="float"/>
-        <attr name="srlFooterMaxDragRate" format="float"/>
-        <attr name="srlHeaderTriggerRate" format="float"/>
-        <attr name="srlFooterTriggerRate" format="float"/>
-        <attr name="srlEnableRefresh" format="boolean"/>
-        <attr name="srlEnableLoadMore" format="boolean"/>
-        <attr name="srlEnableHeaderTranslationContent" format="boolean"/>
-        <attr name="srlEnableFooterTranslationContent" format="boolean"/>
-        <attr name="srlHeaderTranslationViewId" format="reference"/>
-        <attr name="srlFooterTranslationViewId" format="reference"/>
-        <attr name="srlEnablePreviewInEditMode" format="boolean"/>
-        <attr name="srlEnableAutoLoadMore" format="boolean"/>
-        <attr name="srlEnableOverScrollBounce" format="boolean"/>
-        <attr name="srlEnablePureScrollMode" format="boolean"/>
-        <attr name="srlEnableNestedScrolling" format="boolean"/>
-        <attr name="srlEnableScrollContentWhenLoaded" format="boolean"/>
-        <attr name="srlEnableScrollContentWhenRefreshed" format="boolean"/>
-        <attr name="srlEnableLoadMoreWhenContentNotFull" format="boolean"/>
-        <attr name="srlEnableFooterFollowWhenLoadFinished" format="boolean"/>
-        <attr name="srlEnableFooterFollowWhenNoMoreData" format="boolean"/>
-        <attr name="srlEnableClipHeaderWhenFixedBehind" format="boolean"/>
-        <attr name="srlEnableClipFooterWhenFixedBehind" format="boolean"/>
-        <attr name="srlEnableOverScrollDrag" format="boolean"/>
-        <attr name="srlDisableContentWhenRefresh" format="boolean"/>
-        <attr name="srlDisableContentWhenLoading" format="boolean"/>
-        <attr name="srlFixedHeaderViewId" format="reference"/>
-        <attr name="srlFixedFooterViewId" format="reference"/>
+        <!--继承Android clipChildren子控件是否可以绘制到父控件的外面-->
+        <attr name="android:clipChildren" />
+        <!--继承Android 假设内部有个属性设置了PaddingTop但是滑动的时候就忽视paddingTop的 则使用该属性 如设置android:clipToPadding=false：-->
+        <attr name="android:clipToPadding" />
+        <!--主题颜色-->
+        <attr name="refreshPrimaryColor" />
+        <!--强调颜色-->
+        <attr name="refreshAccentColor" />
+        <!--释放后回弹动画时长（默认300毫秒）-->
+        <attr name="refreshReboundDuration" format="integer" />
+        <!--Header的标准高度（dp）（默认100dp）-->
+        <attr name="refreshHeaderHeight" format="dimension" />
+        <!--Footer的标准高度（dp）（默认60dp）-->
+        <attr name="refreshFooterHeight" format="dimension" />
+        <!--Header的起始偏移量（dp）-->
+        <attr name="refreshHeaderInsetStart" format="dimension" />
+        <!--Footer的起始偏移量（dp）-->
+        <attr name="refreshFooterInsetStart" format="dimension" />
+        <!--显示拖动高度/真实拖动高度（默认0.5，阻尼效果）-->
+        <attr name="refreshDragRate" format="float" />
+        <!--Header最大拖动高度/Header标准高度（默认2，要求>=1）-->
+        <attr name="refreshHeaderMaxDragRate" format="float" />
+        <!--Footer最大拖动高度/Footer标准高度（默认2，要求>=1）-->
+        <attr name="refreshFooterMaxDragRate" format="float" />
+        <!--Header触发刷新距离 与 HeaderHeight 的比率（默认1）-->
+        <attr name="refreshHeaderTriggerRate" format="float" />
+        <!--Footer触发加载距离 与 FooterHeight 的比率（默认1）-->
+        <attr name="refreshFooterTriggerRate" format="float" />
+        <!--是否开启下拉刷新功能（默认true）-->
+        <attr name="refreshEnableRefresh" format="boolean" />
+        <!--是否开启加上拉加载功能（默认false-智能开启）-->
+        <attr name="refreshEnableLoadMore" format="boolean" />
+        <!--拖动Header的时候是否同时拖动内容（默认true）-->
+        <attr name="refreshEnableHeaderTranslationContent" format="boolean" />
+        <!--拖动Footer的时候是否同时拖动内容（默认true）-->
+        <attr name="refreshEnableFooterTranslationContent" format="boolean" />
+        <!--指定下拉Header时偏移的视图Id-->
+        <attr name="refreshHeaderTranslationViewId" format="reference" />
+        <!--指定上拉Footer时偏移的视图Id-->
+        <attr name="refreshFooterTranslationViewId" format="reference" />
+        <!--是否在编辑模式时显示预览效果（默认true）-->
+        <attr name="refreshEnablePreviewInEditMode" format="boolean" />
+        <!--是否监听列表惯性滚动到底部时触发加载事件（默认true）-->
+        <attr name="refreshEnableAutoLoadMore" format="boolean" />
+        <!--设置是否开启越界回弹功能（默认true）-->
+        <attr name="refreshEnableOverScrollBounce" format="boolean" />
+        <!--是否开启纯滚动模式（默认false-开启时只支持一个子视图）-->
+        <attr name="refreshEnablePureScrollMode" format="boolean" />
+        <!--是否开启嵌套滚动NestedScrolling(默认false-智能开启)-->
+        <attr name="refreshEnableNestedScrolling" format="boolean" />
+        <!--是否在加载完成之后滚动内容显示新数据（默认-true）-->
+        <attr name="refreshEnableScrollContentWhenLoaded" format="boolean" />
+        <!--是否在刷新成功之后滚动内容显示新数据（默认-true）-->
+        <attr name="refreshEnableScrollContentWhenRefreshed" format="boolean" />
+        <!--在内容不满一页的时候，是否可以上拉加载更多（默认-false）-->
+        <attr name="refreshEnableLoadMoreWhenContentNotFull" format="boolean" />
+        <!--是否在全部加载结束之后Footer跟随内容-->
+        <attr name="refreshEnableFooterFollowWhenLoadFinished" format="boolean" />
+        <!--是否在没用更多内容时Footer跟随内容-->
+        <attr name="refreshEnableFooterFollowWhenNoMoreData" format="boolean" />
+        <!--是否剪裁Header当样式为FixedBehind时（默认-true）-->
+        <attr name="refreshEnableClipHeaderWhenFixedBehind" format="boolean" />
+        <!--是否剪裁Footer当样式为FixedBehind时 （默认-true）-->
+        <attr name="refreshEnableClipFooterWhenFixedBehind" format="boolean" />
+        <!--是否启用越界拖动（仿苹果效果）（默认-false）-->
+        <attr name="refreshEnableOverScrollDrag" format="boolean" />
+        <!--是否在刷新的时候禁止内容的一切手势操作（默认false）-->
+        <attr name="refreshDisableContentWhenRefresh" format="boolean" />
+        <!--是否在加载的时候禁止内容的一切手势操作（默认false）-->
+        <attr name="refreshDisableContentWhenLoading" format="boolean" />
+        <!--指定固定顶部的视图Id-->
+        <attr name="refreshFixedHeaderViewId" format="reference" />
+        <!--指定固定底部的视图Id-->
+        <attr name="refreshFixedFooterViewId" format="reference" />
     </declare-styleable>
 
-    <declare-styleable name="SmartRefreshLayout_Layout">
-        <attr name="layout_srlSpinnerStyle"/>
-        <attr name="layout_srlBackgroundColor" format="color"/>
-    </declare-styleable>
-
+    <!--默认值-->
     <style name="SmartRefreshStyle">
-        <item name="srlPrimaryColor">@android:color/holo_blue_dark</item>
-        <item name="srlAccentColor">@android:color/white</item>
-        <item name="srlReboundDuration">300</item>
-        <item name="srlHeaderHeight">100dp</item>
-        <item name="srlFooterHeight">60dp</item>
-        <item name="srlHeaderInsetStart">0dp</item>
-        <item name="srlFooterInsetStart">0dp</item>
-        <item name="srlDragRate">0.5</item>
-        <item name="srlHeaderMaxDragRate">2.5</item>
-        <item name="srlFooterMaxDragRate">2.5</item>
-        <item name="srlHeaderTriggerRate">1</item>
-        <item name="srlFooterTriggerRate">1</item>
-        <!--<item name="srlEnableRefresh">true</item>-->
-        <!--<item name="srlEnableLoadMore">true</item>-->
-        <!--<item name="srlEnableHeaderTranslationContent">true</item>-->
-        <!--<item name="srlEnableFooterTranslationContent">true</item>-->
-        <!--<item name="srlHeaderTranslationViewId">-1</item>-->
-        <!--<item name="srlFooterTranslationViewId">-1</item>-->
-        <item name="srlEnablePreviewInEditMode">true</item>
-        <item name="srlEnableAutoLoadMore">true</item>
-        <item name="srlEnableOverScrollDrag">false</item>
-        <item name="srlEnableOverScrollBounce">true</item>
-        <item name="srlEnablePureScrollMode">false</item>
-        <item name="srlEnableNestedScrolling">true</item>
-        <item name="srlEnableScrollContentWhenLoaded">true</item>
-        <item name="srlEnableScrollContentWhenRefreshed">true</item>
-        <item name="srlEnableLoadMoreWhenContentNotFull">true</item>
-        <!--<item name="srlEnableFooterFollowWhenLoadFinished" format="boolean"/>-->
-        <item name="srlEnableFooterFollowWhenNoMoreData">false</item>
-        <item name="srlEnableClipHeaderWhenFixedBehind">true</item>
-        <item name="srlEnableClipFooterWhenFixedBehind">true</item>
-        <item name="srlDisableContentWhenRefresh">false</item>
-        <item name="srlDisableContentWhenLoading">false</item>
-        <!--<item name="srlFixedHeaderViewId" format="reference"/>-->
-        <!--<item name="srlFixedFooterViewId" format="reference"/>-->
+        <item name="refreshPrimaryColor">@android:color/holo_blue_dark</item>
+        <item name="refreshAccentColor">@android:color/white</item>
+        <item name="refreshReboundDuration">300</item>
+        <item name="refreshHeaderHeight">100dp</item>
+        <item name="refreshFooterHeight">60dp</item>
+        <item name="refreshHeaderInsetStart">0dp</item>
+        <item name="refreshFooterInsetStart">0dp</item>
+        <item name="refreshDragRate">0.5</item>
+        <item name="refreshHeaderMaxDragRate">2.5</item>
+        <item name="refreshFooterMaxDragRate">2.5</item>
+        <item name="refreshHeaderTriggerRate">1</item>
+        <item name="refreshFooterTriggerRate">1</item>
+        <item name="refreshEnableRefresh">true</item>
+        <item name="refreshEnableLoadMore">false</item>
+        <item name="refreshEnableHeaderTranslationContent">true</item>
+        <item name="refreshEnableFooterTranslationContent">true</item>
+        <item name="refreshEnablePreviewInEditMode">true</item>
+        <item name="refreshEnableAutoLoadMore">true</item>
+        <item name="refreshEnableOverScrollDrag">false</item>
+        <item name="refreshEnableOverScrollBounce">true</item>
+        <item name="refreshEnablePureScrollMode">false</item>
+        <item name="refreshEnableNestedScrolling">true</item>
+        <item name="refreshEnableScrollContentWhenLoaded">true</item>
+        <item name="refreshEnableScrollContentWhenRefreshed">true</item>
+        <item name="refreshEnableLoadMoreWhenContentNotFull">true</item>
+        <item name="refreshEnableFooterFollowWhenLoadFinished">false</item>
+        <item name="refreshEnableFooterFollowWhenNoMoreData">false</item>
+        <item name="refreshEnableClipHeaderWhenFixedBehind">true</item>
+        <item name="refreshEnableClipFooterWhenFixedBehind">true</item>
+        <item name="refreshDisableContentWhenRefresh">false</item>
+        <item name="refreshDisableContentWhenLoading">false</item>
     </style>
 
-
-
-    <declare-styleable name="ClassicsFooter">
-        <attr name="srlClassicsSpinnerStyle"/>
-        <attr name="srlPrimaryColor"/>
-        <attr name="srlAccentColor"/>
-        <attr name="srlFinishDuration"/>
-        <attr name="srlTextSizeTitle"/>
-        <attr name="srlDrawableArrow"/>
-        <attr name="srlDrawableProgress"/>
-        <attr name="srlDrawableMarginRight"/>
-        <attr name="srlDrawableSize"/>
-        <attr name="srlDrawableArrowSize"/>
-        <attr name="srlDrawableProgressSize"/>
-
-        <attr name="srlTextPulling"/>
-        <attr name="srlTextRelease"/>
-        <attr name="srlTextLoading"/>
-        <attr name="srlTextRefreshing"/>
-        <attr name="srlTextFinish"/>
-        <attr name="srlTextFailed"/>
-        <attr name="srlTextNothing"/>
-
+    <!--刷新布局子控件设置属性-->
+    <declare-styleable name="SmartRefreshLayout_Layout">
+        <attr name="layout_refreshSpinnerStyle" />
+        <attr name="layout_refreshBackgroundColor" format="color" />
     </declare-styleable>
+
+    <attr name="layout_refreshSpinnerStyle" format="enum">
+        <enum name="Translate" value="0" /><!--平行移动-->
+        <enum name="Scale" value="1" /><!--拉伸形变-->
+        <enum name="FixedBehind" value="2" /><!--固定在背后-->
+        <enum name="FixedFront" value="3" /><!--固定在前面-->
+        <enum name="MatchLayout" value="4" /><!--填满布局-->
+    </attr>
+
+    <attr name="refreshClassicsSpinnerStyle" format="enum">
+        <enum name="Translate" value="0" /><!--平行移动-->
+        <enum name="Scale" value="1" /><!--拉伸形变-->
+        <enum name="FixedBehind" value="2" /><!--固定在背后-->
+    </attr>
+
+    <!--智能刷新布局around-->
+    <attr name="refreshStyle" format="reference" /><!--样式-->
+    <attr name="refreshDrawableSize" format="dimension" /><!--图片尺寸-->
+    <attr name="refreshDrawableArrowSize" format="dimension" /><!--箭头图片尺寸-->
+    <attr name="refreshDrawableProgressSize" format="dimension" /><!--箭头图片尺寸-->
+    <attr name="refreshDrawableMarginRight" format="dimension" /><!--图片和文字的间距-->
+    <attr name="refreshTextSizeTitle" format="dimension" /><!--标题字体-->
+    <attr name="refreshTextSizeTime" format="dimension" /><!--时间字体-->
+    <attr name="refreshFinishDuration" format="integer" /><!--完成时停留时间-->
+    <attr name="refreshDrawableArrow" format="reference" /><!--箭头图片-->
+    <attr name="refreshDrawableProgress" format="reference" /><!--转动图片-->
+    <attr name="refreshEnableHorizontalDrag" format="boolean" /><!--支持水平拖动-->
+    <attr name="refreshTextPulling" format="string" />
+    <attr name="refreshTextLoading" format="string" />
+    <attr name="refreshTextRelease" format="string" />
+    <attr name="refreshTextFinish" format="string" />
+    <attr name="refreshTextFailed" format="string" />
+    <attr name="refreshTextUpdate" format="string" />
+    <attr name="refreshTextSecondary" format="string" />
+    <attr name="refreshTextRefreshing" format="string" />
+    <attr name="refreshTextNothing" format="string" />
+
 
     <declare-styleable name="ClassicsHeader">
-        <attr name="srlClassicsSpinnerStyle"/>
-        <attr name="srlPrimaryColor"/>
-        <attr name="srlAccentColor"/>
-        <attr name="srlFinishDuration"/>
-        <attr name="srlDrawableArrow"/>
-        <attr name="srlDrawableProgress"/>
-        <attr name="srlDrawableMarginRight"/>
-        <attr name="srlDrawableSize"/>
-        <attr name="srlDrawableArrowSize"/>
-        <attr name="srlDrawableProgressSize"/>
-        <attr name="srlTextSizeTitle"/>
-        <attr name="srlTextSizeTime"/>
-        <attr name="srlTextTimeMarginTop" format="dimension"/>
-        <attr name="srlEnableLastTime" format="boolean"/>
-
-        <attr name="srlTextPulling"/>
-        <attr name="srlTextLoading"/>
-        <attr name="srlTextRelease"/>
-        <attr name="srlTextFinish"/>
-        <attr name="srlTextFailed"/>
-        <attr name="srlTextUpdate"/>
-        <attr name="srlTextSecondary"/>
-        <attr name="srlTextRefreshing"/>
+        <attr name="refreshClassicsSpinnerStyle" />
+        <attr name="refreshPrimaryColor" />
+        <attr name="refreshAccentColor" />
+        <attr name="refreshFinishDuration" />
+        <attr name="refreshDrawableArrow" />
+        <attr name="refreshDrawableProgress" />
+        <attr name="refreshDrawableMarginRight" />
+        <attr name="refreshDrawableSize" />
+        <attr name="refreshDrawableArrowSize" />
+        <attr name="refreshDrawableProgressSize" />
+        <attr name="refreshTextSizeTitle" />
+        <attr name="refreshTextSizeTime" />
+        <attr name="refreshTextTimeMarginTop" format="dimension" />
+        <attr name="refreshEnableLastTime" format="boolean" />
+        <attr name="refreshTextPulling" />
+        <attr name="refreshTextLoading" />
+        <attr name="refreshTextRelease" />
+        <attr name="refreshTextFinish" />
+        <attr name="refreshTextFailed" />
+        <attr name="refreshTextUpdate" />
+        <attr name="refreshTextSecondary" />
+        <attr name="refreshTextRefreshing" />
     </declare-styleable>
+
+    <declare-styleable name="ClassicsFooter">
+        <attr name="refreshClassicsSpinnerStyle" />
+        <attr name="refreshPrimaryColor" />
+        <attr name="refreshAccentColor" />
+        <attr name="refreshFinishDuration" />
+        <attr name="refreshTextSizeTitle" />
+        <attr name="refreshDrawableArrow" />
+        <attr name="refreshDrawableProgress" />
+        <attr name="refreshDrawableMarginRight" />
+        <attr name="refreshDrawableSize" />
+        <attr name="refreshDrawableArrowSize" />
+        <attr name="refreshDrawableProgressSize" />
+        <attr name="refreshTextPulling" />
+        <attr name="refreshTextRelease" />
+        <attr name="refreshTextLoading" />
+        <attr name="refreshTextRefreshing" />
+        <attr name="refreshTextFinish" />
+        <attr name="refreshTextFailed" />
+        <attr name="refreshTextNothing" />
+
+    </declare-styleable>
+
 
 </resources>

@@ -131,7 +131,7 @@ public class SmartUtil implements Interpolator {
             for (int i = childCount; i > 0; i--) {
                 View child = viewGroup.getChildAt(i - 1);
                 if (isTransformedTouchPointInView(viewGroup, child, touch.x, touch.y, point)) {
-                    Object tag = child.getTag(R.id.srl_tag);
+                    Object tag = child.getTag(R.id.refresh_tag);
                     if ("fixed".equals(tag) || "fixed-bottom".equals(tag)) {
                         return false;
                     }
@@ -164,7 +164,7 @@ public class SmartUtil implements Interpolator {
             for (int i = childCount; i > 0; i--) {
                 View child = viewGroup.getChildAt(i - 1);
                 if (isTransformedTouchPointInView(viewGroup, child, touch.x, touch.y, point)) {
-                    Object tag = child.getTag(R.id.srl_tag);
+                    Object tag = child.getTag(R.id.refresh_tag);
                     if ("fixed".equals(tag) || "fixed-top".equals(tag)) {
                         return false;
                     }

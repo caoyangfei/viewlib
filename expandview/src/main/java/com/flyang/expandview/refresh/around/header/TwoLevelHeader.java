@@ -60,12 +60,12 @@ public class TwoLevelHeader extends SimpleComponent implements RefreshHeader, Ne
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.TwoLevelHeader);
 
-        mMaxRage = ta.getFloat(R.styleable.TwoLevelHeader_srlMaxRage, mMaxRage);
-        mFloorRage = ta.getFloat(R.styleable.TwoLevelHeader_srlFloorRage, mFloorRage);
-        mRefreshRage = ta.getFloat(R.styleable.TwoLevelHeader_srlRefreshRage, mRefreshRage);
-        mFloorDuration = ta.getInt(R.styleable.TwoLevelHeader_srlFloorDuration, mFloorDuration);
-        mEnableTwoLevel = ta.getBoolean(R.styleable.TwoLevelHeader_srlEnableTwoLevel, mEnableTwoLevel);
-        mEnablePullToCloseTwoLevel = ta.getBoolean(R.styleable.TwoLevelHeader_srlEnablePullToCloseTwoLevel, mEnablePullToCloseTwoLevel);
+        mMaxRage = ta.getFloat(R.styleable.TwoLevelHeader_refreshMaxRage, mMaxRage);
+        mFloorRage = ta.getFloat(R.styleable.TwoLevelHeader_refreshFloorRage, mFloorRage);
+        mRefreshRage = ta.getFloat(R.styleable.TwoLevelHeader_refreshRefreshRage, mRefreshRage);
+        mFloorDuration = ta.getInt(R.styleable.TwoLevelHeader_refreshFloorDuration, mFloorDuration);
+        mEnableTwoLevel = ta.getBoolean(R.styleable.TwoLevelHeader_refreshEnableTwoLevel, mEnableTwoLevel);
+        mEnablePullToCloseTwoLevel = ta.getBoolean(R.styleable.TwoLevelHeader_refreshEnablePullToCloseTwoLevel, mEnablePullToCloseTwoLevel);
 
         ta.recycle();
     }
