@@ -1,5 +1,5 @@
-<resources>
-     <string name="description_define_in_xml"><![CDATA[\n
+<resources xmlns:tools="http://schemas.android.com/tools">
+     <string name="description_define_in_xml" tools:ignore="ExtraTranslation"><![CDATA[\n
         Feature：\n
         1.Can preview in Android Studio\n
         2.Priority is higher than [global default] but below [JavaCode]\n\n
