@@ -66,7 +66,7 @@ public class ShapeLoadingView extends FrameLayout {
             typedArray.recycle();
         }
 
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.base_shape_loading_layout, null);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.shape_loading_layout, null);
 
         mDistance = dip2px(54f);
 
@@ -74,10 +74,10 @@ public class ShapeLoadingView extends FrameLayout {
 
         layoutParams.gravity = Gravity.CENTER;
 
-        mShapeView = (ShapeView) view.findViewById(R.id.shapeLoadingView);
+        mShapeView = view.findViewById(R.id.shapeLoadingView);
 
-        mIndicationIm = (ImageView) view.findViewById(R.id.indication);
-        mLoadTextView = (TextView) view.findViewById(R.id.promptTV);
+        mIndicationIm = view.findViewById(R.id.loadingIndication);
+        mLoadTextView = view.findViewById(R.id.loadingTv);
 
         if (mTextAppearance != -1) {
             mLoadTextView.setTextAppearance(getContext(), mTextAppearance);

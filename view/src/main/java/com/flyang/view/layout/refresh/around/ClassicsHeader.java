@@ -44,7 +44,7 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 @SuppressWarnings({"unused", "UnusedReturnValue"})
 public class ClassicsHeader extends ClassicsAbstract<ClassicsHeader> implements RefreshHeader {
 
-    public static final int ID_TEXT_UPDATE = R.id.refresh_classics_update;
+    public static final int ID_TEXT_UPDATE = R.id.refreshClassicsUpdate;
 
     public static String REFRESH_HEADER_PULLING = null;//"下拉可以刷新";
     public static String REFRESH_HEADER_REFRESHING = null;//"正在刷新...";
@@ -84,11 +84,11 @@ public class ClassicsHeader extends ClassicsAbstract<ClassicsHeader> implements 
         View.inflate(context, R.layout.refresh_classics_header, this);
 
         final View thisView = this;
-        final View arrowView = mArrowView = thisView.findViewById(R.id.refresh_classics_arrow);
-        final View updateView = mLastUpdateText = thisView.findViewById(R.id.refresh_classics_update);
-        final View progressView = mProgressView = thisView.findViewById(R.id.refresh_classics_progress);
+        final View arrowView = mArrowView = thisView.findViewById(R.id.refreshClassicsArrow);
+        final View updateView = mLastUpdateText = thisView.findViewById(R.id.refreshClassicsUpdate);
+        final View progressView = mProgressView = thisView.findViewById(R.id.refreshClassicsProgress);
 
-        mTitleText = thisView.findViewById(R.id.refresh_classics_title);
+        mTitleText = thisView.findViewById(R.id.refreshClassicsTitle);
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.ClassicsHeader);
 

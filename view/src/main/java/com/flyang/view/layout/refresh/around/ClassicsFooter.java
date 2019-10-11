@@ -57,10 +57,10 @@ public class ClassicsFooter extends ClassicsAbstract<ClassicsFooter> implements 
         View.inflate(context, R.layout.refresh_classics_footer, this);
 
         final View thisView = this;
-        final View arrowView = mArrowView = thisView.findViewById(R.id.refresh_classics_arrow);
-        final View progressView = mProgressView = thisView.findViewById(R.id.refresh_classics_progress);
+        final View arrowView = mArrowView = thisView.findViewById(R.id.refreshClassicsArrow);
+        final View progressView = mProgressView = thisView.findViewById(R.id.refreshClassicsProgress);
 
-        mTitleText = thisView.findViewById(R.id.refresh_classics_title);
+        mTitleText = thisView.findViewById(R.id.refreshClassicsTitle);
 
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.ClassicsFooter);
 

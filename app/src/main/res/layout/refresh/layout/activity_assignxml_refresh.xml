@@ -26,6 +26,15 @@
             android:layout_height="wrap_content"
             app:refreshClassicsSpinnerStyle="FixedBehind" />
 
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:gravity="center"-->
+        <!--android:text="看看我会不会变成Header"-->
+        <!--android:textColor="#fff"-->
+        <!--app:layout_refreshBackgroundColor="#444"-->
+        <!--app:layout_refreshSpinnerStyle="Scale" />-->
+
         <com.flyang.view.sticky.StickyNestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">

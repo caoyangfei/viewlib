@@ -23,9 +23,11 @@ import com.flyang.view.layout.refresh.listener.OnStateChangedListener;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 /**
- * Component 初步实现
- * 实现 Header 和 Footer 时，继承 ComponentAbstract 的话可以少写很多接口方法
- * Created by scwang on 2018/2/6.
+ * @author caoyangfei
+ * @ClassName SimpleComponent
+ * @date 2019/10/11
+ * ------------- Description -------------
+ * Footer and Header的抽象方法,基础实现
  */
 public abstract class SimpleComponent extends RelativeLayout implements RefreshComponent {
 
@@ -57,7 +59,7 @@ public abstract class SimpleComponent extends RelativeLayout implements RefreshC
         if (!super.equals(obj)) {
             if (obj instanceof RefreshComponent) {
                 final RefreshComponent thisView = this;
-                return thisView.getView() == ((RefreshComponent)obj).getView();
+                return thisView.getView() == ((RefreshComponent) obj).getView();
             }
             return false;
         }
@@ -78,7 +80,7 @@ public abstract class SimpleComponent extends RelativeLayout implements RefreshC
     }
 
     @Override
-    public void setPrimaryColors(@ColorInt int ... colors) {
+    public void setPrimaryColors(@ColorInt int... colors) {
         if (mWrappedInternal != null && mWrappedInternal != this) {
             mWrappedInternal.setPrimaryColors(colors);
         }

@@ -1,8 +1,11 @@
 package com.flyang.view.layout.refresh.listener;
 
 /**
- * 刷新加载组合监听器
- * Created by scwang on 2017/5/26.
+ * @author caoyangfei
+ * @ClassName OnRefreshLoadMoreListener
+ * @date 2019/10/11
+ * ------------- Description -------------
+ * 刷新加载组合监听
  */
 public interface OnRefreshLoadMoreListener extends OnRefreshListener, OnLoadMoreListener {
 }

@@ -7,8 +7,11 @@ import com.flyang.view.layout.refresh.inter.RefreshLayout;
 
 
 /**
- * 默认全局初始化器
- * Created by scwang on 2018/5/29 0029.
+ * @author caoyangfei
+ * @ClassName DefaultRefreshInitializer
+ * @date 2019/10/11
+ * ------------- Description -------------
+ * 默认全局初始化接口
  */
 public interface DefaultRefreshInitializer {
     void initialize(@NonNull Context context, @NonNull RefreshLayout layout);

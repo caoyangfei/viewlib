@@ -59,10 +59,8 @@ public interface RefreshKernel {
      * @return ValueAnimator 如果没有执行动画 null
      */
     ValueAnimator animSpinner(int endSpinner);
-    //</editor-fold>
 
-    //<editor-fold desc="请求事件">
-
+    //请求事件
     /**
      * 指定在下拉时候为 Header 或 Footer 绘制背景
      *
@@ -105,5 +103,4 @@ public interface RefreshKernel {
      * @return RefreshKernel
      */
     RefreshKernel requestFloorDuration(int duration);
-    //</editor-fold>
 }

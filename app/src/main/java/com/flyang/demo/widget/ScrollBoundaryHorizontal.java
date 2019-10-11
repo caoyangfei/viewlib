@@ -7,20 +7,23 @@ import android.view.ViewGroup;
 
 import com.flyang.view.layout.refresh.util.SmartUtil;
 
-
 /**
- * 滚动边界
- * Created by scwang on 2017/7/8.
+ * @author caoyangfei
+ * @ClassName ScrollBoundaryHorizontal
+ * @date 2019/10/11
+ * ------------- Description -------------
+ * 横向滚动边界判断
  */
 @SuppressWarnings("WeakerAccess")
 public class ScrollBoundaryHorizontal {
 
-    //<editor-fold desc="滚动判断">
+    //滚动判断
 
     /**
      * 判断内容是否可以刷新
+     *
      * @param targetView 内容视图
-     * @param touch 按压事件位置
+     * @param touch      按压事件位置
      * @return 是否可以刷新
      */
     public static boolean canRefresh(@NonNull View targetView, PointF touch) {
@@ -50,8 +53,9 @@ public class ScrollBoundaryHorizontal {
 
     /**
      * 判断内容视图是否可以加载更多
-     * @param targetView 内容视图
-     * @param touch 按压事件位置
+     *
+     * @param targetView  内容视图
+     * @param touch       按压事件位置
      * @param contentFull 内容是否填满页面 (未填满时，会通过canScrollUp自动判断)
      * @return 是否可以刷新
      */
@@ -79,7 +83,5 @@ public class ScrollBoundaryHorizontal {
         }
         return (contentFull || targetView.canScrollHorizontally(-1));
     }
-
-    //</editor-fold>
 
 }

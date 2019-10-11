@@ -196,11 +196,9 @@ public class RefreshContentWrapper implements RefreshContent, CoordinatorLayoutL
         }
         if (mScrollableView == mContentView) {
             //如果内容视图就是 ScrollableView 就不需要使用事件来动态搜索 而浪费CPU时间和性能了
-//            mBoundaryAdapter.setActionEvent(null);
             mBoundaryAdapter.mActionEvent = null;
         } else {
             mBoundaryAdapter.mActionEvent = point;
-//            mBoundaryAdapter.setActionEvent(mMotionEvent);
         }
     }
 
@@ -284,6 +282,5 @@ public class RefreshContentWrapper implements RefreshContent, CoordinatorLayoutL
         }
         mLastSpinner = value;
     }
-    //</editor-fold>
 
 }

@@ -8,6 +8,7 @@ import android.view.View;
 import com.flyang.demo.refresh.AssignRefreshActivity;
 import com.flyang.demo.refresh.AssignXmlRefreshActivity;
 import com.flyang.demo.refresh.HorizontalRefreshActivity;
+import com.flyang.demo.refresh.PureRollingRefreshActivity;
 import com.flyang.util.app.ActivityUtils;
 import com.flyang.util.view.KeyboardUtils;
 import com.flyang.view.inter.Delegate;
@@ -23,6 +24,17 @@ public class MainActivity extends AppCompatActivity implements Delegate {
         initSwipeBackFinish();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        LoadingLayout loadingLayout = LoadingLayout.wrap(this);
+//        loadingLayout.setRetryListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(v.getContext(), "retry", Toast.LENGTH_LONG).show();
+//                loadingLayout.showContent();
+//            }
+//        });
+//        loadingLayout.showError();
+//        loadingLayout.showContent();
     }
 
     /**
@@ -116,6 +128,15 @@ public class MainActivity extends AppCompatActivity implements Delegate {
                             @Override
                             public void onAnimationEnd() {
                                 ActivityUtils.startActivity(HorizontalRefreshActivity.class);
+                            }
+                        });
+            case R.id.refreshBtn4:
+                CircularAnim.fullActivity(MainActivity.this, view)
+                        .colorOrImageRes(R.color.color_2E8B57)
+                        .go(new CircularAnim.OnAnimationEndListener() {
+                            @Override
+                            public void onAnimationEnd() {
+                                ActivityUtils.startActivity(PureRollingRefreshActivity.class);
                             }
                         });
                 break;

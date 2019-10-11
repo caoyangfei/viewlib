@@ -20,7 +20,6 @@ public class HorizontalRefreshActivity extends AppCompatActivity {
 
         refreshLayout = findViewById(R.id.refreshLayout);
 
-
         refreshLayout.setOnMultiListener(new OnMultiListener() {
             @Override
             public void onStateChanged(@NonNull RefreshLayout refreshLayout, @NonNull RefreshState oldState, @NonNull RefreshState newState) {

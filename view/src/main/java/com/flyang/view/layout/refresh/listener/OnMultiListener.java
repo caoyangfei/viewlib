@@ -34,7 +34,7 @@ public interface OnMultiListener extends OnRefreshLoadMoreListener, OnStateChang
      * @param maxDragHeight
      */
     default void onHeaderReleased(RefreshHeader header, int headerHeight, int maxDragHeight) {
-        LogUtils.tag("Refresh").d("Header:头部释放");
+        LogUtils.tag("SmartRefresh").d("Header:头部释放");
     }
 
     /**
@@ -45,7 +45,7 @@ public interface OnMultiListener extends OnRefreshLoadMoreListener, OnStateChang
      * @param maxDragHeight
      */
     default void onHeaderStartAnimator(RefreshHeader header, int headerHeight, int maxDragHeight) {
-        LogUtils.tag("Refresh").d("Header:头部开始动画");
+        LogUtils.tag("SmartRefresh").d("Header:头部开始动画");
     }
 
     /**
@@ -55,7 +55,7 @@ public interface OnMultiListener extends OnRefreshLoadMoreListener, OnStateChang
      * @param success
      */
     default void onHeaderFinish(RefreshHeader header, boolean success) {
-        LogUtils.tag("Refresh").d("Header:头部消失");
+        LogUtils.tag("SmartRefresh").d("Header:头部消失");
     }
 
     /**
@@ -79,7 +79,7 @@ public interface OnMultiListener extends OnRefreshLoadMoreListener, OnStateChang
      * @param maxDragHeight
      */
     default void onFooterReleased(RefreshFooter footer, int footerHeight, int maxDragHeight) {
-        LogUtils.tag("Refresh").d("Footer:底部释放");
+        LogUtils.tag("SmartRefresh").d("Footer:底部释放");
     }
 
     /**
@@ -90,7 +90,7 @@ public interface OnMultiListener extends OnRefreshLoadMoreListener, OnStateChang
      * @param maxDragHeight
      */
     default void onFooterStartAnimator(RefreshFooter footer, int footerHeight, int maxDragHeight) {
-        LogUtils.tag("Refresh").d("Footer:底部开始动画");
+        LogUtils.tag("SmartRefresh").d("Footer:底部开始动画");
     }
 
     /**
@@ -100,6 +100,6 @@ public interface OnMultiListener extends OnRefreshLoadMoreListener, OnStateChang
      * @param success
      */
     default void onFooterFinish(RefreshFooter footer, boolean success) {
-        LogUtils.tag("Refresh").d("Footer:底部消失");
+        LogUtils.tag("SmartRefresh").d("Footer:底部消失");
     }
 }

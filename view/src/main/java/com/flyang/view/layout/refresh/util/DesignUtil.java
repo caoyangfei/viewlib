@@ -10,8 +10,11 @@ import com.flyang.view.layout.refresh.listener.CoordinatorLayoutListener;
 
 
 /**
- * Design 兼容包缺省尝试
- * Created by scwang on 2018/1/29.
+ * @author caoyangfei
+ * @ClassName DesignUtil
+ * @date 2019/10/11
+ * ------------- Description -------------
+ * 兼容包缺省尝试
  */
 public class DesignUtil {
 

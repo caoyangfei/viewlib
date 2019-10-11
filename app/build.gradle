@@ -49,6 +49,4 @@ dependencies {
 
     implementation dep.util
     implementation project(path: ':expandview')
-    implementation 'com.github.czy1121:loadinglayout:1.0.1'
-    implementation 'com.wang.avi:library:2.1.3'
 }

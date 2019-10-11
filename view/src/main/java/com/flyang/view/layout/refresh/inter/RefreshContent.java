@@ -28,12 +28,27 @@ public interface RefreshContent {
 
     void setScrollBoundaryDecider(ScrollBoundaryDecider boundary);
 
+    /**
+     * 设置内容不满一页是否可以加载更多
+     *
+     * @param enable
+     */
     void setEnableLoadMoreWhenContentNotFull(boolean enable);
 
     void moveSpinner(int spinner, int headerTranslationViewId, int footerTranslationViewId);
 
+    /**
+     * 是否可以刷新
+     *
+     * @return
+     */
     boolean canRefresh();
 
+    /**
+     * 是否能加载更多
+     *
+     * @return
+     */
     boolean canLoadMore();
 
     AnimatorUpdateListener scrollContentWhenFinished(int spinner);

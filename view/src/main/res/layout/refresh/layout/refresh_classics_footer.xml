@@ -3,44 +3,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:paddingTop="20dp"
-    tools:paddingBottom="20dp"
     tools:background="#eee"
+    tools:paddingBottom="20dp"
+    tools:paddingTop="20dp"
     tools:parentTag="android.widget.RelativeLayout">
 
     <ImageView
-        android:id="@+id/refresh_classics_arrow"
+        android:id="@+id/refreshClassicsArrow"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        android:layout_centerVertical="true"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/refresh_classics_title"
-        android:layout_toStartOf="@+id/refresh_classics_title"
-        android:contentDescription="@android:string/untitled"
-        />
+        android:layout_toStartOf="@+id/refreshClassicsTitle"
+        android:layout_toLeftOf="@+id/refreshClassicsTitle"
+        android:contentDescription="@android:string/untitled" />
 
     <ImageView
-        android:id="@+id/refresh_classics_progress"
+        android:id="@+id/refreshClassicsProgress"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        android:layout_centerVertical="true"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/refresh_classics_title"
-        android:layout_toStartOf="@+id/refresh_classics_title"
+        android:layout_toStartOf="@+id/refreshClassicsTitle"
+        android:layout_toLeftOf="@+id/refreshClassicsTitle"
         android:contentDescription="@android:string/untitled"
-        tools:tint="#666"
-        tools:src="@android:drawable/stat_notify_sync"/>
+        tools:src="@android:drawable/stat_notify_sync"
+        tools:tint="#666" />
 
     <TextView
-        android:id="@+id/refresh_classics_title"
+        android:id="@+id/refreshClassicsTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:maxLines="1"
+        android:text="@string/refresh_header_pulling"
         android:textColor="#666666"
-        android:textSize="15sp"
-        android:text="@string/refresh_header_pulling"/>
+        android:textSize="15sp" />
 
 </merge>

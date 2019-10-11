@@ -372,8 +372,46 @@
         <attr name="refreshTextFinish" />
         <attr name="refreshTextFailed" />
         <attr name="refreshTextNothing" />
-
     </declare-styleable>
 
+    <!--加载中布局-->
+    <attr name="styleLoadingLayout" format="reference" />
+    <item name="loadingEmptyIv" type="id" />
+    <item name="loadingEmptyTv" type="id" />
+    <item name="loadingErrorIv" type="id" />
+    <item name="loadingErrorTv" type="id" />
+    <item name="loadingRetryBtn" type="id" />
 
+    <declare-styleable name="LoadingLayout">
+        <!-- 加载中布局资源id -->
+        <attr name="llLoadingResId" format="reference" />
+
+        <!-- 空布局资源id -->
+        <attr name="llEmptyResId" format="reference" />
+        <!-- 空布局图片 -->
+        <attr name="llEmptyImage" format="reference" />
+        <!-- 空布局文本 -->
+        <attr name="llEmptyText" format="string" />
+
+        <!-- 错误布局资源id -->
+        <attr name="llErrorResId" format="reference" />
+        <!-- 错误布局图片 -->
+        <attr name="llErrorImage" format="reference" />
+        <!-- 错误布局文本 -->
+        <attr name="llErrorText" format="string" />
+        <!-- 错误布局重试按钮文本 -->
+        <attr name="llRetryText" format="string" />
+
+        <!-- 文本颜色 -->
+        <attr name="llTextColor" format="color" />
+        <!-- 文本尺寸 -->
+        <attr name="llTextSize" format="dimension" />
+
+        <!-- 按钮文本颜色 -->
+        <attr name="llButtonTextColor" format="color" />
+        <!-- 按钮文本尺寸 -->
+        <attr name="llButtonTextSize" format="dimension" />
+        <!-- 按钮背景 -->
+        <attr name="llButtonBackground" format="reference" />
+    </declare-styleable>
 </resources>

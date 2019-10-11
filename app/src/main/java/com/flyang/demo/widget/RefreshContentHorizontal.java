@@ -23,6 +23,7 @@ public class RefreshContentHorizontal extends RefreshContentWrapper {
             }
         }
         return null;
+
     }
 
     @Override
@@ -34,8 +35,9 @@ public class RefreshContentHorizontal extends RefreshContentWrapper {
             } else {
                 mScrollableView.scrollBy(value - mLastSpinner, 0);
             }
-        } catch (Throwable ignored) {
+        } catch (Throwable e) {
             //根据用户反馈，此处可能会有BUG
+            e.printStackTrace();
         }
         mLastSpinner = value;
     }

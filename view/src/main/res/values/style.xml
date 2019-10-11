@@ -41,4 +41,24 @@
         <item name="minHeight">24dip</item>
         <item name="maxHeight">24dip</item>
     </style>
+
+    <!--加载中-->
+    <style name="LoadingLayout" />
+
+    <style name="LoadingLayout.Style">
+        <item name="llEmptyResId">@layout/loading_layout_empty</item>
+        <item name="llLoadingResId">@layout/loading_layout_loading</item>
+        <item name="llErrorResId">@layout/loading_layout_error</item>
+        <item name="llTextColor">#999999</item>
+        <item name="llTextSize">16sp</item>
+        <item name="llButtonTextColor">#999999</item>
+        <item name="llButtonTextSize">16sp</item>
+        <item name="llButtonBackground">@drawable/_loading_layout_button</item>
+        <item name="llEmptyImage">@drawable/loading_empty_view</item>
+        <item name="llEmptyText">暂无数据</item>
+        <item name="llErrorImage">@null</item>
+        <item name="llErrorText">无网络连接，请检查您的网络...</item>
+        <item name="llRetryText">加载失败，点击重试~~</item>
+    </style>
+
 </resources>

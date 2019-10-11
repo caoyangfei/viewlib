@@ -9,31 +9,31 @@
     tools:parentTag="android.widget.RelativeLayout">
 
     <ImageView
-        android:id="@+id/refresh_classics_arrow"
+        android:id="@+id/refreshClassicsArrow"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_centerVertical="true"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:layout_toStartOf="@+id/refresh_classics_center"
-        android:layout_toLeftOf="@+id/refresh_classics_center"
+        android:layout_toStartOf="@+id/refreshClassicsCenter"
+        android:layout_toLeftOf="@+id/refreshClassicsCenter"
         android:contentDescription="@android:string/untitled" />
 
     <ImageView
-        android:id="@+id/refresh_classics_progress"
+        android:id="@+id/refreshClassicsProgress"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_centerVertical="true"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:layout_toStartOf="@+id/refresh_classics_center"
-        android:layout_toLeftOf="@+id/refresh_classics_center"
+        android:layout_toStartOf="@+id/refreshClassicsCenter"
+        android:layout_toLeftOf="@+id/refreshClassicsCenter"
         android:contentDescription="@android:string/untitled"
         tools:src="@android:drawable/stat_notify_sync"
         tools:tint="#666666" />
 
     <LinearLayout
-        android:id="@+id/refresh_classics_center"
+        android:id="@+id/refreshClassicsCenter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -41,7 +41,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/refresh_classics_title"
+            android:id="@+id/refreshClassicsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxLines="1"
@@ -50,7 +50,7 @@
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/refresh_classics_update"
+            android:id="@+id/refreshClassicsUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxLines="1"

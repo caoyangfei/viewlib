@@ -8,8 +8,11 @@ import com.flyang.view.layout.refresh.inter.RefreshLayout;
 
 
 /**
- * 默认Header创建器
- * Created by scwang on 2018/1/26.
+ * @author caoyangfei
+ * @ClassName DefaultRefreshHeaderCreator
+ * @date 2019/10/11
+ * ------------- Description -------------
+ * 默认头部创建接口
  */
 public interface DefaultRefreshHeaderCreator {
     @NonNull

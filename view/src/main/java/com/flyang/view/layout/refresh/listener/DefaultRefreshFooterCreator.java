@@ -8,8 +8,11 @@ import com.flyang.view.layout.refresh.inter.RefreshLayout;
 
 
 /**
- * 默认Footer创建器
- * Created by scwang on 2018/1/26.
+ * @author caoyangfei
+ * @ClassName DefaultRefreshFooterCreator
+ * @date 2019/10/11
+ * ------------- Description -------------
+ * 默认Footer创建接口
  */
 public interface DefaultRefreshFooterCreator {
     @NonNull

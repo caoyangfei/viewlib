@@ -8,8 +8,11 @@ import com.flyang.view.layout.refresh.util.SmartUtil;
 
 
 /**
+ * @author caoyangfei
+ * @ClassName SimpleBoundaryDecider
+ * @date 2019/10/11
+ * ------------- Description -------------
  * 滚动边界
- * Created by scwang on 2017/7/8.
  */
 public class SimpleBoundaryDecider implements ScrollBoundaryDecider {
 
@@ -17,9 +20,7 @@ public class SimpleBoundaryDecider implements ScrollBoundaryDecider {
     public PointF mActionEvent;
     public ScrollBoundaryDecider boundary;
     public boolean mEnableLoadMoreWhenContentNotFull = true;
-    //</editor-fold>
 
-    //<editor-fold desc="ScrollBoundaryDecider">
     @Override
     public boolean canRefresh(View content) {
         if (boundary != null) {
@@ -37,5 +38,4 @@ public class SimpleBoundaryDecider implements ScrollBoundaryDecider {
         //mActionEvent == null 时 canLoadMore 不会动态递归搜索
         return SmartUtil.canLoadMore(content, mActionEvent, mEnableLoadMoreWhenContentNotFull);
     }
-    //</editor-fold>
 }

@@ -11,8 +11,8 @@
     </style>
 
     <style name="LoadingLayoutStyle" parent="LoadingLayout.Style">
-        <item name="llEmptyImage">@drawable/ic_empty</item>
-        <item name="llErrorImage">@drawable/ic_error</item>
+        <item name="llEmptyImage">@drawable/loading_empty_view</item>
+        <item name="llErrorImage">@drawable/loading_error_view</item>
         <item name="llLoadingResId">@layout/common_loading</item>
     </style>
 

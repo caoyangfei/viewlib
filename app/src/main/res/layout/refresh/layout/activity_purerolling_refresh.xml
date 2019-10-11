@@ -9,24 +9,25 @@
         android:id="@+id/toolbar"
         style="@style/AppTheme.Toolbar"
         app:navigationIcon="?attr/homeAsUpIndicator"
-        app:title="代码设置头部底部" />
+        app:title="纯滚动" />
 
     <com.flyang.view.layout.SmartRefreshLayout
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:refreshEnableLoadMoreWhenContentNotFull="true">
+        app:refreshDragRate="0.5"
+        app:refreshEnableLoadMore="false"
+        app:refreshEnablePureScrollMode="true">
 
-        <TextView
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text=" Usage： \n
-        final RefreshLayout refreshLayout = findViewById(R.id.refreshLayout);\n
-        refreshLayout.setRefreshHeader(new MaterialHeader(this));\n
-        refreshLayout.setRefreshFooter(new BallPulseFooter(this));\n\n" />
-        <com.flyang.view.layout.refresh.around.ClassicsFooter
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/description_define_in_xml" />
+        </ScrollView>
+
     </com.flyang.view.layout.SmartRefreshLayout>
 </LinearLayout>

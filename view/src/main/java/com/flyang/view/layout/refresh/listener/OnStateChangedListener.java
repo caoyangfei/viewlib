@@ -4,6 +4,7 @@ package com.flyang.view.layout.refresh.listener;
 import android.support.annotation.NonNull;
 import android.support.annotation.RestrictTo;
 
+import com.flyang.util.log.LogUtils;
 import com.flyang.view.layout.refresh.constant.RefreshState;
 import com.flyang.view.layout.refresh.inter.RefreshLayout;
 
@@ -27,5 +28,7 @@ public interface OnStateChangedListener {
      * @param newState      改变之后的状态
      */
     @RestrictTo({LIBRARY, LIBRARY_GROUP, SUBCLASSES})
-    void onStateChanged(@NonNull RefreshLayout refreshLayout, @NonNull RefreshState oldState, @NonNull RefreshState newState);
+    default void onStateChanged(@NonNull RefreshLayout refreshLayout, @NonNull RefreshState oldState, @NonNull RefreshState newState) {
+        LogUtils.tag("SmartRefresh").d("oldState:" + oldState + "===newState:" + newState);
+    }
 }
