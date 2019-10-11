@@ -126,4 +126,19 @@
         <attr name="refreshAccentColor" />
         <attr name="refreshEnableHorizontalDrag" />
     </declare-styleable>
+
+    <declare-styleable name="ArrowHeader">
+        <!--背景色-->
+        <attr name="arrowPrimaryColor" format="color" />
+        <!--弓颜色-->
+        <attr name="bowColor" format="color" />
+        <!--箭颜色-->
+        <attr name="arrowColor" format="color" />
+        <!--弦颜色-->
+        <attr name="stringColor" format="color" />
+        <!--坠落的线条颜色-->
+        <attr name="lineColor" format="color" />
+        <!--弓长-->
+        <attr name="vowLength" format="dimension" />
+    </declare-styleable>
 </resources>

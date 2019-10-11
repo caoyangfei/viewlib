@@ -177,10 +177,8 @@ public class TaurusHeader extends SimpleComponent implements RefreshHeader {
         int primaryColor = ta.getColor(R.styleable.TaurusHeader_thPrimaryColor, 0);
         if (primaryColor != 0) {
             mBackgroundColor = primaryColor;
-//            thisView.setBackgroundColor(primaryColor);
         } else {
             mBackgroundColor = 0xff11bbff;
-//            thisView.setBackgroundColor(0xff11bbff);
         }
 
         ta.recycle();

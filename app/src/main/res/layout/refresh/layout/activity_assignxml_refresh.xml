@@ -21,10 +21,10 @@
         app:refreshEnablePreviewInEditMode="true"
         app:refreshPrimaryColor="#444444">
 
-        <com.flyang.view.layout.refresh.around.ClassicsHeader
+        <com.flyang.expandview.refresh.around.header.ArrowHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:refreshClassicsSpinnerStyle="FixedBehind" />
+            app:arrowPrimaryColor="@color/color_00FF7F"/>
 
         <!--<TextView-->
         <!--android:layout_width="match_parent"-->

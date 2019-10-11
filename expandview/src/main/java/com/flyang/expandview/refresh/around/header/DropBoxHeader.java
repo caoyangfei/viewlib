@@ -118,7 +118,6 @@ public class DropBoxHeader extends SimpleComponent implements RefreshHeader {
             if (!drawable1.parserPaths(drawable1Paths)) {
                 drawable1.declareOriginal(2, 1, 20, 22);
             }
-//            drawable1.printOriginal("drawable1");
             mDrawable1 = drawable1;
         }
         if (ta.hasValue(R.styleable.DropBoxHeader_dhDrawable2)) {
@@ -131,7 +130,6 @@ public class DropBoxHeader extends SimpleComponent implements RefreshHeader {
             if (!drawable2.parserPaths(drawable2Paths)) {
                 drawable2.declareOriginal(8, 3, 41, 53);
             }
-//            drawable2.printOriginal("drawable2");
             mDrawable2 = drawable2;
         }
         if (ta.hasValue(R.styleable.DropBoxHeader_dhDrawable3)) {
@@ -144,7 +142,6 @@ public class DropBoxHeader extends SimpleComponent implements RefreshHeader {
             if (!drawable3.parserPaths(drawable3Paths)) {
                 drawable3.declareOriginal(2, 0, 15, 16);
             }
-//            drawable3.printOriginal("drawable3");
             mDrawable3 = drawable3;
         }
         ta.recycle();

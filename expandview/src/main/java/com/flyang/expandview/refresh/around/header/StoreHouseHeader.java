@@ -349,7 +349,6 @@ public class StoreHouseHeader extends SimpleComponent implements RefreshHeader {
         if (colors.length > 0) {
             mBackgroundColor = colors[0];
             if (mRefreshKernel != null) {
-//                mRefreshKernel.requestDrawBackgroundForHeader(colors[0]);
                 mRefreshKernel.requestDrawBackgroundFor(this, mBackgroundColor);
             }
             if (colors.length > 1) {
