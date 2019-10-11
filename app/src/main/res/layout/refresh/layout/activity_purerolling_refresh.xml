@@ -16,12 +16,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:refreshDragRate="0.5"
-        app:refreshEnableLoadMore="false"
         app:refreshEnablePureScrollMode="true">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
 
             <TextView
                 android:layout_width="match_parent"

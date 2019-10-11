@@ -32,7 +32,7 @@ public class ArrowHeader extends View implements RefreshHeader {
 
     private ArrowDrawable mDrawable;
     private RefreshState state = RefreshState.None;
-    protected int mPrimaryColor;
+    protected int mBackColor;
     private int bowColor = Color.WHITE;
     private int arrowColor = Color.WHITE;
     private int stringColor = Color.WHITE;
@@ -57,19 +57,17 @@ public class ArrowHeader extends View implements RefreshHeader {
         stringColor = a.getColor(R.styleable.ArrowHeader_stringColor, stringColor);
         lineColor = a.getColor(R.styleable.ArrowHeader_lineColor, lineColor);
         bowLength = a.getDimensionPixelSize(R.styleable.ArrowHeader_vowLength, bowLength);
-        setPrimaryColor(a.getColor(R.styleable.ArrowHeader_arrowPrimaryColor, 0xFF222222));
+        setPrimaryColor(a.getColor(R.styleable.ArrowHeader_refreshBackColor, 0xFF222222));
         a.recycle();
 
         mBackPaint = new Paint();
-        mBackPaint.setColor(mPrimaryColor);
+        mBackPaint.setColor(mBackColor);
         mBackPaint.setAntiAlias(true);
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
         // 获取宽-测量规则的模式和大小
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         // 获取高-测量规则的模式和大小
@@ -174,7 +172,7 @@ public class ArrowHeader extends View implements RefreshHeader {
     @Deprecated
     public void setPrimaryColors(@ColorInt int... colors) {
         if (colors.length > 0) {
-            mPrimaryColor = colors[0];
+            mBackColor = colors[0];
         }
     }
 
@@ -184,7 +182,7 @@ public class ArrowHeader extends View implements RefreshHeader {
      * @param color
      */
     public void setPrimaryColor(@ColorInt int color) {
-        mPrimaryColor = color;
+        mBackColor = color;
     }
 
     /**

@@ -21,10 +21,9 @@
         app:refreshEnablePreviewInEditMode="true"
         app:refreshPrimaryColor="#444444">
 
-        <com.flyang.expandview.refresh.around.header.ArrowHeader
+        <com.flyang.expandview.refresh.around.header.PhoenixHeader
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:arrowPrimaryColor="@color/color_00FF7F"/>
+            android:layout_height="wrap_content" />
 
         <!--<TextView-->
         <!--android:layout_width="match_parent"-->

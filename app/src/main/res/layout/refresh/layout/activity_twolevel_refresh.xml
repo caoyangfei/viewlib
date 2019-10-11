@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.flyang.view.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        app:refreshAccentColor="@android:color/white">
+
+        <com.flyang.expandview.refresh.around.header.TwoLevelHeader
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/second_floor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_second_floor" />
+
+            <FrameLayout
+                android:id="@+id/second_floor_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/image_second_floor_content" />
+
+                <ListView
+                    android:id="@+id/listview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </FrameLayout>
+
+            <com.flyang.view.layout.refresh.around.ClassicsHeader
+                android:id="@+id/classics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="?attr/actionBarSize" />
+        </com.flyang.expandview.refresh.around.header.TwoLevelHeader>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+            <FrameLayout
+                android:id="@+id/contentPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="?attr/actionBarSize">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/image_taobao" />
+            </FrameLayout>
+        </ScrollView>
+
+        <com.flyang.view.layout.refresh.around.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:refreshPrimaryColor="@android:color/white" />
+    </com.flyang.view.layout.SmartRefreshLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/AppTheme.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#fe1200"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="淘宝二楼">
+
+    </android.support.v7.widget.Toolbar>
+</FrameLayout>

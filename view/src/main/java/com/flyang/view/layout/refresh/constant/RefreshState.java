@@ -35,7 +35,7 @@ public enum RefreshState {
     Refreshing(1, false, true, false, false, false),
     //加载中
     Loading(2, false, true, false, false, false),
-    //二级刷新中
+    //二级页面显示
     TwoLevel(1, false, true, false, true, false),
     //刷新结束
     RefreshFinish(1, false, false, true, false, false),

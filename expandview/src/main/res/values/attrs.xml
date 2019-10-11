@@ -96,7 +96,7 @@
         <attr name="refreshDropHeight" format="dimension" />
         <attr name="refreshEnableFadeAnimation" format="boolean" />
     </declare-styleable>
-
+    <!--盒子掉落-->
     <declare-styleable name="DropBoxHeader">
         <attr name="dhDrawable1" format="reference" />
         <attr name="dhDrawable2" format="reference" />
@@ -106,6 +106,7 @@
         <attr name="refreshDrawable3" format="reference" />
     </declare-styleable>
 
+    <!--二级刷新-->
     <declare-styleable name="TwoLevelHeader">
         <attr name="refreshMaxRage" format="float" />
         <attr name="refreshFloorRage" format="float" />
@@ -115,21 +116,24 @@
         <attr name="refreshEnablePullToCloseTwoLevel" format="boolean" />
     </declare-styleable>
 
+    <!--脉冲-->
     <declare-styleable name="BallPulseFooter">
         <attr name="refreshClassicsSpinnerStyle" />
         <attr name="refreshAnimatingColor" format="color" />
         <attr name="refreshNormalColor" format="color" />
     </declare-styleable>
 
+    <!--贝塞尔雷达-->
     <declare-styleable name="BezierRadarHeader">
         <attr name="refreshPrimaryColor" />
         <attr name="refreshAccentColor" />
         <attr name="refreshEnableHorizontalDrag" />
     </declare-styleable>
 
+    <!--射箭-->
     <declare-styleable name="ArrowHeader">
         <!--背景色-->
-        <attr name="arrowPrimaryColor" format="color" />
+        <attr name="refreshBackColor" />
         <!--弓颜色-->
         <attr name="bowColor" format="color" />
         <!--箭颜色-->
