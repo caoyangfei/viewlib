@@ -152,6 +152,7 @@ public class MainActivity extends AppCompatActivity implements Delegate {
                                 ActivityUtils.startActivity(TwoLevelRefreshActivity.class);
                             }
                         });
+                break;
             case R.id.refreshBtn6:
                 CircularAnim.fullActivity(MainActivity.this, view)
                         .colorOrImageRes(R.color.color_2E8B57)
@@ -161,6 +162,7 @@ public class MainActivity extends AppCompatActivity implements Delegate {
                                 ActivityUtils.startActivity(BannerActivity.class);
                             }
                         });
+                break;
             case R.id.refreshBtn7:
                 CircularAnim.fullActivity(MainActivity.this, view)
                         .colorOrImageRes(R.color.color_2E8B57)
