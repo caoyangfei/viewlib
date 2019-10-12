@@ -1,12 +1,11 @@
 
-# viewlib
+# viewlib（搭建MVP框架UI组件）
    
 ## 1. Features
 
-- view(基础UI库，使用框架式必用) 
+- view(基础UI库，使用框架时必用) 
 
-1. banner（轮播图）
-   
+1. banner（轮播图）   
 2. FlowLayout
 3. LoadingLayout
 4. SmartRefreshLayout
