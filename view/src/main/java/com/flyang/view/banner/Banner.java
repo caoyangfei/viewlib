@@ -158,22 +158,45 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
         }
     }
 
-
+    /**
+     * 设置是否自动轮播（默认自动）
+     *
+     * @param isAutoPlay
+     * @return
+     */
     public Banner isAutoPlay(boolean isAutoPlay) {
         this.isAutoPlay = isAutoPlay;
         return this;
     }
 
+    /**
+     * 设置图片加载器
+     *
+     * @param imageLoader
+     * @return
+     */
     public Banner setImageLoader(ImageLoader imageLoader) {
         this.imageLoader = imageLoader;
         return this;
     }
 
+    /**
+     * 设置轮播图片间隔时间（单位毫秒，默认为2000）
+     *
+     * @param delayTime
+     * @return
+     */
     public Banner setDelayTime(int delayTime) {
         this.delayTime = delayTime;
         return this;
     }
 
+    /**
+     * 设置指示器位置（没有标题默认为右边,有标题时默认左边）
+     *
+     * @param type
+     * @return
+     */
     public Banner setIndicatorGravity(int type) {
         switch (type) {
             case BannerConfig.LEFT:
@@ -190,7 +213,7 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
     }
 
     /**
-     * 设置banner动画
+     * 设置viewpager的动画
      *
      * @param transformer
      * @return
@@ -220,9 +243,7 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
     }
 
     /**
-     * Set a {@link PageTransformer} that will be called for each attached page whenever
-     * the scroll position is changed. This allows the application to apply custom property
-     * transformations to each page, overriding the default sliding look and feel.
+     * 设置viewpager的自定义动画
      *
      * @param reverseDrawingOrder true if the supplied PageTransformer requires page views
      *                            to be drawn from last to first instead of first to last.
@@ -234,33 +255,68 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
         return this;
     }
 
+    /**
+     * 设置轮播要显示的标题和图片对应（如果不传默认不显示标题）
+     *
+     * @param titles
+     * @return
+     */
     public Banner setBannerTitles(List<String> titles) {
         this.titles = titles;
         return this;
     }
 
+    /**
+     * 设置轮播样式（默认为CIRCLE_INDICATOR）
+     *
+     * @param bannerStyle
+     * @return
+     */
     public Banner setBannerStyle(int bannerStyle) {
         this.bannerStyle = bannerStyle;
         return this;
     }
 
+    /**
+     * 设置是否允许手动滑动轮播图（默认true）
+     *
+     * @param isScroll
+     * @return
+     */
     public Banner setViewPagerIsScroll(boolean isScroll) {
         this.isScroll = isScroll;
         return this;
     }
 
+    /**
+     * 设置轮播图片(所有设置参数方法都放在此方法之前执行)
+     *
+     * @param imageUrls
+     * @return
+     */
     public Banner setImages(List<?> imageUrls) {
         this.imageUrls.addAll(imageUrls);
         this.count = imageUrls.size();
         return this;
     }
 
+    /**
+     * 更新图片和标题
+     *
+     * @param imageUrls
+     * @param titles
+     */
     public void update(List<?> imageUrls, List<String> titles) {
         this.titles.clear();
         this.titles.addAll(titles);
         update(imageUrls);
     }
 
+    /**
+     * 更新图片
+     *
+     * @param imageUrls
+     */
     public void update(List<?> imageUrls) {
         this.imageUrls.clear();
         this.imageViews.clear();
@@ -281,6 +337,11 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
         start();
     }
 
+    /**
+     * 开始进行banner渲染（必须放到最后执行）
+     *
+     * @return
+     */
     public Banner start() {
         setBannerStyleUI();
         setImageList(imageUrls);
@@ -468,12 +529,17 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
             startAutoPlay();
     }
 
-
+    /**
+     * 开始轮播
+     */
     public void startAutoPlay() {
         handler.removeCallbacks(task);
         handler.postDelayed(task, delayTime);
     }
 
+    /**
+     * 结束轮播
+     */
     public void stopAutoPlay() {
         handler.removeCallbacks(task);
     }
@@ -637,6 +703,12 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
 
     }
 
+    /**
+     * 设置点击事件，下标是从0开始
+     *
+     * @param listener
+     * @return
+     */
     public Banner setOnBannerListener(OnBannerListener listener) {
         this.listener = listener;
         return this;
@@ -647,6 +719,11 @@ public class Banner extends FrameLayout implements OnPageChangeListener {
         return this;
     }
 
+    /**
+     * 设置viewpager的滑动监听
+     *
+     * @param onPageChangeListener
+     */
     public void setOnPageChangeListener(OnPageChangeListener onPageChangeListener) {
         mOnPageChangeListener = onPageChangeListener;
     }
