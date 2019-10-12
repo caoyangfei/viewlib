@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'signing'
 
 apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.caoyangfei'
+group = 'com.github.caoyangfei'
 
 configurations {
     deployerJars
@@ -33,6 +33,7 @@ android {
             //资源文件分包
             res.srcDirs =
                     [
+                            'src/main/res/layout/banner',
                             'src/main/res/layout/loading',
                             'src/main/res/layout/refresh',
                             'src/main/res/layout',

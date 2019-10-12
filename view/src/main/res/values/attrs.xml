@@ -103,6 +103,52 @@
         <attr name="reachCapRound" format="boolean" />
     </declare-styleable>
 
+    <!--轮播-->
+    <declare-styleable name="Banner">
+        <!--轮播间隔时间，默认2000-->
+        <attr name="delayTime" format="integer" />
+        <!--轮播滑动执行时间，默认800-->
+        <attr name="scrollTime" format="integer" />
+        <!--是否自动轮播，默认true-->
+        <attr name="isAutoPlay" format="boolean" />
+        <!--reference-->
+        <attr name="titleBackground" format="color|reference" />
+        <!--标题字体颜色-->
+        <attr name="titleTextcolor" format="color" />
+        <!--标题字体大小-->
+        <attr name="titleTextsize" format="dimension" />
+        <!--标题栏高度-->
+        <attr name="titleHeight" format="dimension" />
+        <!--指示器圆形按钮的宽度-->
+        <attr name="indicatorWidth" format="dimension" />
+        <!--指示器圆形按钮的高度-->
+        <attr name="indicatorHeight" format="dimension" />
+        <!--指示器圆形按钮的宽度-->
+        <attr name="indicatorSelectedWidth" format="dimension" />
+        <!--指示器圆形按钮的高度-->
+        <attr name="indicatorSelectedHeight" format="dimension" />
+        <!--指示器之间的间距-->
+        <attr name="indicatorMargin" format="dimension" />
+        <!--指示器选中效果-->
+        <attr name="indicatorDrawableSelected" format="reference" />
+        <!--指示器未选中效果-->
+        <attr name="indicatorDrawableUnselected" format="reference" />
+        <!--自定义banner布局文件，但是必须保证id的名称一样（你可以将banner的布局文件复制出来进行修改）-->
+        <attr name="banneLayout" format="reference" />
+        <!--当banner数据为空是显示的默认图片-->
+        <attr name="bannerDefaultImage" format="reference" />
+        <!--和imageview的ScaleType作用一样-->
+        <attr name="imageScaleType" format="enum">
+            <enum name="center" value="0" />
+            <enum name="centerCrop" value="1" />
+            <enum name="centerInside" value="2" />
+            <enum name="fitCenter" value="3" />
+            <enum name="fitEnd" value="4" />
+            <enum name="fitStart" value="5" />
+            <enum name="fitXY" value="6" />
+            <enum name="matrix" value="7" />
+        </attr>
+    </declare-styleable>
 
     <!--智能刷新布局SmartRefreshLayout-->
     <attr name="refreshPrimaryColor" format="color" /><!--主题颜色-->
