@@ -79,6 +79,15 @@
                 android:text="banner"
                 android:textAllCaps="false"
                 tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/refreshBtn7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onClick"
+                android:text="lottie"
+                android:textAllCaps="false"
+                tools:ignore="MissingConstraints" />
         </LinearLayout>
     </com.flyang.view.sticky.StickyNestedScrollView>
 

@@ -32,7 +32,7 @@ public class ArrowHeader extends View implements RefreshHeader {
 
     private ArrowDrawable mDrawable;
     private RefreshState state = RefreshState.None;
-    protected int mBackColor;
+    protected int mBackgroundColor;
     private int bowColor = Color.WHITE;
     private int arrowColor = Color.WHITE;
     private int stringColor = Color.WHITE;
@@ -61,7 +61,7 @@ public class ArrowHeader extends View implements RefreshHeader {
         a.recycle();
 
         mBackPaint = new Paint();
-        mBackPaint.setColor(mBackColor);
+        mBackPaint.setColor(mBackgroundColor);
         mBackPaint.setAntiAlias(true);
     }
 
@@ -169,10 +169,9 @@ public class ArrowHeader extends View implements RefreshHeader {
      * @deprecated 请使用 {@link RefreshLayout#setPrimaryColorsId(int...)}
      */
     @Override
-    @Deprecated
     public void setPrimaryColors(@ColorInt int... colors) {
         if (colors.length > 0) {
-            mBackColor = colors[0];
+            mBackgroundColor = colors[0];
         }
     }
 
@@ -182,7 +181,7 @@ public class ArrowHeader extends View implements RefreshHeader {
      * @param color
      */
     public void setPrimaryColor(@ColorInt int color) {
-        mBackColor = color;
+        mBackgroundColor = color;
     }
 
     /**

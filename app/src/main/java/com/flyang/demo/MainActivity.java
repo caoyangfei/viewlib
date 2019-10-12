@@ -9,6 +9,7 @@ import com.flyang.demo.banner.BannerActivity;
 import com.flyang.demo.refresh.AssignRefreshActivity;
 import com.flyang.demo.refresh.AssignXmlRefreshActivity;
 import com.flyang.demo.refresh.HorizontalRefreshActivity;
+import com.flyang.demo.refresh.LottieRefreshActivity;
 import com.flyang.demo.refresh.PureRollingRefreshActivity;
 import com.flyang.demo.refresh.TwoLevelRefreshActivity;
 import com.flyang.util.app.ActivityUtils;
@@ -158,6 +159,15 @@ public class MainActivity extends AppCompatActivity implements Delegate {
                             @Override
                             public void onAnimationEnd() {
                                 ActivityUtils.startActivity(BannerActivity.class);
+                            }
+                        });
+            case R.id.refreshBtn7:
+                CircularAnim.fullActivity(MainActivity.this, view)
+                        .colorOrImageRes(R.color.color_2E8B57)
+                        .go(new CircularAnim.OnAnimationEndListener() {
+                            @Override
+                            public void onAnimationEnd() {
+                                ActivityUtils.startActivity(LottieRefreshActivity.class);
                             }
                         });
                 break;

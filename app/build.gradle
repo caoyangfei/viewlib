@@ -48,4 +48,7 @@ dependencies {
     implementation project(path: ':view')
     implementation dep.util
     implementation project(path: ':expandview')
+
+    //Lottie
+    implementation 'com.airbnb.android:lottie:2.2.0'
 }
