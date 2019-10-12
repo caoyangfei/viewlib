@@ -48,4 +48,4 @@
 ## 3. Skills
 * [给自己的笔记,记录jitpack和nexus两种使用utillib方式](./doc/configure.md)
 
-* 感觉GitHub开源项目支持
+* 感谢GitHub开源项目支持
