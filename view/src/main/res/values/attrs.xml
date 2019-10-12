@@ -357,8 +357,10 @@
 
     <!--加载中布局-->
     <attr name="styleLoadingLayout" format="reference" />
+    <item name="loadingEmptyLayout" type="id" />
     <item name="loadingEmptyIv" type="id" />
     <item name="loadingEmptyTv" type="id" />
+    <item name="loadingErrorLayout" type="id" />
     <item name="loadingErrorIv" type="id" />
     <item name="loadingErrorTv" type="id" />
     <item name="loadingRetryBtn" type="id" />
