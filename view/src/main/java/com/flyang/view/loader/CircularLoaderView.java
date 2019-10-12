@@ -110,7 +110,7 @@ public class CircularLoaderView extends AppCompatImageButton {
         mParams.mPaddingProgress = 0f;
 
         if (attrs == null) {
-            mGradientDrawable = (GradientDrawable) getDrawable(getContext(), R.drawable.base_circle_loader);
+            mGradientDrawable = (GradientDrawable) getDrawable(getContext(), R.drawable.circle_loader);
         } else {
             int[] attrsArray = new int[]{
                     android.R.attr.background, // 0
