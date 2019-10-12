@@ -2,6 +2,7 @@ package com.flyang.view.layout.refresh.around;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -192,13 +193,13 @@ public class ClassicsFooter extends ClassicsAbstract<ClassicsFooter> implements 
     /**
      * ClassicsFooter 在(SpinnerStyle.FixedBehind)时才有主题色
      */
-   /* @Override
+    @Override
     @Deprecated
     public void setPrimaryColors(@ColorInt int... colors) {
         if (mSpinnerStyle == SpinnerStyle.FixedBehind) {
             super.setPrimaryColors(colors);
         }
-    }*/
+    }
 
     /**
      * 设置数据全部加载完成，将不能再次触发加载功能

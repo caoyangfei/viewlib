@@ -22,7 +22,7 @@ public class LottieRefreshActivity extends AppCompatActivity {
         refreshLayout = findViewById(R.id.refreshLayout);
 
         LottieHeader lottieHeader = findViewById(R.id.lottieHeader);
-        lottieHeader.setAnimationViewJson("anim4.json");
+        lottieHeader.setAnimationViewJson("anim7.json");
 
         refreshLayout.setOnMultiListener(new OnMultiListener() {
             @Override
