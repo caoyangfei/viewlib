@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="refresh_tag" type="id" />
+
 
     <!--轮播-->
     <item name="bannerContainer" type="id" />
@@ -12,4 +12,8 @@
     <item name="numIndicatorInside" type="id" />
     <item name="indicatorInside" type="id" />
     <item name="bannerDefaultImage" type="id" />
+
+    <!--智能刷新-->
+    <item name="smartRefreshLayout" type="id" />
+    <item name="refreshTag" type="id" />
 </resources>

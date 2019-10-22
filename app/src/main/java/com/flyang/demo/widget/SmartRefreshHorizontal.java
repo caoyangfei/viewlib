@@ -106,7 +106,7 @@ public class SmartRefreshHorizontal extends SmartRefreshLayout {
                         t -= div;
 
                         child.setRotation(90);
-                        child.setTag(R.id.refresh_tag, "GONE");
+                        child.setTag(R.id.refreshTag, "GONE");
                         child.measure(View.MeasureSpec.makeMeasureSpec(w, View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(h, View.MeasureSpec.EXACTLY));
                         child.layout(l, t, l + w, t + h);
                     }

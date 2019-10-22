@@ -12,7 +12,6 @@
         app:title="xml设置头部底部" />
 
     <com.flyang.view.layout.SmartRefreshLayout
-        android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:refreshAccentColor="@android:color/white"

@@ -19,8 +19,7 @@ public class LottieRefreshActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lottie_refresh);
 
-        refreshLayout = findViewById(R.id.refreshLayout);
-
+        refreshLayout = findViewById(R.id.smartRefreshLayout);
         LottieHeader lottieHeader = findViewById(R.id.lottieHeader);
         lottieHeader.setAnimationViewJson("anim7.json");
 

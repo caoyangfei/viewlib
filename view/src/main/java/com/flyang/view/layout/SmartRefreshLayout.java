@@ -83,6 +83,8 @@ import static java.lang.System.currentTimeMillis;
  * <p>
  * 来源
  * {@link: https://github.com/scwang90/SmartRefreshLayout}
+ * <p>
+ * 代码中设置id,使用时布局可以不用设置id
  */
 @SuppressLint("RestrictedApi")
 @SuppressWarnings({"unused"})
@@ -222,6 +224,10 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
 
     public SmartRefreshLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        // TODO: 2019/10/22 布局中未设置id时代码设置id,防止因为id覆盖找不到控件
+        if (getId() == -1)
+            this.setId(R.id.smartRefreshLayout);
 
         ViewConfiguration configuration = ViewConfiguration.get(context);
 
@@ -468,7 +474,7 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
         for (int i = 0, len = super.getChildCount(); i < len; i++) {
             View child = super.getChildAt(i);
 
-            if (child.getVisibility() == GONE || "GONE".equals(child.getTag(R.id.refresh_tag))) {
+            if (child.getVisibility() == GONE || "GONE".equals(child.getTag(R.id.refreshTag))) {
                 continue;
             }
 
@@ -612,7 +618,7 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
         for (int i = 0, len = super.getChildCount(); i < len; i++) {
             View child = super.getChildAt(i);
 
-            if (child.getVisibility() == GONE || "GONE".equals(child.getTag(R.id.refresh_tag))) {
+            if (child.getVisibility() == GONE || "GONE".equals(child.getTag(R.id.refreshTag))) {
                 continue;
             }
 
@@ -1607,10 +1613,10 @@ public class SmartRefreshLayout extends ViewGroup implements RefreshLayout, Nest
          *          源码引用，然后删掉下面4行的代码
          */
         //TODO: 2019/10/11 取消提示方式
-        if (spinner > mScreenHeightPixels * 5 && (thisView.getTag() == null || thisView.getTag(R.id.refresh_tag) == null)) {
+        if (spinner > mScreenHeightPixels * 5 && (thisView.getTag() == null || thisView.getTag(R.id.refreshTag) == null)) {
             String egg = "你这么死拉，臣妾做不到啊！";
             Toast.makeText(thisView.getContext(), egg, Toast.LENGTH_SHORT).show();
-            thisView.setTag(R.id.refresh_tag, egg);
+            thisView.setTag(R.id.refreshTag, egg);
         }
         if (mState == RefreshState.TwoLevel && spinner > 0) {
             mKernel.moveSpinner(Math.min((int) spinner, thisView.getMeasuredHeight()), true);
