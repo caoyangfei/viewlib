@@ -397,4 +397,11 @@
         <!-- 按钮背景 -->
         <attr name="llButtonBackground" format="reference" />
     </declare-styleable>
+
+    <declare-styleable name="SwipeMenuLayout">
+        <attr name="swipeEnable" format="boolean"/>
+        <attr name="ios" format="boolean"/>
+        <attr name="leftSwipe" format="boolean"/>
+    </declare-styleable>
+
 </resources>
