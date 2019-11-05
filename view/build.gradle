@@ -34,7 +34,6 @@ android {
             res.srcDirs =
                     [
                             'src/main/res/layout/banner',
-                            'src/main/res/layout/loading',
                             'src/main/res/layout/refresh',
                             'src/main/res/layout',
                             'src/main/res'

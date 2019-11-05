@@ -1,0 +1,34 @@
+<resources>
+
+    <string name="app_name">view</string>
+
+    <string name="refresh_header_pulling">Drop down to refresh</string>
+    <string name="refresh_header_refreshing">Refreshing…</string>
+    <string name="refresh_header_loading">Wait for bottom loading to complete…</string>
+    <string name="refresh_header_release">Release refresh now</string>
+    <string name="refresh_header_finish">Refresh finish</string>
+    <string name="refresh_header_failed">Refresh failed</string>
+    <string name="refresh_header_update">Last update M-d HH:mm</string>
+    <string name="refresh_header_secondary">Release to the second floor</string>
+
+    <string name="refresh_footer_pulling">Pull up to load more</string>
+    <string name="refresh_footer_release">Release load now</string>
+    <string name="refresh_footer_loading">Loading…</string>
+    <string name="refresh_footer_refreshing">Wait for the head refresh to complete…</string>
+    <string name="refresh_footer_finish">Load complete</string>
+    <string name="refresh_footer_failed">Failed to load</string>
+    <string name="refresh_footer_nothing">No more data</string>
+
+    <string name="refresh_content_empty">Content view not found in smartrefreshlayout. Did you forget to add in the XML layout file？</string>
+    <string name="refresh_component_falsify" formatted="false">%s fake area \n represents the height of the runtime drag [%.1fdp] \n without displaying anything</string>
+
+
+    <string name="pickerview_cancel">Cancel</string>
+    <string name="pickerview_submit">Confirm</string>
+    <string name="pickerview_year"> </string>
+    <string name="pickerview_month"> </string>
+    <string name="pickerview_day"> </string>
+    <string name="pickerview_hours"> </string>
+    <string name="pickerview_minutes"> </string>
+    <string name="pickerview_seconds"> </string>
+</resources>

@@ -18,14 +18,6 @@
         <attr name="android:layout_gravity" />
     </declare-styleable>
 
-
-    <!--加载动画-->
-    <declare-styleable name="ShapeLoadingView">
-        <attr name="Shape_Text" format="string" />
-        <attr name="Shape_Color" format="color" />
-        <attr name="ShapeTextAppearance" format="reference" />
-    </declare-styleable>
-
     <!--旋转加载动画-->
     <declare-styleable name="SpinKitLoadingView">
         <attr name="SpinKit_Style">
@@ -355,48 +347,6 @@
         <attr name="refreshTextNothing" />
     </declare-styleable>
 
-    <!--加载中布局-->
-    <attr name="styleLoadingLayout" format="reference" />
-    <item name="loadingEmptyLayout" type="id" />
-    <item name="loadingEmptyIv" type="id" />
-    <item name="loadingEmptyTv" type="id" />
-    <item name="loadingErrorLayout" type="id" />
-    <item name="loadingErrorIv" type="id" />
-    <item name="loadingErrorTv" type="id" />
-    <item name="loadingRetryBtn" type="id" />
-
-    <declare-styleable name="LoadingLayout">
-        <!-- 加载中布局资源id -->
-        <attr name="llLoadingResId" format="reference" />
-
-        <!-- 空布局资源id -->
-        <attr name="llEmptyResId" format="reference" />
-        <!-- 空布局图片 -->
-        <attr name="llEmptyImage" format="reference" />
-        <!-- 空布局文本 -->
-        <attr name="llEmptyText" format="string" />
-
-        <!-- 错误布局资源id -->
-        <attr name="llErrorResId" format="reference" />
-        <!-- 错误布局图片 -->
-        <attr name="llErrorImage" format="reference" />
-        <!-- 错误布局文本 -->
-        <attr name="llErrorText" format="string" />
-        <!-- 错误布局重试按钮文本 -->
-        <attr name="llRetryText" format="string" />
-
-        <!-- 文本颜色 -->
-        <attr name="llTextColor" format="color" />
-        <!-- 文本尺寸 -->
-        <attr name="llTextSize" format="dimension" />
-
-        <!-- 按钮文本颜色 -->
-        <attr name="llButtonTextColor" format="color" />
-        <!-- 按钮文本尺寸 -->
-        <attr name="llButtonTextSize" format="dimension" />
-        <!-- 按钮背景 -->
-        <attr name="llButtonBackground" format="reference" />
-    </declare-styleable>
 
     <declare-styleable name="SwipeMenuLayout">
         <attr name="swipeEnable" format="boolean"/>
@@ -404,4 +354,18 @@
         <attr name="leftSwipe" format="boolean"/>
     </declare-styleable>
 
+    <!--选择器-->
+    <declare-styleable name="pickerview">
+        <attr name="wheelview_gravity">
+            <enum name="center" value="17"/>
+            <enum name="left" value="3"/>
+            <enum name="right" value="5"/>
+        </attr>
+        <attr name="wheelview_textSize" format="dimension"/>
+        <attr name="wheelview_textColorOut" format="color"/>
+        <attr name="wheelview_textColorCenter" format="color"/>
+        <attr name="wheelview_dividerColor" format="color"/>
+        <attr name="wheelview_dividerWidth" format="dimension"/>
+        <attr name="wheelview_lineSpacingMultiplier" format="float"/>
+    </declare-styleable>
 </resources>
