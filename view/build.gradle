@@ -35,6 +35,7 @@ android {
                     [
                             'src/main/res/layout/banner',
                             'src/main/res/layout/refresh',
+                            'src/main/res/layout/picker',
                             'src/main/res/layout',
                             'src/main/res'
                     ]

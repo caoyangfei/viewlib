@@ -71,8 +71,9 @@ public class TimePickerConfig extends PickerConfig {
         dividerType = builder.dividerType;
         itemsVisibleCount = builder.itemsVisibleCount;
         isAlphaGradient = builder.isAlphaGradient;
-
         gravity = builder.gravity;
+        dialogAnim = builder.dialogAnim;
+
         type = builder.type;
         label_year = builder.label_year;
         label_month = builder.label_month;
@@ -130,6 +131,7 @@ public class TimePickerConfig extends PickerConfig {
         int itemsVisibleCount = 9; //最大可见条目数
         boolean isAlphaGradient = false; //透明度渐变
         int gravity = Gravity.BOTTOM; //弹出框位置
+        int dialogAnim = R.style.pickerScaleAnim;
 
         boolean[] type = new boolean[]{true, true, true, false, false, false};//显示类型，默认显示： 年月日
         String label_year, label_month, label_day, label_hours, label_minutes, label_seconds;//单位
@@ -197,6 +199,11 @@ public class TimePickerConfig extends PickerConfig {
 
         public Builder setGravity(int gravity) {
             this.gravity = gravity;
+            return this;
+        }
+
+        public Builder setDialogAnim(int dialogAnim) {
+            this.dialogAnim = dialogAnim;
             return this;
         }
 

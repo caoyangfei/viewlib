@@ -47,4 +47,5 @@ public class PickerConfig {
     public int itemsVisibleCount; //最大可见条目数
     public boolean isAlphaGradient; //透明度渐变
     public int gravity; //弹出框位置
+    public int dialogAnim; //弹出动画
 }

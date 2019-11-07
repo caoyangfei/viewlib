@@ -62,8 +62,9 @@ public class OptionsPickerConfig extends PickerConfig {
         dividerType = builder.dividerType;
         itemsVisibleCount = builder.itemsVisibleCount;
         isAlphaGradient = builder.isAlphaGradient;
-
         gravity = builder.gravity;
+        dialogAnim = builder.dialogAnim;
+
         isRestoreItem = builder.isRestoreItem;
         label1 = builder.label1;
         label2 = builder.label2;
@@ -114,6 +115,7 @@ public class OptionsPickerConfig extends PickerConfig {
         int itemsVisibleCount = 9; //最大可见条目数
         boolean isAlphaGradient = false; //透明度渐变
         int gravity = Gravity.BOTTOM; //弹出框位置
+        int dialogAnim=R.style.pickerScaleAnim;
 
         boolean isRestoreItem = false; //切换时，还原第一项
         String label1, label2, label3;//单位字符
@@ -279,6 +281,11 @@ public class OptionsPickerConfig extends PickerConfig {
 
         public Builder setGravity(int gravity) {
             this.gravity = gravity;
+            return this;
+        }
+
+        public Builder setDialogAnim(int dialogAnim) {
+            this.dialogAnim = dialogAnim;
             return this;
         }
 

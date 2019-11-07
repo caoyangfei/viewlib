@@ -62,6 +62,7 @@ public class MultiplePickerConfig extends PickerConfig {
         itemsVisibleCount = builder.itemsVisibleCount;
         isAlphaGradient = builder.isAlphaGradient;
         gravity = builder.gravity;
+        dialogAnim = builder.dialogAnim;
         cyclic = builder.cyclic;//是否循环，默认否
         label = builder.label;//单位字符
         x_offset = builder.x_offset;//x轴偏移量
@@ -103,6 +104,8 @@ public class MultiplePickerConfig extends PickerConfig {
         int itemsVisibleCount = 9; //最大可见条目数
         boolean isAlphaGradient = false; //透明度渐变
         int gravity = Gravity.BOTTOM; //弹出框位置
+        int dialogAnim = R.style.pickerScaleAnim;
+
         boolean cyclic;//是否循环，默认否
         String[] label;//单位字符
         int x_offset;//x轴偏移量
@@ -266,6 +269,10 @@ public class MultiplePickerConfig extends PickerConfig {
             return this;
         }
 
+        public Builder setDialogAnim(int dialogAnim) {
+            this.dialogAnim = dialogAnim;
+            return this;
+        }
 
         public Builder setFont(Typeface font) {
             this.font = font;

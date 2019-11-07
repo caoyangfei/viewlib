@@ -31,7 +31,7 @@
     </style>
 
 
-    <style name="custom_dialog" parent="@android:style/Theme.Dialog">
+    <style name="customDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
         <!-- Dialog的windowFrame框为无 -->
         <item name="android:windowIsFloating">true</item>
@@ -49,13 +49,12 @@
     </style>
 
 
-    <style name="picker_view_scale_anim" mce_bogus="1" parent="android:Animation">
+    <style name="pickerScaleAnim" mce_bogus="1" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/pickerview_dialog_scale_in</item>
         <item name="android:windowExitAnimation">@anim/pickerview_dialog_scale_out</item>
     </style>
 
-
-    <style name="picker_view_slide_anim" mce_bogus="1" parent="android:Animation">
+    <style name="pickerSlideAnim" mce_bogus="1" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/pickerview_slide_in_bottom</item>
         <item name="android:windowExitAnimation">@anim/pickerview_slide_out_bottom</item>
     </style>
