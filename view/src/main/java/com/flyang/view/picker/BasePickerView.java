@@ -260,9 +260,6 @@ public class BasePickerView {
         }
     }
 
-    /**
-     * Called when the user touch on black overlay, in order to dismiss the dialog.
-     */
     private final View.OnTouchListener onCancelableTouchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View v, MotionEvent event) {

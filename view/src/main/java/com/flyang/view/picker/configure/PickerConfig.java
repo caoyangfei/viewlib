@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.flyang.view.R;
 import com.flyang.view.picker.lisenter.CustomListener;
 import com.flyang.view.wheel.WheelView;
 
@@ -19,8 +18,8 @@ import com.flyang.view.wheel.WheelView;
 public class PickerConfig {
     public View.OnClickListener cancelListener;
     public CustomListener customListener;
-    public int inAnimRes = R.anim.pickerview_slide_in_bottom;
-    public int outAnimRes = R.anim.pickerview_slide_out_bottom;
+    public int inAnimRes;
+    public int outAnimRes;
     public int layoutRes;
     public ViewGroup decorView;
     public Context context;
