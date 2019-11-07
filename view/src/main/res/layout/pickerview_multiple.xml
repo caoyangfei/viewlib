@@ -7,7 +7,7 @@
     <include layout="@layout/pickerview_topbar" />
 
     <LinearLayout
-        android:id="@+id/optionsPicker"
+        android:id="@+id/multiplePicker"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"
@@ -16,23 +16,14 @@
         android:orientation="horizontal">
 
         <com.flyang.view.wheel.WheelView
-            android:id="@+id/options1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
         <com.flyang.view.wheel.WheelView
-            android:id="@+id/options2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <com.flyang.view.wheel.WheelView
-            android:id="@+id/options3"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
     </LinearLayout>
-
 
 </LinearLayout>

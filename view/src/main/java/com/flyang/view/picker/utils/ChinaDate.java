@@ -7,11 +7,18 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
+/**
+ * @author caoyangfei
+ * @ClassName ChinaDate
+ * @date 2019/11/5
+ * ------------- Description -------------
+ * 农历日期
+ */
 public class ChinaDate {
 
     /**
      * <lunarInfo 数组值的计算原理>
-     *
+     * <p>
      * 0x代表十六进制，后面的五位数是十六进制数。
      * 举个例子: 1980年的数据是 0x095b0
      * 二进制:  0000 1001 0101 1011 0000

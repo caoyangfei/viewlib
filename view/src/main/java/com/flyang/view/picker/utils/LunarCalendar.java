@@ -5,9 +5,13 @@ import android.util.Log;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+
 /**
- * author: Jerry on 2016/7/11 11:29.
- * description:工具类，实现公农历互转
+ * @author caoyangfei
+ * @ClassName LunarCalendar
+ * @date 2019/11/5
+ * ------------- Description -------------
+ * 公农历互转
  */
 public class LunarCalendar {
 

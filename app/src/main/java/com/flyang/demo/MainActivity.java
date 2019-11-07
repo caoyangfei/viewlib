@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.flyang.demo.banner.BannerActivity;
+import com.flyang.demo.picker.PicekerActivity;
 import com.flyang.demo.refresh.AssignRefreshActivity;
 import com.flyang.demo.refresh.AssignXmlRefreshActivity;
 import com.flyang.demo.refresh.HorizontalRefreshActivity;
@@ -22,16 +23,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        LoadingLayout loadingLayout = LoadingLayout.wrap(this);
-//        loadingLayout.setRetryListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(v.getContext(), "retry", Toast.LENGTH_LONG).show();
-//                loadingLayout.showContent();
-//            }
-//        });
-//        loadingLayout.showError();
-//        loadingLayout.showContent();
     }
 
 
@@ -111,6 +102,16 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onAnimationEnd() {
                                 ActivityUtils.startActivity(LottieRefreshActivity.class);
+                            }
+                        });
+                break;
+            case R.id.refreshBtn8:
+                CircularAnim.fullActivity(MainActivity.this, view)
+                        .colorOrImageRes(R.color.color_2E8B57)
+                        .go(new CircularAnim.OnAnimationEndListener() {
+                            @Override
+                            public void onAnimationEnd() {
+                                ActivityUtils.startActivity(PicekerActivity.class);
                             }
                         });
                 break;

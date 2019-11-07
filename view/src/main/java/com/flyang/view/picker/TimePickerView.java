@@ -1,6 +1,6 @@
 package com.flyang.view.picker;
 
-import android.content.Context;
+import android.support.annotation.RestrictTo;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,36 +10,41 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.flyang.view.R;
-import com.flyang.view.picker.configure.PickerOptions;
-import com.flyang.view.picker.listener.ISelectTimeCallback;
+import com.flyang.view.picker.configure.TimePickerConfig;
+import com.flyang.view.picker.lisenter.ISelectTimeCallback;
+import com.flyang.view.picker.wheel.WheelTime;
 
 import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
 
+import static android.support.annotation.RestrictTo.Scope.LIBRARY;
+
+
 /**
+ * @author caoyangfei
+ * @ClassName TimePickerView
+ * @date 2019/11/5
+ * ------------- Description -------------
  * 时间选择器
- * Created by Sai on 15/11/22.
- * Updated by XiaoSong on 2017-2-22.
  */
+@RestrictTo({LIBRARY})
 public class TimePickerView extends BasePickerView implements View.OnClickListener {
-
+    TimePickerConfig timePickerConfig;
     private WheelTime wheelTime; //自定义控件
-    private static final String TAG_SUBMIT = "submit";
-    private static final String TAG_CANCEL = "cancel";
 
-    public TimePickerView(PickerOptions pickerOptions) {
-        super(pickerOptions.context);
-        mPickerOptions = pickerOptions;
-        initView(pickerOptions.context);
+    public TimePickerView(TimePickerConfig pickerOptions) {
+        super(pickerOptions);
+        timePickerConfig = pickerOptions;
+        initView();
     }
 
-    private void initView(Context context) {
+    private void initView() {
         setDialogOutSideCancelable();
         initViews();
         initAnim();
 
-        if (mPickerOptions.customListener == null) {
+        if (timePickerConfig.customListener == null) {
             LayoutInflater.from(context).inflate(R.layout.pickerview_time, contentContainer);
 
             //顶部标题
@@ -50,47 +55,45 @@ public class TimePickerView extends BasePickerView implements View.OnClickListen
             Button btnSubmit = (Button) findViewById(R.id.btnSubmit);
             Button btnCancel = (Button) findViewById(R.id.btnCancel);
 
-            btnSubmit.setTag(TAG_SUBMIT);
-            btnCancel.setTag(TAG_CANCEL);
-
             btnSubmit.setOnClickListener(this);
             btnCancel.setOnClickListener(this);
+            tvTitle.setOnClickListener(null);
 
             //设置文字
-            btnSubmit.setText(TextUtils.isEmpty(mPickerOptions.textContentConfirm) ? context.getResources().getString(R.string.pickerview_submit) : mPickerOptions.textContentConfirm);
-            btnCancel.setText(TextUtils.isEmpty(mPickerOptions.textContentCancel) ? context.getResources().getString(R.string.pickerview_cancel) : mPickerOptions.textContentCancel);
-            tvTitle.setText(TextUtils.isEmpty(mPickerOptions.textContentTitle) ? "" : mPickerOptions.textContentTitle);//默认为空
+            btnSubmit.setText(TextUtils.isEmpty(timePickerConfig.textContentConfirm) ? context.getResources().getString(R.string.pickerview_submit) : timePickerConfig.textContentConfirm);
+            btnCancel.setText(TextUtils.isEmpty(timePickerConfig.textContentCancel) ? context.getResources().getString(R.string.pickerview_cancel) : timePickerConfig.textContentCancel);
+            tvTitle.setText(TextUtils.isEmpty(timePickerConfig.textContentTitle) ? "" : timePickerConfig.textContentTitle);//默认为空
 
             //设置color
-            btnSubmit.setTextColor(mPickerOptions.textColorConfirm);
-            btnCancel.setTextColor(mPickerOptions.textColorCancel);
-            tvTitle.setTextColor(mPickerOptions.textColorTitle);
-            rv_top_bar.setBackgroundColor(mPickerOptions.bgColorTitle);
+            btnSubmit.setTextColor(timePickerConfig.textColorConfirm);
+            btnCancel.setTextColor(timePickerConfig.textColorCancel);
+            tvTitle.setTextColor(timePickerConfig.textColorTitle);
+            rv_top_bar.setBackgroundColor(timePickerConfig.bgColorTitle);
 
             //设置文字大小
-            btnSubmit.setTextSize(mPickerOptions.textSizeSubmitCancel);
-            btnCancel.setTextSize(mPickerOptions.textSizeSubmitCancel);
-            tvTitle.setTextSize(mPickerOptions.textSizeTitle);
+            btnSubmit.setTextSize(timePickerConfig.textSizeSubmitCancel);
+            btnCancel.setTextSize(timePickerConfig.textSizeSubmitCancel);
+            tvTitle.setTextSize(timePickerConfig.textSizeTitle);
 
         } else {
-            mPickerOptions.customListener.customLayout(LayoutInflater.from(context).inflate(mPickerOptions.layoutRes, contentContainer));
+            timePickerConfig.customListener.customLayout(LayoutInflater.from(context).inflate(timePickerConfig.layoutRes, contentContainer));
         }
         // 时间转轮 自定义控件
-        LinearLayout timePickerView = (LinearLayout) findViewById(R.id.timepicker);
-        timePickerView.setBackgroundColor(mPickerOptions.bgColorWheel);
+        LinearLayout timePickerView = (LinearLayout) findViewById(R.id.timePicker);
+        timePickerView.setBackgroundColor(timePickerConfig.bgColorWheel);
 
         initWheelTime(timePickerView);
     }
 
     private void initWheelTime(LinearLayout timePickerView) {
-        wheelTime = new WheelTime(timePickerView, mPickerOptions.type, mPickerOptions.textGravity, mPickerOptions.textSizeContent);
-        if (mPickerOptions.timeSelectChangeListener != null) {
+        wheelTime = new WheelTime(timePickerView, timePickerConfig.type, timePickerConfig.textGravity, timePickerConfig.textSizeContent);
+        if (timePickerConfig.timeSelectChangeListener != null) {
             wheelTime.setSelectChangeCallback(new ISelectTimeCallback() {
                 @Override
                 public void onTimeSelectChanged() {
                     try {
                         Date date = WheelTime.dateFormat.parse(wheelTime.getTime());
-                        mPickerOptions.timeSelectChangeListener.onTimeSelectChanged(date);
+                        timePickerConfig.timeSelectChangeListener.onTimeSelectChanged(date);
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
@@ -98,28 +101,28 @@ public class TimePickerView extends BasePickerView implements View.OnClickListen
             });
         }
 
-        wheelTime.setLunarMode(mPickerOptions.isLunarCalendar);
+        wheelTime.setLunarMode(timePickerConfig.isLunarCalendar);
 
-        if (mPickerOptions.startYear != 0 && mPickerOptions.endYear != 0
-                && mPickerOptions.startYear <= mPickerOptions.endYear) {
+        if (timePickerConfig.startYear != 0 && timePickerConfig.endYear != 0
+                && timePickerConfig.startYear <= timePickerConfig.endYear) {
             setRange();
         }
 
         //若手动设置了时间范围限制
-        if (mPickerOptions.startDate != null && mPickerOptions.endDate != null) {
-            if (mPickerOptions.startDate.getTimeInMillis() > mPickerOptions.endDate.getTimeInMillis()) {
+        if (timePickerConfig.startDate != null && timePickerConfig.endDate != null) {
+            if (timePickerConfig.startDate.getTimeInMillis() > timePickerConfig.endDate.getTimeInMillis()) {
                 throw new IllegalArgumentException("startDate can't be later than endDate");
             } else {
                 setRangDate();
             }
-        } else if (mPickerOptions.startDate != null) {
-            if (mPickerOptions.startDate.get(Calendar.YEAR) < 1900) {
+        } else if (timePickerConfig.startDate != null) {
+            if (timePickerConfig.startDate.get(Calendar.YEAR) < 1900) {
                 throw new IllegalArgumentException("The startDate can not as early as 1900");
             } else {
                 setRangDate();
             }
-        } else if (mPickerOptions.endDate != null) {
-            if (mPickerOptions.endDate.get(Calendar.YEAR) > 2100) {
+        } else if (timePickerConfig.endDate != null) {
+            if (timePickerConfig.endDate.get(Calendar.YEAR) > 2100) {
                 throw new IllegalArgumentException("The endDate should not be later than 2100");
             } else {
                 setRangDate();
@@ -129,61 +132,61 @@ public class TimePickerView extends BasePickerView implements View.OnClickListen
         }
 
         setTime();
-        wheelTime.setLabels(mPickerOptions.label_year, mPickerOptions.label_month, mPickerOptions.label_day
-                , mPickerOptions.label_hours, mPickerOptions.label_minutes, mPickerOptions.label_seconds);
-        wheelTime.setTextXOffset(mPickerOptions.x_offset_year, mPickerOptions.x_offset_month, mPickerOptions.x_offset_day,
-                mPickerOptions.x_offset_hours, mPickerOptions.x_offset_minutes, mPickerOptions.x_offset_seconds);
-        wheelTime.setItemsVisible(mPickerOptions.itemsVisibleCount);
-        wheelTime.setAlphaGradient(mPickerOptions.isAlphaGradient);
-        setOutSideCancelable(mPickerOptions.cancelable);
-        wheelTime.setCyclic(mPickerOptions.cyclic);
-        wheelTime.setDividerColor(mPickerOptions.dividerColor);
-        wheelTime.setDividerType(mPickerOptions.dividerType);
-        wheelTime.setLineSpacingMultiplier(mPickerOptions.lineSpacingMultiplier);
-        wheelTime.setTextColorOut(mPickerOptions.textColorOut);
-        wheelTime.setTextColorCenter(mPickerOptions.textColorCenter);
-        wheelTime.isCenterLabel(mPickerOptions.isCenterLabel);
+        wheelTime.setLabels(timePickerConfig.label_year, timePickerConfig.label_month, timePickerConfig.label_day
+                , timePickerConfig.label_hours, timePickerConfig.label_minutes, timePickerConfig.label_seconds);
+        wheelTime.setTextXOffset(timePickerConfig.x_offset_year, timePickerConfig.x_offset_month, timePickerConfig.x_offset_day,
+                timePickerConfig.x_offset_hours, timePickerConfig.x_offset_minutes, timePickerConfig.x_offset_seconds);
+        wheelTime.setItemsVisible(timePickerConfig.itemsVisibleCount);
+        wheelTime.setAlphaGradient(timePickerConfig.isAlphaGradient);
+        setOutSideCancelable(timePickerConfig.cancelable);
+        wheelTime.setCyclic(timePickerConfig.cyclic);
+        wheelTime.setDividerColor(timePickerConfig.dividerColor);
+        wheelTime.setDividerType(timePickerConfig.dividerType);
+        wheelTime.setLineSpacingMultiplier(timePickerConfig.lineSpacingMultiplier);
+        wheelTime.setTextColorOut(timePickerConfig.textColorOut);
+        wheelTime.setTextColorCenter(timePickerConfig.textColorCenter);
+        wheelTime.isCenterLabel(timePickerConfig.isCenterLabel);
     }
 
 
     /**
      * 设置默认时间
      */
-    public void setDate(Calendar date) {
-        mPickerOptions.date = date;
+    public TimePickerView setDate(Calendar date) {
+        timePickerConfig.date = date;
         setTime();
+        return this;
     }
 
     /**
      * 设置可以选择的时间范围, 要在setTime之前调用才有效果
      */
     private void setRange() {
-        wheelTime.setStartYear(mPickerOptions.startYear);
-        wheelTime.setEndYear(mPickerOptions.endYear);
-
+        wheelTime.setStartYear(timePickerConfig.startYear);
+        wheelTime.setEndYear(timePickerConfig.endYear);
     }
 
     /**
      * 设置可以选择的时间范围, 要在setTime之前调用才有效果
      */
     private void setRangDate() {
-        wheelTime.setRangDate(mPickerOptions.startDate, mPickerOptions.endDate);
+        wheelTime.setRangDate(timePickerConfig.startDate, timePickerConfig.endDate);
         initDefaultSelectedDate();
     }
 
     private void initDefaultSelectedDate() {
         //如果手动设置了时间范围
-        if (mPickerOptions.startDate != null && mPickerOptions.endDate != null) {
+        if (timePickerConfig.startDate != null && timePickerConfig.endDate != null) {
             //若默认时间未设置，或者设置的默认时间越界了，则设置默认选中时间为开始时间。
-            if (mPickerOptions.date == null || mPickerOptions.date.getTimeInMillis() < mPickerOptions.startDate.getTimeInMillis()
-                    || mPickerOptions.date.getTimeInMillis() > mPickerOptions.endDate.getTimeInMillis()) {
-                mPickerOptions.date = mPickerOptions.startDate;
+            if (timePickerConfig.date == null || timePickerConfig.date.getTimeInMillis() < timePickerConfig.startDate.getTimeInMillis()
+                    || timePickerConfig.date.getTimeInMillis() > timePickerConfig.endDate.getTimeInMillis()) {
+                timePickerConfig.date = timePickerConfig.startDate;
             }
-        } else if (mPickerOptions.startDate != null) {
+        } else if (timePickerConfig.startDate != null) {
             //没有设置默认选中时间,那就拿开始时间当默认时间
-            mPickerOptions.date = mPickerOptions.startDate;
-        } else if (mPickerOptions.endDate != null) {
-            mPickerOptions.date = mPickerOptions.endDate;
+            timePickerConfig.date = timePickerConfig.startDate;
+        } else if (timePickerConfig.endDate != null) {
+            timePickerConfig.date = timePickerConfig.endDate;
         }
     }
 
@@ -194,7 +197,7 @@ public class TimePickerView extends BasePickerView implements View.OnClickListen
         int year, month, day, hours, minute, seconds;
         Calendar calendar = Calendar.getInstance();
 
-        if (mPickerOptions.date == null) {
+        if (timePickerConfig.date == null) {
             calendar.setTimeInMillis(System.currentTimeMillis());
             year = calendar.get(Calendar.YEAR);
             month = calendar.get(Calendar.MONTH);
@@ -203,12 +206,12 @@ public class TimePickerView extends BasePickerView implements View.OnClickListen
             minute = calendar.get(Calendar.MINUTE);
             seconds = calendar.get(Calendar.SECOND);
         } else {
-            year = mPickerOptions.date.get(Calendar.YEAR);
-            month = mPickerOptions.date.get(Calendar.MONTH);
-            day = mPickerOptions.date.get(Calendar.DAY_OF_MONTH);
-            hours = mPickerOptions.date.get(Calendar.HOUR_OF_DAY);
-            minute = mPickerOptions.date.get(Calendar.MINUTE);
-            seconds = mPickerOptions.date.get(Calendar.SECOND);
+            year = timePickerConfig.date.get(Calendar.YEAR);
+            month = timePickerConfig.date.get(Calendar.MONTH);
+            day = timePickerConfig.date.get(Calendar.DAY_OF_MONTH);
+            hours = timePickerConfig.date.get(Calendar.HOUR_OF_DAY);
+            minute = timePickerConfig.date.get(Calendar.MINUTE);
+            seconds = timePickerConfig.date.get(Calendar.SECOND);
         }
 
         wheelTime.setPicker(year, month, day, hours, minute, seconds);
@@ -217,22 +220,21 @@ public class TimePickerView extends BasePickerView implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        String tag = (String) v.getTag();
-        if (tag.equals(TAG_SUBMIT)) {
+        if (v.getId() == R.id.btnSubmit) {
             returnData();
-        } else if (tag.equals(TAG_CANCEL)) {
-            if (mPickerOptions.cancelListener != null) {
-                mPickerOptions.cancelListener.onClick(v);
+        } else if (v.getId() == R.id.btnCancel) {
+            if (timePickerConfig.cancelListener != null) {
+                timePickerConfig.cancelListener.onClick(v);
             }
         }
         dismiss();
     }
 
     public void returnData() {
-        if (mPickerOptions.timeSelectListener != null) {
+        if (timePickerConfig.timeSelectListener != null) {
             try {
                 Date date = WheelTime.dateFormat.parse(wheelTime.getTime());
-                mPickerOptions.timeSelectListener.onTimeSelect(date, clickView);
+                timePickerConfig.timeSelectListener.onTimeSelect(clickView, date);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -244,11 +246,12 @@ public class TimePickerView extends BasePickerView implements View.OnClickListen
      *
      * @param text 标题文本内容
      */
-    public void setTitleText(String text) {
+    public TimePickerView setTitleText(String text) {
         TextView tvTitle = (TextView) findViewById(R.id.tvTitle);
         if (tvTitle != null) {
             tvTitle.setText(text);
         }
+        return this;
     }
 
     /**
@@ -256,7 +259,7 @@ public class TimePickerView extends BasePickerView implements View.OnClickListen
      *
      * @param lunar 农历的开关
      */
-    public void setLunarCalendar(boolean lunar) {
+    public TimePickerView setLunarCalendar(boolean lunar) {
         try {
             int year, month, day, hours, minute, seconds;
             Calendar calendar = Calendar.getInstance();
@@ -269,12 +272,13 @@ public class TimePickerView extends BasePickerView implements View.OnClickListen
             seconds = calendar.get(Calendar.SECOND);
 
             wheelTime.setLunarMode(lunar);
-            wheelTime.setLabels(mPickerOptions.label_year, mPickerOptions.label_month, mPickerOptions.label_day,
-                    mPickerOptions.label_hours, mPickerOptions.label_minutes, mPickerOptions.label_seconds);
+            wheelTime.setLabels(timePickerConfig.label_year, timePickerConfig.label_month, timePickerConfig.label_day,
+                    timePickerConfig.label_hours, timePickerConfig.label_minutes, timePickerConfig.label_seconds);
             wheelTime.setPicker(year, month, day, hours, minute, seconds);
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        return this;
     }
 
     public boolean isLunarCalendar() {
@@ -284,6 +288,6 @@ public class TimePickerView extends BasePickerView implements View.OnClickListen
 
     @Override
     public boolean isDialog() {
-        return mPickerOptions.isDialog;
+        return timePickerConfig.isDialog;
     }
 }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
     <!--轮播-->
     <item name="bannerContainer" type="id" />
     <item name="bannerViewPager" type="id" />
