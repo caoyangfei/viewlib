@@ -11,14 +11,17 @@ ext {
 
     isAlone = false
 
-    //本地
-//    utilVersion = "2.1.1.2019_beta_01"
-
+//    //本地
+//    utilVersion = "2.1.1.2019_beta_03"
+//    viewVersion = "2.1.1.2019_beta_10"
+//    basicVersion = "2.1.1.2019_beta_22"
+//
 //    dep = [
-//            util: "com.flyang.common:util:$utilVersion",
 //            gson: "com.google.code.gson:gson:2.8.5",
+//            util: "com.flyang.common:util:$utilVersion",
+//            view: "com.flyang.common:view:$viewVersion",
+//            basic: "com.flyang.common:basic:$basicVersion",
 //    ]
-
 
     //GitHub
     utilVersion = "1.1.1.2019_02"
@@ -29,6 +32,7 @@ ext {
             basic: "com.github.caoyangfei:basiclib:$basicVersion",
             gson : "com.google.code.gson:gson:2.8.5",
     ]
+
 
 
 }

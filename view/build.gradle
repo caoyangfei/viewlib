@@ -96,7 +96,7 @@ dependencies {
 }
 
 
-def version = "2.1.1.2019_beta_02"
+def version = "2.1.1.2019_beta_11"
 
 uploadArchives {
     repositories {
