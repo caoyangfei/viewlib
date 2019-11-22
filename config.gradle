@@ -22,10 +22,12 @@ ext {
 
     //GitHub
     utilVersion = "1.1.1.2019_02"
+    basicVersion = "1.1.2.2019_02"
 
     dep = [
-            util: "com.github.caoyangfei:utillib:$utilVersion",
-            gson: "com.google.code.gson:gson:2.8.5",
+            util : "com.github.caoyangfei:utillib:$utilVersion",
+            basic: "com.github.caoyangfei:basiclib:$basicVersion",
+            gson : "com.google.code.gson:gson:2.8.5",
     ]
 
 

@@ -9,7 +9,7 @@ import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 
-import com.flyang.view.layout.refresh.around.drawable.PaintDrawable;
+import com.flyang.base.view.refresh.around.drawable.PaintDrawable;
 
 import java.util.ArrayList;
 import java.util.List;

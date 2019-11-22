@@ -5,10 +5,10 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.flyang.base.view.SmartRefreshLayout;
+import com.flyang.base.view.refresh.inter.RefreshComponent;
+import com.flyang.base.view.refresh.simple.SimpleBoundaryDecider;
 import com.flyang.demo.R;
-import com.flyang.view.layout.SmartRefreshLayout;
-import com.flyang.view.layout.refresh.inter.RefreshComponent;
-import com.flyang.view.layout.refresh.simple.SimpleBoundaryDecider;
 
 /**
  * @author caoyangfei

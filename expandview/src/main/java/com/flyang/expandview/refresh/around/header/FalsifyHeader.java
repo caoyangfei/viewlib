@@ -4,10 +4,10 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 
+import com.flyang.base.view.refresh.constant.RefreshState;
+import com.flyang.base.view.refresh.inter.RefreshHeader;
+import com.flyang.base.view.refresh.inter.RefreshLayout;
 import com.flyang.expandview.refresh.around.internal.falsify.FalsifyAbstract;
-import com.flyang.view.layout.refresh.constant.RefreshState;
-import com.flyang.view.layout.refresh.inter.RefreshHeader;
-import com.flyang.view.layout.refresh.inter.RefreshLayout;
 
 
 /**

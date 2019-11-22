@@ -79,6 +79,7 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 
     implementation dep.util
+    implementation dep.basic
 
     implementation project(path: ':view')
     //本地nexus库使用时，必须使用线上依赖不然下载不下来

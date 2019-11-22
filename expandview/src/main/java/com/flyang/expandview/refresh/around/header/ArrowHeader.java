@@ -12,14 +12,14 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.flyang.base.view.refresh.constant.RefreshState;
+import com.flyang.base.view.refresh.constant.SpinnerStyle;
+import com.flyang.base.view.refresh.inter.RefreshHeader;
+import com.flyang.base.view.refresh.inter.RefreshKernel;
+import com.flyang.base.view.refresh.inter.RefreshLayout;
+import com.flyang.base.view.refresh.util.SmartUtil;
 import com.flyang.expandview.R;
 import com.flyang.expandview.refresh.around.internal.drawable.ArrowDrawable;
-import com.flyang.view.layout.refresh.constant.RefreshState;
-import com.flyang.view.layout.refresh.constant.SpinnerStyle;
-import com.flyang.view.layout.refresh.inter.RefreshHeader;
-import com.flyang.view.layout.refresh.inter.RefreshKernel;
-import com.flyang.view.layout.refresh.inter.RefreshLayout;
-import com.flyang.view.layout.refresh.util.SmartUtil;
 
 /**
  * @author caoyangfei

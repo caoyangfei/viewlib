@@ -5,16 +5,16 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatDelegate;
 
+import com.flyang.base.view.SmartRefreshLayout;
+import com.flyang.base.view.refresh.around.ClassicsFooter;
+import com.flyang.base.view.refresh.around.ClassicsHeader;
+import com.flyang.base.view.refresh.inter.RefreshFooter;
+import com.flyang.base.view.refresh.inter.RefreshHeader;
+import com.flyang.base.view.refresh.inter.RefreshLayout;
+import com.flyang.base.view.refresh.listener.DefaultRefreshFooterCreator;
+import com.flyang.base.view.refresh.listener.DefaultRefreshHeaderCreator;
+import com.flyang.base.view.refresh.listener.DefaultRefreshInitializer;
 import com.flyang.util.app.ApplicationUtils;
-import com.flyang.view.layout.SmartRefreshLayout;
-import com.flyang.view.layout.refresh.around.ClassicsFooter;
-import com.flyang.view.layout.refresh.around.ClassicsHeader;
-import com.flyang.view.layout.refresh.inter.RefreshFooter;
-import com.flyang.view.layout.refresh.inter.RefreshHeader;
-import com.flyang.view.layout.refresh.inter.RefreshLayout;
-import com.flyang.view.layout.refresh.listener.DefaultRefreshFooterCreator;
-import com.flyang.view.layout.refresh.listener.DefaultRefreshHeaderCreator;
-import com.flyang.view.layout.refresh.listener.DefaultRefreshInitializer;
 
 /**
  * @author yangfei.cao

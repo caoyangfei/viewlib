@@ -5,8 +5,9 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.AbsListView;
 
-import com.flyang.view.layout.refresh.util.SmartUtil;
-import com.flyang.view.layout.refresh.wrapper.RefreshContentWrapper;
+import com.flyang.base.view.refresh.util.SmartUtil;
+import com.flyang.base.view.refresh.wrapper.RefreshContentWrapper;
+
 
 public class RefreshContentHorizontal extends RefreshContentWrapper {
 

@@ -14,12 +14,13 @@ import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 
-import com.flyang.view.layout.refresh.constant.SpinnerStyle;
-import com.flyang.view.layout.refresh.inter.RefreshHeader;
-import com.flyang.view.layout.refresh.inter.RefreshKernel;
-import com.flyang.view.layout.refresh.inter.RefreshLayout;
-import com.flyang.view.layout.refresh.simple.SimpleComponent;
-import com.flyang.view.layout.refresh.util.SmartUtil;
+import com.flyang.base.view.refresh.constant.SpinnerStyle;
+import com.flyang.base.view.refresh.inter.RefreshHeader;
+import com.flyang.base.view.refresh.inter.RefreshKernel;
+import com.flyang.base.view.refresh.inter.RefreshLayout;
+import com.flyang.base.view.refresh.simple.SimpleComponent;
+import com.flyang.base.view.refresh.util.SmartUtil;
+
 
 /**
  * @author caoyangfei

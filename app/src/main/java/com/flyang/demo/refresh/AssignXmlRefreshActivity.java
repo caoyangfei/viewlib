@@ -3,8 +3,8 @@ package com.flyang.demo.refresh;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.flyang.base.view.refresh.inter.RefreshLayout;
 import com.flyang.demo.R;
-import com.flyang.view.layout.refresh.inter.RefreshLayout;
 
 public class AssignXmlRefreshActivity extends AppCompatActivity {
 

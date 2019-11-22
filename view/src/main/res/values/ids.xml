@@ -12,7 +12,4 @@
     <item name="indicatorInside" type="id" />
     <item name="bannerDefaultImage" type="id" />
 
-    <!--智能刷新-->
-    <item name="smartRefreshLayout" type="id" />
-    <item name="refreshTag" type="id" />
 </resources>

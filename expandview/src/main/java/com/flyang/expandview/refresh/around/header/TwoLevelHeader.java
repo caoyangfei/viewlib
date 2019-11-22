@@ -10,17 +10,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import com.flyang.base.view.refresh.around.ClassicsHeader;
+import com.flyang.base.view.refresh.constant.RefreshState;
+import com.flyang.base.view.refresh.constant.SpinnerStyle;
+import com.flyang.base.view.refresh.inter.RefreshComponent;
+import com.flyang.base.view.refresh.inter.RefreshHeader;
+import com.flyang.base.view.refresh.inter.RefreshKernel;
+import com.flyang.base.view.refresh.inter.RefreshLayout;
+import com.flyang.base.view.refresh.listener.OnStateChangedListener;
+import com.flyang.base.view.refresh.simple.SimpleComponent;
 import com.flyang.expandview.R;
 import com.flyang.expandview.refresh.around.listener.OnTwoLevelListener;
-import com.flyang.view.layout.refresh.constant.RefreshState;
-import com.flyang.view.layout.refresh.constant.SpinnerStyle;
-import com.flyang.view.layout.refresh.around.ClassicsHeader;
-import com.flyang.view.layout.refresh.inter.RefreshComponent;
-import com.flyang.view.layout.refresh.inter.RefreshHeader;
-import com.flyang.view.layout.refresh.inter.RefreshKernel;
-import com.flyang.view.layout.refresh.inter.RefreshLayout;
-import com.flyang.view.layout.refresh.listener.OnStateChangedListener;
-import com.flyang.view.layout.refresh.simple.SimpleComponent;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;

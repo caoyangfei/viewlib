@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
+import com.flyang.base.view.refresh.constant.RefreshState;
+import com.flyang.base.view.refresh.constant.SpinnerStyle;
+import com.flyang.base.view.refresh.inter.RefreshLayout;
+import com.flyang.base.view.refresh.listener.OnMultiListener;
 import com.flyang.demo.R;
 import com.flyang.expandview.refresh.around.footer.BallPulseFooter;
 import com.flyang.expandview.refresh.around.header.MaterialHeader;
-import com.flyang.view.layout.refresh.constant.RefreshState;
-import com.flyang.view.layout.refresh.constant.SpinnerStyle;
-import com.flyang.view.layout.refresh.inter.RefreshLayout;
-import com.flyang.view.layout.refresh.listener.OnMultiListener;
 
 public class AssignRefreshActivity extends AppCompatActivity {
 

@@ -2,7 +2,8 @@ package com.flyang.expandview.refresh.around.listener;
 
 import android.support.annotation.NonNull;
 
-import com.flyang.view.layout.refresh.inter.RefreshLayout;
+import com.flyang.base.view.refresh.inter.RefreshLayout;
+
 
 /**
  * 二级刷新监听器

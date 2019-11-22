@@ -3,8 +3,8 @@ package com.flyang.expandview.refresh.around.internal.flyrefresh;
 import android.content.Context;
 import android.util.AttributeSet;
 
+import com.flyang.base.view.refresh.util.SmartUtil;
 import com.flyang.expandview.refresh.around.internal.path.PathsView;
-import com.flyang.view.layout.refresh.util.SmartUtil;
 
 
 /**

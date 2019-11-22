@@ -5,7 +5,8 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.flyang.view.layout.refresh.util.SmartUtil;
+import com.flyang.base.view.refresh.util.SmartUtil;
+
 
 /**
  * @author caoyangfei

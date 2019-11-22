@@ -10,7 +10,7 @@ import android.support.annotation.ColorInt;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
-import com.flyang.view.layout.refresh.util.SmartUtil;
+import com.flyang.base.view.refresh.util.SmartUtil;
 
 
 /**

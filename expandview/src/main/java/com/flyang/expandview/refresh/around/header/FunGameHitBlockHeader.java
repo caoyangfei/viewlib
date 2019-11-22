@@ -10,10 +10,10 @@ import android.support.v4.graphics.ColorUtils;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.flyang.base.view.refresh.inter.RefreshKernel;
+import com.flyang.base.view.refresh.util.SmartUtil;
 import com.flyang.expandview.R;
 import com.flyang.expandview.refresh.around.internal.fungame.FunGameView;
-import com.flyang.view.layout.refresh.inter.RefreshKernel;
-import com.flyang.view.layout.refresh.util.SmartUtil;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -10,15 +10,15 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.flyang.base.view.refresh.constant.RefreshState;
+import com.flyang.base.view.refresh.inter.RefreshHeader;
+import com.flyang.base.view.refresh.inter.RefreshLayout;
+import com.flyang.base.view.refresh.listener.OnMultiListener;
+import com.flyang.base.view.refresh.listener.OnRefreshListener;
 import com.flyang.demo.R;
 import com.flyang.demo.StatusBarUtil;
 import com.flyang.expandview.refresh.around.header.TwoLevelHeader;
 import com.flyang.expandview.refresh.around.listener.OnTwoLevelListener;
-import com.flyang.view.layout.refresh.constant.RefreshState;
-import com.flyang.view.layout.refresh.inter.RefreshHeader;
-import com.flyang.view.layout.refresh.inter.RefreshLayout;
-import com.flyang.view.layout.refresh.listener.OnMultiListener;
-import com.flyang.view.layout.refresh.listener.OnRefreshListener;
 
 import java.util.Arrays;
 import java.util.List;

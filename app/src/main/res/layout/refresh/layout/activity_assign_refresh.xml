@@ -11,7 +11,7 @@
         app:navigationIcon="?attr/homeAsUpIndicator"
         app:title="代码设置头部底部" />
 
-    <com.flyang.view.layout.SmartRefreshLayout
+    <com.flyang.base.view.SmartRefreshLayout
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -25,8 +25,8 @@
         final RefreshLayout refreshLayout = findViewById(R.id.refreshLayout);\n
         refreshLayout.setRefreshHeader(new MaterialHeader(this));\n
         refreshLayout.setRefreshFooter(new BallPulseFooter(this));\n\n" />
-        <com.flyang.view.layout.refresh.around.ClassicsFooter
+        <com.flyang.base.view.refresh.around.ClassicsFooter
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </com.flyang.view.layout.SmartRefreshLayout>
+    </com.flyang.base.view.SmartRefreshLayout>
 </LinearLayout>

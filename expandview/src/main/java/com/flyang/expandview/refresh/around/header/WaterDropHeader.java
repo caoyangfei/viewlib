@@ -13,15 +13,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.flyang.base.view.refresh.around.drawable.ProgressDrawable;
+import com.flyang.base.view.refresh.constant.RefreshState;
+import com.flyang.base.view.refresh.constant.SpinnerStyle;
+import com.flyang.base.view.refresh.inter.RefreshHeader;
+import com.flyang.base.view.refresh.inter.RefreshLayout;
+import com.flyang.base.view.refresh.simple.SimpleComponent;
+import com.flyang.base.view.refresh.util.SmartUtil;
 import com.flyang.expandview.refresh.around.internal.material.MaterialProgressDrawable;
 import com.flyang.expandview.refresh.around.internal.waterdrop.WaterDropView;
-import com.flyang.view.layout.refresh.around.drawable.ProgressDrawable;
-import com.flyang.view.layout.refresh.constant.RefreshState;
-import com.flyang.view.layout.refresh.constant.SpinnerStyle;
-import com.flyang.view.layout.refresh.inter.RefreshHeader;
-import com.flyang.view.layout.refresh.inter.RefreshLayout;
-import com.flyang.view.layout.refresh.simple.SimpleComponent;
-import com.flyang.view.layout.refresh.util.SmartUtil;
 
 import static android.view.View.MeasureSpec.AT_MOST;
 import static android.view.View.MeasureSpec.EXACTLY;
